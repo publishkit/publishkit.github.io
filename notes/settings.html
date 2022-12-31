@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Settings</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="Settings" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <meta name="frontmatter" content="%7B%22title%22%3A%22Settings%22%2C%22alias%22%3A%22pkrc%22%7D" />
+  <meta name="tags" content="%5B%5D" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <div id="content" style="display: none;">
+    <h1>Settings</h1>
+    <p>Global settings are located in the <code>pkrc</code> file at the root of your vault. Settings are just <a class="external-link" href="https://help.obsidian.md/Advanced+topics/YAML+front+matter" target="_blank">frontmatter</a> variables.</p>
+    <div data-callout="info" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">Info</div>
+      </div>
+      <div class="callout-content">
+        <ul>
+          <li>Each setting can be overrided on a page basis.</li>
+          <li>When you edit a setting, you have to re export your file.</li>
+        </ul>
+      </div>
+    </div>
+    <h2>general</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">pk_folder</span><span class="token punctuation">:</span> /Users/louis/sites/PublishKit
+<span class="token key atrule">site_id</span><span class="token punctuation">:</span> insert_your_id
+<span class="token key atrule">site_name</span><span class="token punctuation">:</span> PublishKit
+<span class="token key atrule">site_assets</span><span class="token punctuation">:</span> /assets
+<span class="token key atrule">description</span><span class="token punctuation">:</span> Welcome to PublishKit
+</code></pre>
+    <h2>layout</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">fluid</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">footer</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">rtoc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>search</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">search_chars</span><span class="token punctuation">:</span> <span class="token number">3</span>
+<span class="token key atrule">search_fuzzy</span><span class="token punctuation">:</span> <span class="token number">0.2</span>
+<span class="token key atrule">search_padding</span><span class="token punctuation">:</span> <span class="token number">20</span>
+<span class="token key atrule">search_max_results</span><span class="token punctuation">:</span> <span class="token number">5</span>
+</code></pre>
+    <h2>social</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">social_github</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/username
+<span class="token key atrule">social_twitter</span><span class="token punctuation">:</span>
+<span class="token key atrule">social_twitch</span><span class="token punctuation">:</span>
+<span class="token key atrule">social_facebook</span><span class="token punctuation">:</span>
+<span class="token key atrule">social_instagram</span><span class="token punctuation">:</span>
+<span class="token key atrule">social_reddit</span><span class="token punctuation">:</span>
+<span class="token key atrule">social_linkedin</span><span class="token punctuation">:</span>
+</code></pre>
+    <h2>other</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml">
+<span class="token comment"># show frontmatter</span>
+<span class="token key atrule">frontmatter</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token comment"># pdf options</span>
+<span class="token key atrule">pdf_notoolbar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token comment"># not yet implemented</span>
+<span class="token key atrule">breadcrumbs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">latex</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+</code></pre>
+    <h2>styles</h2>
+    <h3>css</h3>
+    <p>You can override css variables.</p>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">--font-family</span><span class="token punctuation">:</span> Cousine<span class="token punctuation">,</span> sans<span class="token punctuation">-</span>serif
+<span class="token key atrule">--primary</span><span class="token punctuation">:</span> <span class="token string">'#0ed519'</span>
+<span class="token key atrule">--primary-hover</span><span class="token punctuation">:</span> <span class="token string">'#0bb714'</span>
+</code></pre>
+    <div data-callout="info" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">Info</div>
+      </div>
+      <div class="callout-content">
+        <p>You can choose any fonts from <a class="external-link" href="https://www.cdnfonts.com/" target="_blank">cdnfonts.com</a><br>
+          Go to the font page that you like, for exemple <a class="external-link" href="https://www.cdnfonts.com/ambery-garden.font" target="_blank">this one</a>.<br>
+          <code>font-family: 'Ambery Garden', sans-serif;</code>
+        </p>
+        <p>Make sure you remove the quotes <code>'</code> and the <code>;</code> </p>
+        <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">--font-family</span><span class="token punctuation">:</span> Ambery Garden<span class="token punctuation">,</span> sans<span class="token punctuation">-</span>serif
+</code></pre>
+      </div>
+    </div>
+    <h3>codeblocks</h3>
+    <p>You get syntax highlighting out of the box with <a class="external-link" href="https://highlightjs.org/" target="_blank">highlight.js</a><br>
+      You can choose from the available themes <a class="external-link" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/" target="_blank">here</a>.</p>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">highlightjs</span><span class="token punctuation">:</span> arta
+</code></pre>
+  </div>
+</body>
+
+</html>

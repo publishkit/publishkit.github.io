@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Settings</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="Settings" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <meta name="frontmatter" content="%7B%7D" />
+  <meta name="tags" content="%5B%5D" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <div id="content" style="display: none;">
+    <h1>html showcase</h1>
+    <h2>typography</h2>
+    <article aria-label="Inline text examples">
+      <div class="grid">
+        <div>
+          <p><abbr title="Abbreviation">Abbr.</abbr> <code>abbr</code></p>
+          <p><strong>Bold</strong> <code>strong</code> <code>b</code></p>
+          <p><em>Italic</em> <code>i</code> <code>em</code> <code>cite</code></p>
+          <p><del>Deleted</del> <code>del</code></p>
+          <p><ins>Inserted</ins> <code>ins</code></p>
+          <p><kbd>Ctrl + S</kbd> <code>kbd</code></p>
+        </div>
+        <div>
+          <p><mark>Highlighted</mark> <code>mark</code></p>
+          <p><s>Strikethrough</s> <code>s</code></p>
+          <p><small>Small </small><code>small</code></p>
+          <p>Text <sub>Sub</sub> <code>sub</code></p>
+          <p>Text <sup>Sup</sup> <code>sup</code></p>
+          <p><u>Underline</u> <code>u</code></p>
+        </div>
+      </div>
+    </article>
+    <h2>callouts</h2>
+    <div data-callout-fold="-" data-callout="info" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">Info</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: note,info,todo</p>
+      </div>
+    </div>
+    <div data-callout-fold="-" data-callout="tip" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Tip</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: tip,hint,important</p>
+      </div>
+    </div>
+    <div data-callout-fold="-" data-callout="success" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg></div>
+        <div class="callout-title-inner">Success</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: success,check,done</p>
+      </div>
+    </div>
+    <div data-callout-fold="-" data-callout="question" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-help-circle">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg></div>
+        <div class="callout-title-inner">Question</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: question,help,faq</p>
+      </div>
+    </div>
+    <div data-callout-fold="-" data-callout="warning" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg></div>
+        <div class="callout-title-inner">Warning</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: warning,caution,attention</p>
+      </div>
+    </div>
+    <div data-callout-fold="-" data-callout="danger" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-zap">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg></div>
+        <div class="callout-title-inner">Danger</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: danger,error,bug,failure,fail,missing</p>
+      </div>
+    </div>
+    <div data-callout-fold="-" data-callout="quote" class="callout is-collapsible is-collapsed">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote">
+            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Quote</div>
+        <div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg></div>
+      </div>
+      <div class="callout-content" style="display: none;">
+        <p><strong>type</strong>: quote,cite</p>
+      </div>
+    </div>
+    <h2>quote</h2>
+    <blockquote>
+      <p>This is Quote</p>
+    </blockquote>
+    <h2>headings</h2>
+    <article>
+      <h1 style="margin:0;">this is h1</h1>
+      <h2 style="margin:0;">this is h2</h2>
+      <h3 style="margin:0;">this is h3</h3>
+      <h4 style="margin:0;">this is h4</h4>
+      <h5 style="margin:0;">this is h5</h5>
+    </article>
+    <h2>codeblock</h2>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">"bar,baz"</span><span class="token punctuation">.</span><span class="token method function property-access">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+</code></pre>
+    <h2>icons</h2>
+    <p>Choose any of the 1634 open source icons from <a class="external-link" href="https://boxicons.com/" target="_blank">boxicons</a></p>
+    <pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-xs<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-sm<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-md<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-lg<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <div class="d-flex align-items-center">
+      <i class="bx bxs-plane bx-xs"></i>
+      <i class="bx bxs-plane bx-sm"></i>
+      <i class="bx bxs-plane bx-md"></i>
+      <i class="bx bxs-plane bx-lg"></i>
+    </div>
+    <h2>image</h2>
+    <p><span width="300" class="internal-embed media-embed"><img width="300" src="/assets/a9b6147130b1c969fdc4c754f6acf44c.jpg"></span></p>
+    <h2>table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>type</th>
+          <th>memory</th>
+          <th>ip</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>freebox 💻</td>
+          <td>box</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>macbook pro 💻</td>
+          <td>laptop</td>
+          <td>16GB</td>
+          <td>192.168.0.12</td>
+        </tr>
+        <tr>
+          <td>mac studio 💻</td>
+          <td>mac</td>
+          <td>32GO</td>
+          <td>192.168.0.13</td>
+        </tr>
+        <tr>
+          <td>nas 💻</td>
+          <td>nas</td>
+          <td>-</td>
+          <td>192.168.0.14</td>
+        </tr>
+        <tr>
+          <td>HP Serie 🖨</td>
+          <td>printer</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>ipad air 📱</td>
+          <td>ipad</td>
+          <td>64GO</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>iphone 14 📱</td>
+          <td>iphone</td>
+          <td>256GO</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>iphone SE 📱</td>
+          <td>iphone</td>
+          <td>64GO</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>iphone 11 📱</td>
+          <td>iphone</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Eyecloud 📹</td>
+          <td>cam</td>
+          <td>168GO</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>reolink 4G 📹</td>
+          <td>cam</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>hikvision 📹</td>
+          <td>cam</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>amcrest 📹</td>
+          <td>cam</td>
+          <td>-</td>
+          <td>192.168.1.15</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>modal</h2>
+    <p><a data-click="$('#modal-example').modal('open', event)" class="contrast outline" role="button" href="#" target="_blank">Open modal</a></p>
+    <dialog id="modal-example">
+      <article>
+        <a data-click="$('#modal-example').modal('close', event)" class="close" href="#" target="_blank"></a>
+        <h3>Confirm your action!</h3>
+        <p>
+          Cras sit amet maximus risus.<br>
+          Pellentesque sodales odio sit amet augue finibus pellentesque.<br><br>
+          Nullam finibus risus non semper euismod.
+        </p>
+        <footer>
+          <a data-click="$('#modal-example').modal('close', event)" class="secondary" role="button" href="#" target="_blank">
+            Cancel
+          </a>
+          <a data-click="$('#modal-example').modal('close', event)" role="button" href="#" target="_blank">
+            Confirm
+          </a>
+        </footer>
+      </article>
+    </dialog>
+    <p>Find how to use modals <a href="/plugins/modal.html" class="internal-link">here</a>.</p>
+    <h2>forms</h2>
+    <div>
+      <input value="foobar" type="text">
+      <input type="date">
+      <input type="time">
+      <input type="color">
+      <input value="foobar" type="search">
+      <select>
+        <option selected="" value="">Select a fruit…</option>
+        <option>…</option>
+        <option>…</option>
+      </select>
+
+      <fieldset>
+        <legend>Size</legend>
+        <label for="small">
+          <input checked="" value="small" name="size" id="small" type="radio">
+          Small
+        </label>
+        <label for="medium">
+          <input value="medium" name="size" id="medium" type="radio">
+          Medium
+        </label>
+        <label for="large">
+          <input value="large" name="size" id="large" type="radio">
+          Large
+        </label>
+        <label for="extralarge">
+          <input disabled="" value="extralarge" name="size" id="extralarge" type="radio">
+          Extra Large
+        </label>
+      </fieldset>
+    </div>
+    <fieldset>
+      <label for="terms">
+        <input name="terms" id="terms" type="checkbox">
+        I agree
+      </label>
+      <label for="terms_sharing">
+        <input checked="" disabled="" name="terms_sharing" id="terms_sharing" type="checkbox">
+        I agree
+      </label>
+    </fieldset>
+    <fieldset>
+      <label for="switch">
+        <input role="switch" name="switch" id="switch" type="checkbox">
+        Publish on my profile
+      </label>
+      <label for="switch_disabled">
+        <input checked="" disabled="" role="switch_disabled" name="switch_disabled" id="switch_disabled" type="checkbox">
+        User must change
+      </label>
+    </fieldset>
+    <h2>pdf</h2>
+    <p><span class="internal-embed pdf-embed"><iframe src="/assets/ca8c94ef7d002a6ea586b4a17c2b7e5c.pdf" frameborder="no"></iframe></span></p>
+    <h2>background</h2>
+    <div>
+      <div class="p-1 px-2 mb-1 bg-primary">.bg-primary</div>
+      <div class="p-1 px-2 mb-1 bg-secondary">.bg-secondary</div>
+      <div class="p-1 px-2 mb-1 bg-success">.bg-success</div>
+      <div class="p-1 px-2 mb-1 bg-danger">.bg-danger</div>
+      <div class="p-1 px-2 mb-1 bg-warning">.bg-warning</div>
+      <div class="p-1 px-2 mb-1 bg-info">.bg-info</div>
+      <div class="p-1 px-2 mb-1 bg-white">.bg-white</div>
+      <div class="p-1 px-2 mb-1 bg-black">.bg-black</div>
+    </div>
+    <p></p>
+    <h2>latex</h2>
+    <div class="math math-block"><mjx-container class="MathJax" jax="CHTML" display="true" style="position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>y</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mi>x</mi>
+            </mfrac>
+          </math></mjx-assistive-mml></mjx-container></div>
+  </div>
+</body>
+
+</html>

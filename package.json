@@ -1,0 +1,10 @@
+{
+  "name": "doc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "louis",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx serve -l 3010"
+  }
+}
