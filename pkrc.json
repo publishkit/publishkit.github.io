@@ -1,1 +1,50 @@
-{"site":{"id":"rec_ce2thrqg1ibmhfpnqtdg","name":"PublishKit","description":"Welcome to PublishKit","url":"https://publishkit.dev","assets":"/assets","theme":"default"},"plugins":{"header":true,"cdnfonts":true,"darkmode":true,"navbar":true,"toc":true,"search":true,"social":true,"highlightjs":true},"highlightjs":{"theme":"arta"},"cdnfonts":{"font":"Marcher"},"social":{"github":"https://publishkit.dev","discord":"https://publishkit.dev"},"search":{"chars":3,"fuzzy":0.2,"padding":40,"max_results":5}}
+{
+  "pk": {
+    "version": "latest",
+    "dirs": true
+  },
+  "site": {
+    "id": "rec_ce2thrqg1ibmhfpnqtdg",
+    "name": "PublishKit",
+    "description": "Welcome to PublishKit",
+    "url": "https://publishkit.dev",
+    "theme": "default"
+  },
+  "plugins": {
+    "header": true,
+    "fonts": true,
+    "darkmode": true,
+    "toc": true,
+    "navbar": true,
+    "search": true,
+    "social": true,
+    "modal": true,
+    "pdf": true,
+    "highlight": true
+  },
+  "header": {
+    "fluid": true,
+    "contrast": false
+  },
+  "fonts": {
+    "font": "Marcher",
+    "headings": "Marcher"
+  },
+  "highlight": {
+    "theme": "arta"
+  },
+  "social": {
+    "github": "https://github.com/publishkit",
+    "discord": "https://discord.gg/XMgVPajeT9"
+  },
+  "search": {
+    "chars": 3,
+    "fuzzy": 0.2,
+    "padding": 40,
+    "max_results": 6
+  },
+  "pdf": {
+    "toolbar": false,
+    "width": "100%"
+  }
+}

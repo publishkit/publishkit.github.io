@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frontmatter</title>
+  <meta name="description" content="Debug file frontmatter" />
+  <meta property="og:title" content="frontmatter" />
+  <meta property="og:description" content="Debug file frontmatter" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis","description":"Debug file frontmatter"}
+  </template>
+  <template id="content">
+    <h1>frontmatter</h1>
+    <blockquote>
+      <p>Debug file frontmatter</p>
+    </blockquote>
+    <p>This plugin add an action to the action list that which open a modal showing you the current file frontmatter, the site pkrc, or the merged config. It can be useful for debuging.</p>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">frontmatter</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h1>preview</h1>
+    <ul>
+      <li><a class="internal-link" href="plugins/core/frontmatter?p=frontmatter">frontmatter=true</a></li>
+    </ul>
+  </template>
+</body>
+
+</html>

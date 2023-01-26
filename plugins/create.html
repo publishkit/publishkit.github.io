@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create a plugin</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="Create a plugin" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"title":"Create a plugin"}
+  </template>
+  <template id="content">
+    <h1>Create a plugin</h1>
+    <p>Creating a plugin is very easy. In a javascript file, return a class defining your plugin.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">return</span> <span class="token keyword">class</span> <span class="token class-name">Plugin</span> <span class="token keyword">extends</span> <span class="token class-name">BasePlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">// default options</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">fontsize</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">rate</span><span class="token operator">:</span> <span class="token number">35</span><span class="token punctuation">,</span>
+      <span class="token spread operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">render</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// register ui</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  
+  <span class="token function-variable function">bind</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// bind ui</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+    <h2>lifecycle</h2>
+    <p>When a plugin is registered, it goes through a simple lifecycle.</p>
+    <pre><code>init -&gt; render -&gt; bind
+</code></pre>
+    <h3>init</h3>
+    <p>Some plugins may require some initialisation before they get rendered. In that case just provide an <code>init</code> function to your plugin class.</p>
+    <div data-callout="info" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">Info</div>
+      </div>
+      <div class="callout-content">
+        <ul>
+          <li>If you don't provide an <code>init</code> function, the lifecycle will continue as normal.</li>
+          <li>If your <code>init</code> function returns <code>false</code>, then the lifecycle will stop and the plugin won't be registered.</li>
+        </ul>
+      </div>
+    </div>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token comment">// do stuff</span>
+	<span class="token comment">// if everything ok, return true</span>
+	<span class="token comment">// else return false</span>
+	<span class="token keyword control-flow">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    <h3>render</h3>
+    <p>The <code>render</code> method is where you can register UI components.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">render</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token comment">// do stuff</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    <h3>bind</h3>
+    <p>The <code>bind</code> method is where you bind your UI components.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">bind</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token comment">// do stuff</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    <h2>UI</h2>
+    <p>More on <code>UI</code> later !</p>
+    <h3>addAction</h3>
+    <h3>addElement</h3>
+    <h3>addHeaderIcon</h3>
+    <h3>addModal</h3>
+    <h2>style</h2>
+    <p>The <code>style</code> function is where you style your components. You can write vanilla css, or <a class="external-link" href="https://lesscss.org/" target="_blank">lesscss</a>.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">style</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  [id="right.toc.main"] {
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        &amp;:hover {
+          background: red;
+        }
+      }
+    }
+  }
+ 
+  @media (max-width: 576px) {
+    [id="right.toc.main"] {
+      display: none;
+    }
+  }
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</code></pre>
+  </template>
+</body>
+
+</html>

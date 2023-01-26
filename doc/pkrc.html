@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pkrc file</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="pkrc file" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"title":"pkrc file","alias":"pkrc file"}
+  </template>
+  <template id="content">
+    <h1>pkrc</h1>
+    <div data-callout="info" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">Info</div>
+      </div>
+      <div class="callout-content">
+        <ul>
+          <li>The <code>vault</code> is the folder containing your markdown files.</li>
+          <li>The <code>kit</code> is the folder containing the exported markdown files.</li>
+        </ul>
+      </div>
+    </div>
+    <p>The <code>pkrc.md</code> file is the global configuration file of your site. The configuration is written in <code>yaml</code> syntax, inside the frontmatter block.</p>
+    <p>Every time you make a change to the <code>pkrc.md</code> file, you have to export it for the change to take effect on your website.</p>
+    <p>When you export this file, the configuration is converted &amp; exported into a <code>pkrc.json</code> file at the root of your <code>kit</code> folder.</p>
+    <div data-callout="important" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Important</div>
+      </div>
+      <div class="callout-content">
+        <p>The <code>pkrc.md</code> file must reside at the root of your <code>vault</code></p>
+      </div>
+    </div>
+    <h2>example</h2>
+    <p>This is what a <code>pkrc.md</code> look like:</p>
+    <pre><code>---
+# your configuration goes here
+---
+
+You can add some text after the frontmatter if you want, it will not get exported in the pkrc.json in your kit folder.
+</code></pre>
+    <p>Some configuration might look like the following:</p>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token comment"># 📂 Vault</span>
+
+<span class="token key atrule">vault</span><span class="token punctuation">:</span>
+  <span class="token key atrule">export_folder</span><span class="token punctuation">:</span> /Users/louis/myWebSite
+  <span class="token key atrule">include</span><span class="token punctuation">:</span> 
+    <span class="token punctuation">-</span> <span class="token string">'^notes/'</span>
+  <span class="token key atrule">exclude</span><span class="token punctuation">:</span> 
+    <span class="token punctuation">-</span> <span class="token string">'^kit/'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^templates/'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^test/'</span>
+
+
+<span class="token comment"># 🚀 PublishKit</span>
+
+<span class="token key atrule">pk</span><span class="token punctuation">:</span>
+  <span class="token key atrule">version</span><span class="token punctuation">:</span> latest
+  <span class="token key atrule">dirs</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+
+<span class="token comment"># 🔱 Site</span>
+
+<span class="token key atrule">site</span><span class="token punctuation">:</span>
+  <span class="token key atrule">id</span><span class="token punctuation">:</span> rec_ce0thrqz1iosrhanqtdg
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> PublishKit
+  <span class="token key atrule">description</span><span class="token punctuation">:</span> Welcome to PublishKit
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//publishkit.dev
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> default
+
+
+<span class="token comment"># 📦 Plugins</span>
+
+<span class="token key atrule">plugins</span><span class="token punctuation">:</span> 
+  <span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">modal</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">fonts</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">navbar</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">social</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">highlight</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+
+<span class="token comment"># ⚙️ Plugins settings</span>
+
+<span class="token key atrule">header</span><span class="token punctuation">:</span>
+  <span class="token key atrule">fluid</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">contrast</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">fonts</span><span class="token punctuation">:</span>
+  <span class="token key atrule">font</span><span class="token punctuation">:</span> Marcher
+  <span class="token key atrule">headings</span><span class="token punctuation">:</span> Helsinki
+
+<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> arta
+
+<span class="token key atrule">social</span><span class="token punctuation">:</span>
+  <span class="token key atrule">github</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/publishkit
+  <span class="token key atrule">discord</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//discord.gg/XMgVPajeT9
+  
+<span class="token key atrule">search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">chars</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token key atrule">fuzzy</span><span class="token punctuation">:</span> <span class="token number">0.2</span>
+  <span class="token key atrule">padding</span><span class="token punctuation">:</span> <span class="token number">40</span>
+  <span class="token key atrule">max_results</span><span class="token punctuation">:</span> <span class="token number">5</span>
+
+<span class="token key atrule">pdf</span><span class="token punctuation">:</span>
+  <span class="token key atrule">toolbar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">width</span><span class="token punctuation">:</span> 100%
+</code></pre>
+  </template>
+</body>
+
+</html>

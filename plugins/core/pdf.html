@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pdf</title>
+  <meta name="description" content="Customize pdf preview" />
+  <meta property="og:title" content="pdf" />
+  <meta property="og:description" content="Customize pdf preview" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis","description":"Customize pdf preview","pdf":{"width":"inherit"}}
+  </template>
+  <template id="content">
+    <h1>pdf</h1>
+    <blockquote>
+      <p>Customize pdf preview</p>
+    </blockquote>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">pdf</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>options</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">pdf</span><span class="token punctuation">:</span>
+  <span class="token key atrule">toolbar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">width</span><span class="token punctuation">:</span> 100%
+</code></pre>
+    <h1>preview</h1>
+    <ul>
+      <li><a class="internal-link" href="plugins/core/pdf?p=pdf%7Ctoolbar:true">toolbar=true</a></li>
+      <li><a class="internal-link" href="plugins/core/pdf?p=pdf%7Ctoolbar:false">toolbar=false</a></li>
+      <li><a class="internal-link" href="plugins/core/pdf?p=pdf%7Cwidth:100%25">width=100%</a></li>
+    </ul>
+    <p><span class="pdf"><iframe src="attachements/showcase-pdf.pdf" frameborder="no"></iframe></span></p>
+  </template>
+</body>
+
+</html>

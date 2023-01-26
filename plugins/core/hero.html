@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hero</title>
+  <meta name="description" content="Add a hero banner" />
+  <meta property="og:title" content="hero" />
+  <meta property="og:description" content="Add a hero banner" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis","description":"Add a hero banner"}
+  </template>
+  <template id="content">
+    <h1>hero</h1>
+    <blockquote>
+      <p>Add a hero banner</p>
+    </blockquote>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">hero</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>options</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">hero</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//someurl.com
+  <span class="token key atrule">height</span><span class="token punctuation">:</span> 300px
+</code></pre>
+    <p>If no image is passed, the plugin will look into the <code>og.image</code> setting.</p>
+    <h2>preview</h2>
+    <ul>
+      <li><a class="internal-link" href="plugins/core/hero.html?p=hero%7Cimage:https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80,height:400px">click here</a></li>
+    </ul>
+  </template>
+</body>
+
+</html>

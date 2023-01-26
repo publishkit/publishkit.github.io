@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>header</title>
+  <meta name="description" content="Customize site header" />
+  <meta property="og:title" content="header" />
+  <meta property="og:description" content="Customize site header" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis","description":"Customize site header"}
+  </template>
+  <template id="content">
+    <h1>header</h1>
+    <blockquote>
+      <p>Customize site header</p>
+    </blockquote>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>options</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">header</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> SiteName
+  <span class="token key atrule">name_fontsize</span><span class="token punctuation">:</span> 0.8rem
+  <span class="token key atrule">logo</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//epic.spb.ru/hero/hero.jpg
+  <span class="token key atrule">logo_height</span><span class="token punctuation">:</span> 40px
+  <span class="token key atrule">fluid</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>option</th>
+          <th>desc</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>fallback to <code>site.name</code>. set to <code>false</code> to hide it.</td>
+        </tr>
+        <tr>
+          <td>name_fontsize</td>
+          <td>adjust name font size</td>
+        </tr>
+        <tr>
+          <td>logo</td>
+          <td>fallback to <code>site.logo</code></td>
+        </tr>
+        <tr>
+          <td>logo_height</td>
+          <td>adjust logo height</td>
+        </tr>
+        <tr>
+          <td>icons_fontsize</td>
+          <td>adjust icons font size</td>
+        </tr>
+        <tr>
+          <td>fluid</td>
+          <td>fluid layout (width=100%)</td>
+        </tr>
+      </tbody>
+    </table>
+  </template>
+</body>
+
+</html>

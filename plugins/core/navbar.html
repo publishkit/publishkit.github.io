@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>navbar</title>
+  <meta name="description" content="Add a navigation menu" />
+  <meta property="og:title" content="navbar" />
+  <meta property="og:description" content="Add a navigation menu" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis","description":"Add a navigation menu"}
+  </template>
+  <template id="content">
+    <h1>navbar</h1>
+    <blockquote>
+      <p>Add a navigation menu to your site</p>
+    </blockquote>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">navbar</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <ul>
+      <li>Create a <code>navbar.md</code> file at the root of your <code>vault</code>.</li>
+      <li>Add your navigation links, and export the file.</li>
+      <li>A file called <code>navbar.json</code> will be created at the root of your <code>kit</code> folder.</li>
+    </ul>
+    <h2>basic</h2>
+    <p>To add a basic navigation, simply add a list of links.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link1</span>](<span class="token url">relative/path/to/link1</span>)</span>
+<span class="token list punctuation">-</span> [[wikilink|Link2]]
+<span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link3</span>](<span class="token url">http://external.link.com</span>)</span>
+</code></pre>
+    <p><span><img src="attachements/plugin-navbar-s1.png"></span></p>
+    <h2>icons</h2>
+    <p>You can customize the icons by adding 2 pipes <code>||</code> after your link, followed by one the 1664 icons name from <a class="external-link" href="https://boxicons.com/" target="_blank">boxicons.com</a>:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link1</span>](<span class="token url">relative/path/to/link1</span>)</span> || bx-paper-plane
+<span class="token list punctuation">-</span> [[wikilink|Link2]] || bx-cog
+<span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link3</span>](<span class="token url">http://external.link.com</span>)</span>
+</code></pre>
+    <p><span><img src="attachements/plugin-navbar-s2.png"></span></p>
+    <h2>nested</h2>
+    <p>You can opt for a nested navigation menu by nesting links lists into sections.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> section 1
+  <span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link1</span>](<span class="token url">relative/path/to/link1</span>)</span>
+  <span class="token list punctuation">-</span> [[wikilink|Link2]]
+  <span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link3</span>](<span class="token url">http://external.link.com</span>)</span>
+<span class="token list punctuation">-</span> section 2
+  <span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link4</span>](<span class="token url">relative/path/to/link4</span>)</span>
+<span class="token list punctuation">-</span> foobar
+  <span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link5</span>](<span class="token url">relative/path/to/link5</span>)</span>
+</code></pre>
+    <p><span><img src="attachements/plugin-navbar-s3.png"></span></p>
+    <p>To make a section closed by default, just add a checked checkbox <code>[x]</code> in front of your section name.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> [x] section 2
+  <span class="token list punctuation">-</span> <span class="token url">[<span class="token content">Link4</span>](<span class="token url">relative/path/to/link4</span>)</span>
+</code></pre>
+    <p><span><img src="attachements/plugin-navbar-s4.png"></span></p>
+  </template>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>highlightjs</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="highlightjs" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis"}
+  </template>
+  <template id="content">
+    <h1>highlightjs</h1>
+    <blockquote>
+      <p>This plugin enable highlight of code blocks</p>
+    </blockquote>
+    <p>Choose from more then 197 languages and 248 styles from <a class="external-link" href="https://highlightjs.org/static/demo" target="_blank">highlightjs.org</a></p>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">highlightjs</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>options</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">highlightjs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> Freaky Story
+</code></pre>
+    <h2>preview</h2>
+    <ul>
+      <li><a class="external-link" href="plugins/core/highlightjs?p=highlightjs%7Ctheme:monokai" target="_blank">monokai</a></li>
+      <li><a class="external-link" href="plugins/core/highlightjs?p=highlightjs%7Ctheme:shades-of-purple" target="_blank">shades-of-purple</a></li>
+      <li><a class="external-link" href="plugins/core/highlightjs?p=highlightjs%7Ctheme:tomorrow-night-bright" target="_blank">tomorrow-night-bright</a></li>
+    </ul>
+  </template>
+</body>
+
+</html>

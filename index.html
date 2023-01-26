@@ -8,18 +8,58 @@
   <meta name="description" content="Welcome to PublishKit" />
   <meta property="og:title" content="PublishKit" />
   <meta property="og:description" content="Welcome to PublishKit" />
-  <meta name="frontmatter" content="%7B%22title%22%3A%22PublishKit%22%2C%22alias%22%3A%5B%22publishkit%22%2C%22home%22%5D%2C%22tags%22%3A%22home%2C%20rocknroll%22%7D" />
-  <meta name="tags" content="%5B%22home%22%2C%22rocknroll%22%5D" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
 </head>
 
 <body>
-  <div id="content" style="display: none;">
+  <template id="frontmatter">
+    {"title":"PublishKit","alias":["publishkit","home"],"tags":"home, rocknroll"}
+  </template>
+  <template id="content">
     <h1>PublishKit</h1>
-  </div>
+    <blockquote>
+      <p>Ship markdown based websites 🚀</p>
+    </blockquote>
+    <p><span class="dataview"><span>PublishKit</span></span> is a <a class="external-link" href="https://en.wikipedia.org/wiki/No-code_development_platform" target="_blank">no-code</a>, plugin based framework, that can turn <a class="external-link" href="https://en.wikipedia.org/wiki/Markdown" target="_blank">markdown</a> files into a fully featured and highly customizable <a class="external-link" href="https://en.wikipedia.org/wiki/Static_web_page" target="_blank">static website</a> ready to be served on the <a class="external-link" href="https://en.wikipedia.org/wiki/Edge_computing" target="_blank">edge</a>.</p>
+    <h2>features</h2>
+    <ul>
+      <li><input checked="" type="checkbox">no code</li>
+      <li><input checked="" type="checkbox">community plugins &amp; themes</li>
+      <li><input checked="" type="checkbox">plugins injection via url</li>
+      <li><input checked="" type="checkbox">global, directory and file config</li>
+      <li><input checked="" type="checkbox">full-text search</li>
+      <li><input checked="" type="checkbox">password protected pages</li>
+      <li><input checked="" type="checkbox">assets support (images &amp; pdfs)</li>
+      <li><input checked="" type="checkbox">seo friendly (open graph)</li>
+      <li><input checked="" type="checkbox">code highlighting</li>
+      <li><input checked="" type="checkbox">custom table of content</li>
+      <li><input checked="" type="checkbox">breadcrumbs</li>
+      <li><input checked="" type="checkbox">bootstrap utilities</li>
+      <li><input checked="" type="checkbox">&amp; so much more</li>
+    </ul>
+    <p>Obsidian features: </p>
+    <ul>
+      <li><input checked="" type="checkbox">dataview support 🥳</li>
+      <li><input checked="" type="checkbox"><code>[[wiki links]]</code></li>
+      <li><input checked="" type="checkbox"><code>![[embed notes]]</code></li>
+      <li><input checked="" type="checkbox">callouts / admonitions</li>
+      <li><input type="checkbox">latex</li>
+      <li><input type="checkbox">excalidraw</li>
+      <li><input type="checkbox">canvas ?</li>
+    </ul>
+    <h2>usecase</h2>
+    <p>PublishKit is ideal for content based websites and is aimed at markdown users looking to publish their blog, wikis, <a class="external-link" href="https://github.com/MaggieAppleton/digital-gardeners" target="_blank">digital garden</a> or projects documentation.</p>
+    <p>PublishKit can be used natively via it's <code>cli</code>, or via a plugin in your favorite <a class="external-link" href="https://en.wikipedia.org/wiki/Personal_knowledge_management" target="_blank">PKM</a> software.</p>
+    <p>Because PublisKit renders static html files, it won't be suitable for projects that requires authentification or databases.</p>
+    <h2>installation</h2>
+    <ul>
+      <li>for CLI users: <a href="notes/cli/index.html" class="internal-link">click here</a></li>
+      <li>for Obsidian users: <a href="notes/obsidian/index.html" class="internal-link">click here</a></li>
+    </ul>
+    <h2>about</h2>
+    <p>PublishKit is developed by a french based indie studio named <a href="Studio1337" class="internal-link">Studio1337</a>. We are a truly passionnate remote team with more then 20 years of tech expertise. We design elegant and robust software and bring high value to our clients.</p>
+    <p>PublishKit is a full time project. We are actively focused on delivering best in class services and growing our community. We'd love to hear from you. If you have any question or feedback, we are on <a class="external-link" href="https://discord.gg/XMgVPajeT9" target="_blank">discord</a>!</p>
+  </template>
 </body>
 
 </html>

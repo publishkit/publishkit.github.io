@@ -1,0 +1,60 @@
+{
+  "nested": true,
+  "items": [
+    {
+      "label": "welcome",
+      "isOpen": true,
+      "items": [
+        [
+          "<a href=\"index.html\" class=\"internal-link\">PublishKit</a>",
+          "bx-paper-plane"
+        ],
+        [
+          "<a href=\"doc/pkrc.html\" class=\"internal-link\">Settings</a>",
+          "bx-cog"
+        ],
+        [
+          "<a href=\"themes/index.html\" class=\"internal-link\">Themes</a>",
+          "bx-palette"
+        ],
+        [
+          "<a href=\"notes/showcase.html\" class=\"internal-link\">Showcase</a>",
+          "bx-category"
+        ],
+        [
+          "<a href=\"notes/pricing.html\" class=\"internal-link\">Pricing</a>",
+          "bx-dollar-circle"
+        ]
+      ]
+    },
+    {
+      "label": "plugins",
+      "isOpen": true,
+      "items": [
+        [
+          "<a href=\"plugins/index.html\" class=\"internal-link\">General</a>"
+        ],
+        [
+          "<a href=\"plugins/core/index.html\" class=\"internal-link\">Core</a>"
+        ],
+        [
+          "<a href=\"plugins/community/index.html\" class=\"internal-link\">Community</a>"
+        ]
+      ]
+    },
+    {
+      "label": "other",
+      "isOpen": true,
+      "items": [
+        [
+          "<a href=\"blog/index.html\" class=\"internal-link\">Blog</a>",
+          "bx-notepad"
+        ],
+        [
+          "<a href=\"contact.html\" class=\"internal-link\">Contact</a>",
+          "bx-envelope"
+        ]
+      ]
+    }
+  ]
+}

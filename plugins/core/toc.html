@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>toc</title>
+  <meta name="description" content="Add a table of content" />
+  <meta property="og:title" content="toc" />
+  <meta property="og:description" content="Add a table of content" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"core":true,"author":"louis","description":"Add a table of content"}
+  </template>
+  <template id="content">
+    <h1>toc</h1>
+    <blockquote>
+      <p>This plugin add a table of content to the page</p>
+    </blockquote>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>options</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">toc</span><span class="token punctuation">:</span>
+  <span class="token key atrule">title</span><span class="token punctuation">:</span> Table of content
+</code></pre>
+    <h2>preview</h2>
+    <p><span><img src="attachements/plugin-toc-s1.png"></span></p>
+  </template>
+</body>
+
+</html>

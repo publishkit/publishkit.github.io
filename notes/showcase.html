@@ -4,23 +4,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Settings</title>
+  <title>showcase</title>
   <meta name="description" content="Welcome to PublishKit" />
-  <meta property="og:title" content="Settings" />
+  <meta property="og:title" content="showcase" />
   <meta property="og:description" content="Welcome to PublishKit" />
-  <meta name="frontmatter" content="%7B%7D" />
-  <meta name="tags" content="%5B%5D" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
 </head>
 
 <body>
-  <div id="content" style="display: none;">
+  <template id="frontmatter">
+    {}
+  </template>
+  <template id="content">
     <h1>html showcase</h1>
     <h2>typography</h2>
-    <article aria-label="Inline text examples">
+    <article>
       <div class="grid">
         <div>
           <p><abbr title="Abbreviation">Abbr.</abbr> <code>abbr</code></p>
@@ -40,6 +41,7 @@
         </div>
       </div>
     </article>
+    <p>Find out more about fonts <a href="plugins/core/fonts.html" class="internal-link">here</a>.</p>
     <h2>callouts</h2>
     <div data-callout-fold="-" data-callout="info" class="callout is-collapsible is-collapsed">
       <div class="callout-title">
@@ -161,8 +163,9 @@
     <h2>codeblock</h2>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">"bar,baz"</span><span class="token punctuation">.</span><span class="token method function property-access">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 </code></pre>
+    <p>Find out about code highlight <a href="plugins/core/highlight.html" class="internal-link">here</a>.</p>
     <h2>icons</h2>
-    <p>Choose any of the 1634 open source icons from <a class="external-link" href="https://boxicons.com/" target="_blank">boxicons</a></p>
+    <p>Choose any of the 1634 open source icons from <a class="external-link" href="https://boxicons.com/" target="_blank">boxicons</a>.</p>
     <pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-xs<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-sm<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-md<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
@@ -175,7 +178,7 @@
       <i class="bx bxs-plane bx-lg"></i>
     </div>
     <h2>image</h2>
-    <p><span width="300" class="internal-embed media-embed"><img width="300" src="/assets/a9b6147130b1c969fdc4c754f6acf44c.jpg"></span></p>
+    <p><span width="300"><img width="300" src="attachements/showcase-image.jpg"></span></p>
     <h2>table</h2>
     <table>
       <thead>
@@ -268,10 +271,10 @@
       </tbody>
     </table>
     <h2>modal</h2>
-    <p><a data-click="$('#modal-example').modal('open', event)" class="contrast outline" role="button" href="#" target="_blank">Open modal</a></p>
+    <p><button data-click="$modal.open('modal-example')" class="contrast outline">Open modal</button></p>
     <dialog id="modal-example">
       <article>
-        <a data-click="$('#modal-example').modal('close', event)" class="close" href="#" target="_blank"></a>
+        <a data-click="return $modal.close()" class="close internal-link" href="#"></a>
         <h3>Confirm your action!</h3>
         <p>
           Cras sit amet maximus risus.<br>
@@ -279,16 +282,16 @@
           Nullam finibus risus non semper euismod.
         </p>
         <footer>
-          <a data-click="$('#modal-example').modal('close', event)" class="secondary" role="button" href="#" target="_blank">
+          <button data-click="$modal.close()" class="secondary">
             Cancel
-          </a>
-          <a data-click="$('#modal-example').modal('close', event)" role="button" href="#" target="_blank">
+          </button>
+          <button data-click="$modal.close()">
             Confirm
-          </a>
+          </button>
         </footer>
       </article>
     </dialog>
-    <p>Find how to use modals <a href="/plugins/modal.html" class="internal-link">here</a>.</p>
+    <p>Find out more about modals <a href="plugins/core/modal.html" class="internal-link">here</a>.</p>
     <h2>forms</h2>
     <div>
       <input value="foobar" type="text">
@@ -301,6 +304,14 @@
         <option>…</option>
         <option>…</option>
       </select>
+      <details role="list">
+        <summary aria-haspopup="listbox">Dropdown</summary>
+        <ul role="listbox">
+          <li><a href="#" class="internal-link">Action</a></li>
+          <li><a href="#" class="internal-link">Another action</a></li>
+          <li><a href="#" class="internal-link">Something else here</a></li>
+        </ul>
+      </details>
 
       <fieldset>
         <legend>Size</legend>
@@ -343,7 +354,8 @@
       </label>
     </fieldset>
     <h2>pdf</h2>
-    <p><span class="internal-embed pdf-embed"><iframe src="/assets/ca8c94ef7d002a6ea586b4a17c2b7e5c.pdf" frameborder="no"></iframe></span></p>
+    <p><span class="pdf"><iframe src="attachements/showcase-pdf.pdf" frameborder="no"></iframe></span></p>
+    <p>Find out more about pdfs <a href="plugins/core/pdf.html" class="internal-link">here</a>.</p>
     <h2>background</h2>
     <div>
       <div class="p-1 px-2 mb-1 bg-primary">.bg-primary</div>
@@ -355,7 +367,6 @@
       <div class="p-1 px-2 mb-1 bg-white">.bg-white</div>
       <div class="p-1 px-2 mb-1 bg-black">.bg-black</div>
     </div>
-    <p></p>
     <h2>latex</h2>
     <div class="math math-block"><mjx-container class="MathJax" jax="CHTML" display="true" style="position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
             <mi>y</mi>
@@ -365,7 +376,7 @@
               <mi>x</mi>
             </mfrac>
           </math></mjx-assistive-mml></mjx-container></div>
-  </div>
+  </template>
 </body>
 
 </html>
