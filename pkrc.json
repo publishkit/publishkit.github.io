@@ -7,28 +7,23 @@
     "id": "rec_ce2thrqg1ibmhfpnqtdg",
     "name": "PublishKit",
     "description": "Welcome to PublishKit",
-    "url": "https://publishkit.dev",
-    "theme": "default"
+    "url": "https://publishkit.dev"
   },
   "plugins": {
+    "theme": true,
+    "frontmatter": true,
     "header": true,
-    "fonts": true,
     "darkmode": true,
     "toc": true,
     "navbar": true,
     "search": true,
     "social": true,
     "modal": true,
-    "pdf": true,
-    "highlight": true
+    "pdf": true
   },
   "header": {
     "fluid": true,
     "contrast": false
-  },
-  "fonts": {
-    "font": "Marcher",
-    "headings": "Marcher"
   },
   "highlight": {
     "theme": "arta"
