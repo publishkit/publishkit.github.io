@@ -164,8 +164,6 @@ return class Theme extends BaseTheme {
 
         [role="document"] {
             background: var(--card-background-color);
-            margin: 0 -20px;
-            padding: 20px;
             a {
                 text-decoration: underline;
             }

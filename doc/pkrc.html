@@ -8,9 +8,6 @@
   <meta name="description" content="Welcome to PublishKit" />
   <meta property="og:title" content="pkrc file" />
   <meta property="og:description" content="Welcome to PublishKit" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
 </head>
 
@@ -64,11 +61,13 @@ You can add some text after the frontmatter if you want, it will not get exporte
 <span class="token key atrule">vault</span><span class="token punctuation">:</span>
   <span class="token key atrule">export_folder</span><span class="token punctuation">:</span> /Users/louis/myWebSite
   <span class="token key atrule">include</span><span class="token punctuation">:</span> 
-    <span class="token punctuation">-</span> <span class="token string">'^notes/'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^pkrc.md'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^(index|navbar).md$'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^blog/'</span>
   <span class="token key atrule">exclude</span><span class="token punctuation">:</span> 
-    <span class="token punctuation">-</span> <span class="token string">'^kit/'</span>
-    <span class="token punctuation">-</span> <span class="token string">'^templates/'</span>
-    <span class="token punctuation">-</span> <span class="token string">'^test/'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^kit/'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^templates/'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^blog/draft'</span>
 
 
 <span class="token comment"># 🚀 PublishKit</span>
@@ -85,21 +84,19 @@ You can add some text after the frontmatter if you want, it will not get exporte
   <span class="token key atrule">name</span><span class="token punctuation">:</span> PublishKit
   <span class="token key atrule">description</span><span class="token punctuation">:</span> Welcome to PublishKit
   <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//publishkit.dev
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span> default
 
 
 <span class="token comment"># 📦 Plugins</span>
 
 <span class="token key atrule">plugins</span><span class="token punctuation">:</span> 
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">"@default"</span>
   <span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">modal</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">fonts</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">navbar</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">social</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">highlight</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">modal</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 
 
 <span class="token comment"># ⚙️ Plugins settings</span>
@@ -107,13 +104,6 @@ You can add some text after the frontmatter if you want, it will not get exporte
 <span class="token key atrule">header</span><span class="token punctuation">:</span>
   <span class="token key atrule">fluid</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">contrast</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-
-<span class="token key atrule">fonts</span><span class="token punctuation">:</span>
-  <span class="token key atrule">font</span><span class="token punctuation">:</span> Marcher
-  <span class="token key atrule">headings</span><span class="token punctuation">:</span> Helsinki
-
-<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span> arta
 
 <span class="token key atrule">social</span><span class="token punctuation">:</span>
   <span class="token key atrule">github</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/publishkit
