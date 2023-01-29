@@ -18,7 +18,12 @@
     "search": true,
     "social": true,
     "modal": true,
-    "pdf": true
+    "pdf": true,
+    "ga": "id:foo",
+    "chargebee": "foo.bar:baz"
+  },
+  "ga": {
+    "foo": "baz"
   },
   "header": {
     "fluid": true,
