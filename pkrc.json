@@ -19,8 +19,10 @@
     "social": true,
     "modal": true,
     "pdf": true,
-    "ga": "id:foo",
-    "chargebee": "foo.bar:baz"
+    "ga": "id:G-MWGQ40965V"
+  },
+  "theme": {
+    "primary": "#887ba6"
   },
   "ga": {
     "foo": "baz"
