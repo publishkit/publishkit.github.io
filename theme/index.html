@@ -22,7 +22,7 @@
       </div>
       <div>
         <blockquote>
-          <p>Set a theme, you can always override !</p>
+          <p>Configure theme</p>
         </blockquote>
       </div>
       <div>
@@ -38,21 +38,34 @@
       </div>
       <div>
         <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span>
+  <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">primary</span><span class="token punctuation">:</span> <span class="token string">"#0f0"</span>
   <span class="token key atrule">highlight</span><span class="token punctuation">:</span> base16/green<span class="token punctuation">-</span>screen
   <span class="token key atrule">font</span><span class="token punctuation">:</span> monospace
   <span class="token key atrule">headings</span><span class="token punctuation">:</span> 
-    <span class="token key atrule">font</span><span class="token punctuation">:</span> Bungee Shade
+    <span class="token key atrule">font</span><span class="token punctuation">:</span> bungee<span class="token punctuation">-</span>shade
 </code></pre>
       </div>
       <div>
-        <h2>demo</h2>
+        <h2>live demo</h2>
       </div>
       <div>
         <ul>
-          <li><a class="internal-link" href="theme?theme=@default%7Chighlight:base16/green-screen">?theme=@default|highlight:base16/green-screen</a></li>
-          <li><a class="internal-link" href="theme?theme=@default%7Cheadings.font:Pent-Up%20Rage">?theme=@default|headings.font:Pent-Up Rage</a></li>
-          <li><a class="internal-link" href="theme?theme=@matrix">?theme=@matrix</a></li>
-          <li><a class="internal-link" href="theme?theme=@matrix%7Canimate:false">?theme=@matrix|animate:false</a></li>
+          <li><code>default</code>
+            <ul>
+              <li><a class="internal-link" href="theme?theme=@default%7Cprimary:green">@default|primary:green</a></li>
+              <li><a class="internal-link" href="theme?theme=@default%7Cprimary:hex:0f0">@default|primary:hex:0f0</a></li>
+              <li><a class="internal-link" href="theme?theme=@default%7Chighlight:base16/green-screen">@default|highlight:base16/green-screen</a></li>
+              <li><a class="internal-link" href="theme?theme=@default%7Cheadings.font:kg-pdx-blocks">@default|headings.font:kg-pdx-blocks</a></li>
+            </ul>
+          </li>
+          <li><code>matrix</code>
+            <ul>
+              <li><a class="internal-link" href="theme?theme=@matrix%7Cprimary:hex:0f0">@matrix</a></li>
+              <li><a class="internal-link" href="theme?theme=@matrix%7Cprimary:red">@matrix|primary:red</a></li>
+              <li><a class="internal-link" href="theme?theme=@matrix%7Canimate:false">@matrix|animate:false</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

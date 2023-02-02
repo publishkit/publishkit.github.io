@@ -22,7 +22,8 @@
     "ga": "ga|id:G-MWGQ40965V"
   },
   "theme": {
-    "primary": "#7f64c8"
+    "primary": "#7f64c8",
+    "highlight": "shades-of-purple"
   },
   "header": {
     "fluid": true,
