@@ -10,7 +10,7 @@
     "url": "https://publishkit.dev"
   },
   "og": {
-    "image": "https://publishkit.dev/attachements/og-image.jpeg"
+    "image": "https://publishkit.dev/attachements/og-image.png"
   },
   "plugins": {
     "theme": true,
