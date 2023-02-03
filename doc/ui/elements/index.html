@@ -2,13 +2,19 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>UI showcase</title>
-  <meta name="description" content="Publish markdown content" />
-  <meta property="og:title" content="UI showcase" />
-  <meta property="og:description" content="Publish markdown content" />
-  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="UI showcase" />
+  <meta name="description" content="Markdown based webapps" />
+  <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta name="name" content="PublishKit.dev" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="url" content="https://publishkit.dev" />
+  <meta property="title" content="UI showcase" />
+  <meta property="description" content="Markdown based webapps" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
 </head>
 
@@ -353,6 +359,117 @@
         </dialog>
       </div>
       <p>checkout the <a href="plugins/core/modal.html" class="internal-link">$modal</a> plugin!</p>
+    </div>
+    <div class="embed-content">
+      <div>
+        <h1>form</h1>
+      </div>
+      <div>
+        <div>
+          <input value="foobar" type="text">
+          <input type="date">
+          <input type="time">
+          <input type="color">
+          <input value="foobar" type="search">
+          <select>
+            <option selected="" value="">Select a fruit…</option>
+            <option>…</option>
+            <option>…</option>
+          </select>
+          <details role="list">
+            <summary aria-haspopup="listbox">Dropdown</summary>
+            <ul role="listbox">
+              <li><a href="#" class="internal-link">Action</a></li>
+              <li><a href="#" class="internal-link">Another action</a></li>
+              <li><a href="#" class="internal-link">Something else here</a></li>
+            </ul>
+          </details>
+
+          <fieldset>
+            <legend>Size</legend>
+            <label for="small">
+              <input checked="" value="small" name="size" id="small" type="radio">
+              Small
+            </label>
+            <label for="medium">
+              <input value="medium" name="size" id="medium" type="radio">
+              Medium
+            </label>
+            <label for="large">
+              <input value="large" name="size" id="large" type="radio">
+              Large
+            </label>
+            <label for="extralarge">
+              <input disabled="" value="extralarge" name="size" id="extralarge" type="radio">
+              Extra Large
+            </label>
+          </fieldset>
+        </div>
+      </div>
+      <div>
+        <fieldset>
+          <label for="terms">
+            <input name="terms" id="terms" type="checkbox">
+            I agree
+          </label>
+          <label for="terms_sharing">
+            <input checked="" disabled="" name="terms_sharing" id="terms_sharing" type="checkbox">
+            I agree
+          </label>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <label for="switch">
+            <input role="switch" name="switch" id="switch" type="checkbox">
+            Publish on my profile
+          </label>
+          <label for="switch_disabled">
+            <input checked="" disabled="" role="switch_disabled" name="switch_disabled" id="switch_disabled" type="checkbox">
+            User must change
+          </label>
+        </fieldset>
+      </div>
+    </div>
+    <div class="embed-content">
+      <div>
+        <h1>pdf</h1>
+      </div>
+      <p><span class="pdf"><iframe src="attachements/showcase-pdf.pdf" frameborder="no"></iframe></span></p>
+      <p>checkout the <a href="plugins/core/pdf.html" class="internal-link">$pdf</a> plugin!</p>
+    </div>
+    <div class="embed-content">
+      <div>
+        <h1>latex</h1>
+      </div>
+      <div>
+        <div class="math math-block"><mjx-container class="MathJax" jax="CHTML" display="true" style="position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>y</mi>
+                <mo>=</mo>
+                <mfrac>
+                  <mn>1</mn>
+                  <mi>x</mi>
+                </mfrac>
+              </math></mjx-assistive-mml></mjx-container></div>
+      </div>
+    </div>
+    <div class="embed-content">
+      <div>
+        <h1>color</h1>
+      </div>
+      <div>
+        <h2>backgrounds</h2>
+      </div>
+      <div>
+        <div class="p-1 px-2 mb-1 bg-primary">.bg-primary</div>
+        <div class="p-1 px-2 mb-1 bg-secondary">.bg-secondary</div>
+        <div class="p-1 px-2 mb-1 bg-success">.bg-success</div>
+        <div class="p-1 px-2 mb-1 bg-danger">.bg-danger</div>
+        <div class="p-1 px-2 mb-1 bg-warning">.bg-warning</div>
+        <div class="p-1 px-2 mb-1 bg-info">.bg-info</div>
+        <div class="p-1 px-2 mb-1 bg-white">.bg-white</div>
+        <div class="p-1 px-2 mb-1 bg-black">.bg-black</div>
+      </div>
     </div>
   </template>
 </body>

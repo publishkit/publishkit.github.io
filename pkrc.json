@@ -5,9 +5,10 @@
   },
   "site": {
     "id": "rec_ce2thrqg1ibmhfpnqtdg",
-    "name": "PublishKit",
-    "description": "Publish markdown content",
-    "url": "https://publishkit.dev"
+    "name": "PublishKit.dev",
+    "description": "Markdown based webapps",
+    "url": "https://publishkit.dev",
+    "keyswords": "markdown, publishing, blogging, blog, api doc"
   },
   "og": {
     "image": "https://publishkit.dev/attachements/og-image.png"
