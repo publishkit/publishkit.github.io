@@ -6,8 +6,11 @@
   "site": {
     "id": "rec_ce2thrqg1ibmhfpnqtdg",
     "name": "PublishKit",
-    "description": "Welcome to PublishKit",
+    "description": "Publish markdown content",
     "url": "https://publishkit.dev"
+  },
+  "og": {
+    "image": "https://publishkit.dev/attachements/og-image.jpeg"
   },
   "plugins": {
     "theme": true,
