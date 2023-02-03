@@ -3,17 +3,17 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Plugins</title>
-  <meta name="description" content="Welcome to PublishKit" />
-  <meta property="og:title" content="Plugins" />
-  <meta property="og:description" content="Welcome to PublishKit" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>$plugins</title>
+  <meta name="description" content="Plugins Paradise" />
+  <meta property="og:title" content="$plugins" />
+  <meta property="og:description" content="Plugins Paradise" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
 </head>
 
 <body>
   <template id="frontmatter">
-    {"title":"Plugins","alias":"Plugins"}
+    {"title":"$plugins","alias":"$plugins","description":"Plugins Paradise"}
   </template>
   <template id="content">
     <h1>Plugins</h1>
@@ -25,7 +25,7 @@
       <li><a href="plugins/create.html" class="internal-link">How to create a plugin</a></li>
     </ul>
     <h2>usage</h2>
-    <p>To use a plugin, open your <a href="doc/pkrc.html" class="internal-link">pkrc</a> file and in the <code>plugins</code> section, add a new entry with the id of the plugin set to <code>true</code>.</p>
+    <p>To use a plugin, open your <a href="doc/services/pkrc.html" class="internal-link">pkrc</a> file and in the <code>plugins</code> section, add a new entry with the id of the plugin set to <code>true</code>.</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">plugin1</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">plugin2</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -43,13 +43,13 @@
       </div>
     </div>
     <h2>options</h2>
-    <p>Some plugins have options. To configure them, add a new entry at the root of your <a href="doc/pkrc.html" class="internal-link">pkrc</a> file with the plugin id, then add key values for the options.</p>
+    <p>Some plugins have options. To configure them, add a new entry at the root of your <a href="doc/services/pkrc.html" class="internal-link">pkrc</a> file with the plugin id, then add key values for the options.</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugin1</span><span class="token punctuation">:</span>
   <span class="token key atrule">option1</span><span class="token punctuation">:</span> <span class="token string">"foo"</span>
   <span class="token key atrule">option2</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token string">"baz"</span><span class="token punctuation">]</span>
 </code></pre>
     <h2>overriding</h2>
-    <p>Remember that each setting in your <a href="doc/pkrc.html" class="internal-link">pkrc</a> file can be overrided on a file or directory basis. This let you have a global site configuration via the <code>pkrc</code>, and fine tune any page of your site.</p>
+    <p>Remember that each setting in your <a href="doc/services/pkrc.html" class="internal-link">pkrc</a> file can be overrided on a file or directory basis. This let you have a global site configuration via the <code>pkrc</code>, and fine tune any page of your site.</p>
     <p>Let's say you want to activate <code>plugin1</code> on the entire site, except on your contact page. You will set your <code>pkrc</code> like:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">plugin1</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>

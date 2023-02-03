@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Obsidian setup</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="Obsidian setup" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"title":"Obsidian setup","alias":"$setup.obsidian"}
+  </template>
+  <template id="content">
+    <h1>Obsidian setup</h1>
+    <h2>install</h2>
+    <p>In Obsidian settings, go to community plugins, search &amp; install "<strong><span class="dataview"><span>Obsidian setup</span></span></strong>".</p>
+    <h2>use</h2>
+    <p>Now, whenever you want to export a file, you can either:</p>
+    <ul>
+      <li>click the paper-airplane icon <i class="bx bx-paper-plane"></i> in the left bar</li>
+      <li>open command palette with <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> and run <code>PublishKit: export file</code></li>
+      <li>or assign a shortcut to that command in the Obsidian settings</li>
+    </ul>
+    <div data-callout="info" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">Info</div>
+      </div>
+      <div class="callout-content">
+        <p>Each note is exported independently. When you make a modification to a note you have to export the note again.</p>
+      </div>
+    </div>
+    <h2>configuration</h2>
+    <p>When you export a note for the first time, <span class="dataview"><span>Obsidian setup</span></span> will ask you to specify the folder where you want your notes to be exported.</p>
+  </template>
+</body>
+
+</html>

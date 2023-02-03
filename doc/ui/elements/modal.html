@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>modal</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="modal" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$ui.modal"}
+  </template>
+  <template id="content">
+    <h1>modal</h1>
+    <p><button data-click="$modal.open('modal-example')" class="contrast outline">Open modal</button></p>
+    <dialog id="modal-example">
+      <article>
+        <a data-click="return $modal.close()" class="close internal-link" href="#"></a>
+        <h3>Confirm your action!</h3>
+        <p>
+          Cras sit amet maximus risus.<br>
+          Pellentesque sodales odio sit amet augue finibus pellentesque.<br><br>
+          Nullam finibus risus non semper euismod.
+        </p>
+        <footer>
+          <button data-click="$modal.close()" class="secondary">
+            Cancel
+          </button>
+          <button data-click="$modal.close()">
+            Confirm
+          </button>
+        </footer>
+      </article>
+    </dialog>
+    <p>checkout the <a href="plugins/core/modal.html" class="internal-link">$modal</a> plugin!</p>
+  </template>
+</body>
+
+</html>

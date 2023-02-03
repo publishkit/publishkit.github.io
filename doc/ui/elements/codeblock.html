@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>codeblock</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="codeblock" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$ui.codeblock"}
+  </template>
+  <template id="content">
+    <h1>codeblock</h1>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">"bar,baz"</span><span class="token punctuation">.</span><span class="token method function property-access">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+</code></pre>
+    <p>You can theme codeblocks with <a href="doc/services/theme#highlight" class="internal-link">$theme.highlight</a></p>
+  </template>
+</body>
+
+</html>

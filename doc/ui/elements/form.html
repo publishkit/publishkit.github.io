@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>form</title>
+  <meta name="description" content="Welcome to PublishKit" />
+  <meta property="og:title" content="form" />
+  <meta property="og:description" content="Welcome to PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$ui.form"}
+  </template>
+  <template id="content">
+    <h1>form</h1>
+    <div>
+      <input value="foobar" type="text">
+      <input type="date">
+      <input type="time">
+      <input type="color">
+      <input value="foobar" type="search">
+      <select>
+        <option selected="" value="">Select a fruit…</option>
+        <option>…</option>
+        <option>…</option>
+      </select>
+      <details role="list">
+        <summary aria-haspopup="listbox">Dropdown</summary>
+        <ul role="listbox">
+          <li><a href="#" class="internal-link">Action</a></li>
+          <li><a href="#" class="internal-link">Another action</a></li>
+          <li><a href="#" class="internal-link">Something else here</a></li>
+        </ul>
+      </details>
+
+      <fieldset>
+        <legend>Size</legend>
+        <label for="small">
+          <input checked="" value="small" name="size" id="small" type="radio">
+          Small
+        </label>
+        <label for="medium">
+          <input value="medium" name="size" id="medium" type="radio">
+          Medium
+        </label>
+        <label for="large">
+          <input value="large" name="size" id="large" type="radio">
+          Large
+        </label>
+        <label for="extralarge">
+          <input disabled="" value="extralarge" name="size" id="extralarge" type="radio">
+          Extra Large
+        </label>
+      </fieldset>
+    </div>
+    <fieldset>
+      <label for="terms">
+        <input name="terms" id="terms" type="checkbox">
+        I agree
+      </label>
+      <label for="terms_sharing">
+        <input checked="" disabled="" name="terms_sharing" id="terms_sharing" type="checkbox">
+        I agree
+      </label>
+    </fieldset>
+    <fieldset>
+      <label for="switch">
+        <input role="switch" name="switch" id="switch" type="checkbox">
+        Publish on my profile
+      </label>
+      <label for="switch_disabled">
+        <input checked="" disabled="" role="switch_disabled" name="switch_disabled" id="switch_disabled" type="checkbox">
+        User must change
+      </label>
+    </fieldset>
+
+  </template>
+</body>
+
+</html>
