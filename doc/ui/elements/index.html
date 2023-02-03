@@ -11,10 +11,11 @@
   <meta name="name" content="PublishKit.dev" />
   <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta property="image" content="https://publishkit.dev/attachements/og-image.png" />
-  <meta property="url" content="https://publishkit.dev" />
-  <meta property="title" content="UI showcase" />
-  <meta property="description" content="Markdown based webapps" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="UI showcase" />
+  <meta property="og:description" content="Markdown based webapps" />
+  <meta property="og:site_name" content="PublishKit.dev" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
 </head>
 
@@ -334,34 +335,6 @@
     </div>
     <div class="embed-content">
       <div>
-        <h1>modal</h1>
-      </div>
-      <p><button data-click="$modal.open('modal-example')" class="contrast outline">Open modal</button></p>
-      <div>
-        <dialog id="modal-example">
-          <article>
-            <a data-click="return $modal.close()" class="close internal-link" href="#"></a>
-            <h3>Confirm your action!</h3>
-            <p>
-              Cras sit amet maximus risus.<br>
-              Pellentesque sodales odio sit amet augue finibus pellentesque.<br><br>
-              Nullam finibus risus non semper euismod.
-            </p>
-            <footer>
-              <button data-click="$modal.close()" class="secondary">
-                Cancel
-              </button>
-              <button data-click="$modal.close()">
-                Confirm
-              </button>
-            </footer>
-          </article>
-        </dialog>
-      </div>
-      <p>checkout the <a href="plugins/core/modal.html" class="internal-link">$modal</a> plugin!</p>
-    </div>
-    <div class="embed-content">
-      <div>
         <h1>form</h1>
       </div>
       <div>
@@ -429,28 +402,6 @@
             User must change
           </label>
         </fieldset>
-      </div>
-    </div>
-    <div class="embed-content">
-      <div>
-        <h1>pdf</h1>
-      </div>
-      <p><span class="pdf"><iframe src="attachements/showcase-pdf.pdf" frameborder="no"></iframe></span></p>
-      <p>checkout the <a href="plugins/core/pdf.html" class="internal-link">$pdf</a> plugin!</p>
-    </div>
-    <div class="embed-content">
-      <div>
-        <h1>latex</h1>
-      </div>
-      <div>
-        <div class="math math-block"><mjx-container class="MathJax" jax="CHTML" display="true" style="position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>y</mi>
-                <mo>=</mo>
-                <mfrac>
-                  <mn>1</mn>
-                  <mi>x</mi>
-                </mfrac>
-              </math></mjx-assistive-mml></mjx-container></div>
       </div>
     </div>
     <div class="embed-content">
