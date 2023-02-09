@@ -16,7 +16,7 @@
   <meta property="og:title" content="hero" />
   <meta property="og:description" content="Add a hero banner" />
   <meta property="og:site_name" content="PublishKit" />
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
 
 <body>
@@ -37,10 +37,14 @@
   <span class="token key atrule">image</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//someurl.com
   <span class="token key atrule">height</span><span class="token punctuation">:</span> 300px
 </code></pre>
-    <p>If no image is passed, the plugin will look into the <code>og.image</code> setting.</p>
+    <ul>
+      <li>the image option fall back to the pkrc root <code>image</code> variable.</li>
+    </ul>
     <h2>preview</h2>
     <ul>
-      <li><a class="internal-link" href="plugins/core/hero.html?p=hero%7Cimage:https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80,height:400px">click here</a></li>
+      <li><a class="internal-link" href="plugins/core/hero.html?p=hero%7Cimage:attachements/og-image.png">p=hero|image:attachements/og-image.png</a></li>
+      <li><a class="internal-link" href="plugins/core/hero.html?p=hero%7Cimage:https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80,height:400px">p=hero|image:https://unsplash.com/foo.png</a></li>
+      <li><a class="internal-link" href="plugins/core/hero.html?p=hero%7Cimage:https://images.unsplash.com/photo-1498673394965-85cb14905c89?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=870&amp;q=80">p=hero|image:https://unsplash.com/bar.png</a></li>
     </ul>
   </template>
 </body>

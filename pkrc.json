@@ -1,5 +1,5 @@
 {
-  "pk": {
+  "kit": {
     "version": "latest",
     "dirs": true
   },
@@ -23,14 +23,20 @@
     "social": true,
     "modal": true,
     "pdf": true,
-    "ga": "@ga|id:G-MWGQ40965V"
+    "ga": "ga|id:G-MWGQ40965V",
+    "frontmatter": true,
+    "bg": false
   },
   "theme": {
-    "primary": "#433da6",
-    "highlight": "shades-of-purple"
+    "primary": "#6964cd",
+    "highlight": "Shades of purple"
+  },
+  "bg": {
+    "parralax": true,
+    "image": null
   },
   "header": {
-    "fluid": true,
+    "fluid": false,
     "contrast": false
   },
   "social": {

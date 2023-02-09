@@ -16,7 +16,7 @@
   <meta property="og:title" content="UI showcase" />
   <meta property="og:description" content="Markdown web apps" />
   <meta property="og:site_name" content="PublishKit" />
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/sdk@latest/sdk.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
 
 <body>
@@ -352,29 +352,24 @@
           <details role="list">
             <summary aria-haspopup="listbox">Dropdown</summary>
             <ul role="listbox">
-              <li><a href="#" class="internal-link">Action</a></li>
-              <li><a href="#" class="internal-link">Another action</a></li>
-              <li><a href="#" class="internal-link">Something else here</a></li>
+              <li><a data-click="return false" href="#" class="internal-link">Action</a></li>
+              <li><a data-click="return false" href="#" class="internal-link">Another action</a></li>
+              <li><a data-click="return false" href="#" class="internal-link">Something else here</a></li>
             </ul>
           </details>
 
           <fieldset>
-            <legend>Size</legend>
             <label for="small">
               <input checked="" value="small" name="size" id="small" type="radio">
-              Small
+              radio
             </label>
             <label for="medium">
               <input value="medium" name="size" id="medium" type="radio">
-              Medium
-            </label>
-            <label for="large">
-              <input value="large" name="size" id="large" type="radio">
-              Large
+              radio
             </label>
             <label for="extralarge">
               <input disabled="" value="extralarge" name="size" id="extralarge" type="radio">
-              Extra Large
+              disabled
             </label>
           </fieldset>
         </div>
@@ -383,11 +378,11 @@
         <fieldset>
           <label for="terms">
             <input name="terms" id="terms" type="checkbox">
-            I agree
+            checkbox
           </label>
           <label for="terms_sharing">
             <input checked="" disabled="" name="terms_sharing" id="terms_sharing" type="checkbox">
-            I agree
+            disabled
           </label>
         </fieldset>
       </div>
@@ -395,11 +390,7 @@
         <fieldset>
           <label for="switch">
             <input role="switch" name="switch" id="switch" type="checkbox">
-            Publish on my profile
-          </label>
-          <label for="switch_disabled">
-            <input checked="" disabled="" role="switch_disabled" name="switch_disabled" id="switch_disabled" type="checkbox">
-            User must change
+            switch
           </label>
         </fieldset>
       </div>
