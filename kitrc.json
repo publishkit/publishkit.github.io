@@ -21,36 +21,16 @@
     "navbar": true,
     "search": true,
     "social": true,
-    "modal": true,
     "pdf": true,
     "ga": "@ga|id:G-MWGQ40965V",
-    "frontmatter": true,
-    "bg": false
+    "frontmatter": true
   },
   "theme": {
     "primary": "#6964cd",
     "highlight": "Shades of purple"
   },
-  "bg": {
-    "parralax": true,
-    "image": null
-  },
-  "header": {
-    "fluid": false,
-    "contrast": false
-  },
   "social": {
     "github": "https://github.com/publishkit",
     "discord": "https://discord.gg/XMgVPajeT9"
-  },
-  "search": {
-    "chars": 3,
-    "fuzzy": 0.2,
-    "padding": 40,
-    "max_results": 6
-  },
-  "pdf": {
-    "toolbar": false,
-    "width": "100%"
   }
 }

@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
   <meta name="title" content="modal" />
-  <meta name="description" content="Enable & create modals" />
+  <meta name="description" content="Use modals" />
   <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
   <meta name="name" content="PublishKit" />
   <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
@@ -14,36 +14,39 @@
   <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
   <meta property="og:url" content="https://publishkit.dev" />
   <meta property="og:title" content="modal" />
-  <meta property="og:description" content="Enable & create modals" />
+  <meta property="og:description" content="Use modals" />
   <meta property="og:site_name" content="PublishKit" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
 
 <body>
   <template id="frontmatter">
-    {"alias":"$modal","core":true,"author":"louis","description":"Enable & create modals"}
+    {"alias":"$modal","core":true,"author":"louis","description":"Use modals"}
   </template>
   <template id="content">
     <h1>modals</h1>
     <blockquote>
-      <p>Enable &amp; create modals</p>
+      <p>Use modals</p>
     </blockquote>
+    <p><em>The modal plugin is registered by default, you can't turn it off.</em></p>
     <h2>use</h2>
-    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
-  <span class="token key atrule">modal</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <p>Modal can be created programmatically via plugins, or manualy inside content.</p>
+    <h3>programmatic</h3>
+    <pre class="language-js" tabindex="0"><code class="language-js">ui<span class="token punctuation">.</span><span class="token method function property-access">addModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-    <h2>create</h2>
-    <p>In any of your markdown file, add a modal &amp; a call to action</p>
-    <p>call to action:</p>
+    <p>In the markdown file add a call to action, using any tag you want.</p>
     <pre class="language-html" tabindex="0"><code class="language-html"><span class="token comment">&lt;!-- A Tag (use return statement) --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contrast outline<span class="token punctuation">"</span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> 
+   <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> 
+   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contrast outline<span class="token punctuation">"</span></span> 
    <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>return $modal.open(<span class="token punctuation">'</span>modal-example<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 	Open modal Link
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token comment">&lt;!-- or any other Tag (button, div, ...) --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contrast outline<span class="token punctuation">"</span></span> 
-   <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$modal.open(<span class="token punctuation">'</span>modal-example<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> 
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> 
+  <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$modal.open(<span class="token punctuation">'</span>modal-example<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 	Open modal Button
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
@@ -57,20 +60,23 @@
         <div class="callout-title-inner">Info</div>
       </div>
       <div class="callout-content">
-        <p>When binding data-click to <code>&lt;a/&gt;</code> tag, you must add a <code>return</code> statement to prevent link to follow <code>href</code>. You can omit this statement in other tags.</p>
+        <p>When binding data-click to an <code>&lt;a/&gt;</code> tag, you must add a <code>return</code> statement to prevent link to follow <code>href</code>. You can omit this statement in other tags.</p>
       </div>
     </div>
-    <p>modal element:</p>
+    <p>add the modal:</p>
     <pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dialog</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>modal-example<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close<span class="token punctuation">"</span></span> 
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> 
+	   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>close<span class="token punctuation">"</span></span> 
 	   <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>return $modal.close()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Confirm your action!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+	   
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Modal Title!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+	
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
 	  Cras sit amet maximus risus.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span>
-	  Pellentesque sodales odio sit amet augue finibus pellentesque.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span> 
-	  Nullam finibus risus non semper euismod.
+	  Pellentesque sodales odio sit amet augue finibus pellentesque.
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+	
 	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
 	  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>secondary<span class="token punctuation">"</span></span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$modal.close()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 		Cancel
@@ -87,11 +93,10 @@
     <dialog id="modal-example">
       <article>
         <a data-click="return $modal.close()" class="close internal-link" href="#"></a>
-        <h2 class="noprocess">Confirm your action!</h2>
+        <h2 class="noprocess">Modal Title!</h2>
         <p>
           Cras sit amet maximus risus.<br>
-          Pellentesque sodales odio sit amet augue finibus pellentesque.<br><br>
-          Nullam finibus risus non semper euismod.
+          Pellentesque sodales odio sit amet augue finibus pellentesque.
         </p>
         <footer>
           <button data-click="$modal.close()" class="secondary">

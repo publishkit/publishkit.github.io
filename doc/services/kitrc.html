@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <title>pkrc</title>
+  <title>kitrc</title>
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
-  <meta name="title" content="pkrc" />
+  <meta name="title" content="kitrc" />
   <meta name="description" content="global configuration" />
   <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
   <meta name="name" content="PublishKit" />
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
   <meta property="og:url" content="https://publishkit.dev" />
-  <meta property="og:title" content="pkrc" />
+  <meta property="og:title" content="kitrc" />
   <meta property="og:description" content="global configuration" />
   <meta property="og:site_name" content="PublishKit" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
@@ -21,13 +21,13 @@
 
 <body>
   <template id="frontmatter">
-    {"title":"pkrc","alias":"pkrc","description":"global configuration"}
+    {"title":"kitrc","alias":"kitrc","description":"global configuration"}
   </template>
   <template id="content">
-    <h1>pkrc</h1>
-    <p>The <code>pkrc.md</code> file is the global configuration file of your site. The configuration is written in <code>yaml</code> syntax, inside the frontmatter block.</p>
-    <p>Every time you make a change to the <code>pkrc.md</code> file, you have to export it for the change to take effect on your website.</p>
-    <p>When you export this file, the configuration is converted &amp; exported into a <code>pkrc.json</code> file at the root of your <code>kit</code> folder.</p>
+    <h1>kitrc</h1>
+    <p>The <code>kitrc.md</code> file is the global configuration file of your site. It must reside at the root of your <code>vault</code> folder. The configuration is written in <code>yaml</code> syntax, inside the frontmatter block of the file.</p>
+    <p>Every time you make a change to the <code>kitrc.md</code> file, you have to export it for the change to take effect on your website.</p>
+    <p>When you export this file, the frontmatter configuratuion is converted &amp; exported into a <code>kitrc.json</code> file at the root of your <code>kit</code> folder.</p>
     <div data-callout="important" class="callout">
       <div class="callout-title">
         <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
@@ -36,16 +36,16 @@
         <div class="callout-title-inner">Important</div>
       </div>
       <div class="callout-content">
-        <p>The <code>pkrc.md</code> file must reside at the root of your <code>vault</code></p>
+        <p>The <code>kitrc.md</code> file must reside at the root of your <code>vault</code></p>
       </div>
     </div>
     <h2>example</h2>
-    <p>This is what a <code>pkrc.md</code> look like:</p>
+    <p>This is what a <code>kitrc.md</code> look like:</p>
     <pre><code>---
 # your configuration goes here
 ---
 
-You can add some text after the frontmatter if you want, it will not get exported in the pkrc.json in your kit folder.
+You can add some text after the frontmatter if you want, it will not get exported in the kitrc.json in your kit folder.
 </code></pre>
     <p>Some configuration might look like the following:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token comment"># 📂 Vault</span>
@@ -53,7 +53,7 @@ You can add some text after the frontmatter if you want, it will not get exporte
 <span class="token key atrule">vault</span><span class="token punctuation">:</span>
   <span class="token key atrule">export_folder</span><span class="token punctuation">:</span> /Users/louis/myWebSite
   <span class="token key atrule">include</span><span class="token punctuation">:</span> 
-	<span class="token punctuation">-</span> <span class="token string">'^pkrc.md'</span>
+	<span class="token punctuation">-</span> <span class="token string">'^kitrc.md'</span>
 	<span class="token punctuation">-</span> <span class="token string">'^(index|navbar).md$'</span>
 	<span class="token punctuation">-</span> <span class="token string">'^blog/'</span>
   <span class="token key atrule">exclude</span><span class="token punctuation">:</span> 

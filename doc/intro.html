@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <title>User Guide 📘</title>
+  <title>intro</title>
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
-  <meta name="title" content="User Guide 📘" />
+  <meta name="title" content="intro" />
   <meta name="description" content="Markdown web apps" />
   <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
   <meta name="name" content="PublishKit" />
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
   <meta property="og:url" content="https://publishkit.dev" />
-  <meta property="og:title" content="User Guide 📘" />
+  <meta property="og:title" content="intro" />
   <meta property="og:description" content="Markdown web apps" />
   <meta property="og:site_name" content="PublishKit" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
@@ -21,14 +21,14 @@
 
 <body>
   <template id="frontmatter">
-    {"title":"User Guide 📘","alias":"User Guide"}
+    {}
   </template>
   <template id="content">
-    <h1>User Guide 📘</h1>
+    <h1>User Manual 📘</h1>
     <p>PublishKit philosophy is to be able to publish markdown content on the web, effortlessly. The kit offers a set of tools designed around powerful heuristics that offers a range between zero configuration to advanced cross content workflows.</p>
     <p>Each markdown file that PublishKit exports is processed and converted into a static html file, saved in the <code>kit</code> folder you configured.</p>
     <p>Once a file, or a list of files from a directory/vault, are exported, you can publish/deploy the <code>kit</code> folder to any hosting provider. PublishKit as it's name implies, is a kit, and don't take part in the hosting decision.</p>
-    <p>The kit embrace the <code>static</code> experience and is meant to be deployed at the edge on CDN's. They offer ultra hight speed delievery of your content to the users, worldwide, for free. One other advantage about static apps is because all pages are delivered at nearly instant speed, they make for very consistent and pleasent browsing experiences. Which is something PublishKit is deeply focusing on. Our goal is to design first class publishing experiences for content first applications.</p>
+    <p>The kit embrace the <code>static</code> experience and is meant to be deployed at the edge on CDN's. They offer ultra hight speed delievery of your content to the users, worldwide, for free. One other advantage about static apps is because all pages are delivered nearly instantly, they offer ultra fast &amp; consitent browsing experiences. Which is something PublishKit is very focused on. Our goal is to design first class publishing experiences for content first applications.</p>
     <h2>usage</h2>
     <ul>
       <li>via the <a href="doc/setup/cli.html" class="internal-link">CLI</a></li>
@@ -43,7 +43,7 @@
 pk <span class="token builtin class-name">export</span> index.md
 
 <span class="token comment"># multiple files</span>
-pk <span class="token builtin class-name">export</span> kitrc.md navbar.md blog/myarticle.md
+pk <span class="token builtin class-name">export</span> index.md navbar.md blog/myarticle.md
 </code></pre>
     <p>In the kit folder, the converted files, along side linked assets like images &amp; pdfs, will mirror the same folder structure as their respective source file. Exported, the file <code>blog/myarticle.md</code> in your vault folder, will be located at <code>blog/myarticle.html</code> in the kit folder.</p>
     <div data-callout="tip" class="callout">
@@ -74,86 +74,8 @@ npx http-server
       </div>
     </div>
     <h2>publishing</h2>
-    <p>The <code>kit</code> can be hosted anywhere.<br>
-      Preferably on ultra fast CDN's :)<br>
+    <p>The <code>kit</code> can be hosted anywhere. Preferably on ultra fast CDN's :)<br>
       This website is hosted on github pages for intance.</p>
-    <div class="embed-content">
-      <div>
-        <h1>Setup</h1>
-      </div>
-      <div>
-        <div class="block-language-dataview node-insert-event">
-          <table class="dataview">
-            <thead class="table-view-thead">
-              <tr class="table-view-tr-header">
-                <th class="table-view-th"><span></span><span class="dataview small-text">2</span></th>
-              </tr>
-            </thead>
-            <tbody class="table-view-tbody">
-              <tr>
-                <td><span><a href="doc/setup/obsidian.html" class="internal-link">Obsidian Plugin</a></span></td>
-              </tr>
-              <tr>
-                <td><span><a href="doc/setup/cli.html" class="internal-link">PublishKit Cli</a></span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="embed-content">
-      <div>
-        <h1>Services</h1>
-      </div>
-      <div>
-        <div class="block-language-dataview node-insert-event">
-          <table class="dataview">
-            <thead class="table-view-thead">
-              <tr class="table-view-tr-header">
-                <th class="table-view-th"><span></span><span class="dataview small-text">5</span></th>
-                <th class="table-view-th"><span></span></th>
-              </tr>
-            </thead>
-            <tbody class="table-view-tbody">
-              <tr>
-                <td><span><a href="doc/services/app.html" class="internal-link">app</a></span></td>
-                <td><span>-</span></td>
-              </tr>
-              <tr>
-                <td><span><a href="doc/services/kitrc.html" class="internal-link">kitrc</a></span></td>
-                <td><span>global configuration</span></td>
-              </tr>
-              <tr>
-                <td><span><a href="doc/services/plugins.html" class="internal-link">plugins</a></span></td>
-                <td><span>-</span></td>
-              </tr>
-              <tr>
-                <td><span><a href="doc/services/theme.html" class="internal-link">theme</a></span></td>
-                <td><span>-</span></td>
-              </tr>
-              <tr>
-                <td><span><a href="doc/services/utils.html" class="internal-link">utils</a></span></td>
-                <td><span>powerful utilities</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="embed-content">
-      <div>
-        <h1>Top level variables</h1>
-      </div>
-      <div>
-        <ul>
-          <li>title</li>
-          <li>description</li>
-          <li>image</li>
-          <li>date</li>
-          <li>url</li>
-        </ul>
-      </div>
-    </div>
   </template>
 </body>
 
