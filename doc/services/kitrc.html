@@ -21,95 +21,69 @@
 
 <body>
   <template id="frontmatter">
-    {"title":"kitrc","alias":"kitrc","description":"global configuration"}
+    {"title":"kitrc","alias":"$kitrc","description":"global configuration"}
   </template>
   <template id="content">
     <h1>kitrc</h1>
-    <p>The <code>kitrc.md</code> file is the global configuration file of your site. It must reside at the root of your <code>vault</code> folder. The configuration is written in <code>yaml</code> syntax, inside the frontmatter block of the file.</p>
-    <p>Every time you make a change to the <code>kitrc.md</code> file, you have to export it for the change to take effect on your website.</p>
-    <p>When you export this file, the frontmatter configuratuion is converted &amp; exported into a <code>kitrc.json</code> file at the root of your <code>kit</code> folder.</p>
-    <div data-callout="important" class="callout">
-      <div class="callout-title">
-        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
-            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
-          </svg></div>
-        <div class="callout-title-inner">Important</div>
-      </div>
-      <div class="callout-content">
-        <p>The <code>kitrc.md</code> file must reside at the root of your <code>vault</code></p>
-      </div>
-    </div>
+    <p>The <code>kitrc.md</code> file aka <code>kitrc</code> is the global configuration file of your app. It must reside at the root of your <code>vault</code> folder. The configuration is written in yaml syntax, inside the frontmatter block of the file.</p>
+    <p>The <code>kitrc</code> have to be exported like any other file, and is converted into <code>kitrc.json</code> at the root of the your <code>kit</code> folder.</p>
     <h2>example</h2>
-    <p>This is what a <code>kitrc.md</code> look like:</p>
+    <p>This is what the <code>kitrc.md</code> file look like:</p>
     <pre><code>---
-# your configuration goes here
+# kit configuration goes here
 ---
 
-You can add some text after the frontmatter if you want, it will not get exported in the kitrc.json in your kit folder.
+You can add text after the frontmatter configuration, it will not get exported in the kitrc.json file
 </code></pre>
     <p>Some configuration might look like the following:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token comment"># 📂 Vault</span>
 
 <span class="token key atrule">vault</span><span class="token punctuation">:</span>
-  <span class="token key atrule">export_folder</span><span class="token punctuation">:</span> /Users/louis/myWebSite
+  <span class="token key atrule">kit_folder</span><span class="token punctuation">:</span> /Users/louis/mykitfolder
   <span class="token key atrule">include</span><span class="token punctuation">:</span> 
-	<span class="token punctuation">-</span> <span class="token string">'^kitrc.md'</span>
-	<span class="token punctuation">-</span> <span class="token string">'^(index|navbar).md$'</span>
-	<span class="token punctuation">-</span> <span class="token string">'^blog/'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^(kitrc|index|navbar).md$'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^blog/'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^notes/'</span>
   <span class="token key atrule">exclude</span><span class="token punctuation">:</span> 
-	<span class="token punctuation">-</span> <span class="token string">'^kit/'</span>
-	<span class="token punctuation">-</span> <span class="token string">'^templates/'</span>
-	<span class="token punctuation">-</span> <span class="token string">'^blog/draft'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^kit/'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^templates/'</span>
+    <span class="token punctuation">-</span> <span class="token string">'^blog/draft'</span>
 
 
-<span class="token comment"># 🚀 PublishKit</span>
+<span class="token comment"># 🧰 Kit</span>
 
 <span class="token key atrule">kit</span><span class="token punctuation">:</span>
   <span class="token key atrule">version</span><span class="token punctuation">:</span> latest
-  <span class="token key atrule">dirs</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">dirs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 
 
-<span class="token comment"># 🔱 Site</span>
+<span class="token comment"># 🖥️ Site</span>
 
 <span class="token key atrule">site</span><span class="token punctuation">:</span>
   <span class="token key atrule">id</span><span class="token punctuation">:</span> rec_ce0thrqz1iosrhanqtdg
   <span class="token key atrule">name</span><span class="token punctuation">:</span> PublishKit
   <span class="token key atrule">description</span><span class="token punctuation">:</span> Welcome to PublishKit
   <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//publishkit.dev
+  <span class="token key atrule">keyswords</span><span class="token punctuation">:</span> publishkit<span class="token punctuation">,</span> blogging<span class="token punctuation">,</span> markdown
 
 
-<span class="token comment"># 📦 Plugins</span>
+<span class="token comment"># 🔌 Plugins</span>
 
 <span class="token key atrule">plugins</span><span class="token punctuation">:</span> 
   <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">"@default"</span>
   <span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">navbar</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">social</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">modal</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 
 
-<span class="token comment"># ⚙️ Plugins settings</span>
-
-<span class="token key atrule">header</span><span class="token punctuation">:</span>
-  <span class="token key atrule">fluid</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">contrast</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token comment"># ⚙️  Plugins settings</span>
 
 <span class="token key atrule">social</span><span class="token punctuation">:</span>
-  <span class="token key atrule">github</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/publishkit
-  <span class="token key atrule">discord</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//discord.gg/XMgVPajeT9
-  
-<span class="token key atrule">search</span><span class="token punctuation">:</span>
-  <span class="token key atrule">chars</span><span class="token punctuation">:</span> <span class="token number">3</span>
-  <span class="token key atrule">fuzzy</span><span class="token punctuation">:</span> <span class="token number">0.2</span>
-  <span class="token key atrule">padding</span><span class="token punctuation">:</span> <span class="token number">40</span>
-  <span class="token key atrule">max_results</span><span class="token punctuation">:</span> <span class="token number">5</span>
-
-<span class="token key atrule">pdf</span><span class="token punctuation">:</span>
-  <span class="token key atrule">toolbar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">width</span><span class="token punctuation">:</span> 100%
+  <span class="token key atrule">github</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//publishkit.dev
+  <span class="token key atrule">discord</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//publishkit.dev
 </code></pre>
   </template>
 </body>
