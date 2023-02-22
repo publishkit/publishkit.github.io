@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>props</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="props" />
+  <meta name="description" content="Dynamic content bindings" />
+  <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta name="name" content="PublishKit" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="props" />
+  <meta property="og:description" content="Dynamic content bindings" />
+  <meta property="og:site_name" content="PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$props","core":true,"author":"louis","description":"Dynamic content bindings","props":{"counter":1,"tickers":["€","¥"],"total":"(price, qty, ticker='€') => (price * qty) + ticker","foo":{"bar":"baz"}}}
+  </template>
+  <template id="content">
+    <h1>props</h1>
+    <blockquote>
+      <p>The $props plugin makes markdown content fully dynamic and computable.</p>
+    </blockquote>
+    <p>You can define any properties inside the <code>props</code> object of your frontmatter :</p>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">props</span><span class="token punctuation">:</span>
+  <span class="token key atrule">counter</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">tickers</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"€"</span><span class="token punctuation">,</span> <span class="token string">"¥"</span><span class="token punctuation">]</span>
+  <span class="token key atrule">total</span><span class="token punctuation">:</span> <span class="token string">"(price, qty, ticker=0) =&gt; (price * qty) + ~tickers[ticker]"</span>
+  <span class="token key atrule">foo</span><span class="token punctuation">:</span>
+    <span class="token key atrule">bar</span><span class="token punctuation">:</span> <span class="token string">"baz"</span>
+</code></pre>
+    <p>Those props can be used and rendered anywhere in your markdown body, as single child of any element (paragraph, codeblocks, tables) by just prefixing their name with a <code>~</code>.</p>
+    <div data-callout="info" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg></div>
+        <div class="callout-title-inner">about the <code>~</code></div>
+      </div>
+      <div class="callout-content">
+        <ul>
+          <li>The <code>~</code> prefix feats perfectly in the markdown, but can also be configured. </li>
+          <li>The prefix is just syntaxic sugar and is replaced by javascript runtime associated property. <code>~foobar</code> is short syntax for <code>$props.options.foobar</code>, where the value reside.</li>
+        </ul>
+      </div>
+    </div>
+    <h2>use</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>markdown</th>
+          <th>prop value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="noprocess">~foo.bar</span></td>
+          <td><code>~foo.bar</code></td>
+        </tr>
+        <tr>
+          <td><span class="noprocess">~tickers[0]</span></td>
+          <td><code>~tickers[0]</code></td>
+        </tr>
+        <tr>
+          <td><span class="noprocess">~total(10, 3)</span></td>
+          <td><code>~total(10, 3)</code></td>
+        </tr>
+        <tr>
+          <td><span class="noprocess">~total(10, ~counter)</span></td>
+          <td><code>~total(10, ~counter)</code></td>
+        </tr>
+        <tr>
+          <td><span class="noprocess">~total(10, ~counter, "¥")</span></td>
+          <td><code>~total(10, ~counter, "¥")</code></td>
+        </tr>
+        <tr>
+          <td><span class="noprocess">~counter</span></td>
+          <td><code>~counter</code></td>
+        </tr>
+        <tr>
+          <td><span class="noprocess">~counter * 2</span></td>
+          <td><code>~counter * 2</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Use props inside click events:</p>
+    <pre class="language-html" tabindex="0"><code class="language-html">counter = **~counter**
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~counter--<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  decrement
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~counter++<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  increment
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p>counter = <strong>~counter</strong></p><button data-click="~counter--" class="secondary outline">
+      <i class="bx bx-minus-circle me-2"></i>decrement
+    </button>
+    <button data-click="~counter++" class="secondary outline">
+      <i class="bx bx-plus-circle me-2"></i>increment
+    </button>
+  </template>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pricing</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="Pricing" />
+  <meta name="description" content="Markdown web apps" />
+  <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta name="name" content="PublishKit" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="Pricing" />
+  <meta property="og:description" content="Markdown web apps" />
+  <meta property="og:site_name" content="PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"title":"Pricing","plugins":{"toc":false,"chargebee":"chargebee|site:studio1337"},"props":{"period":"monthly","price":"(plan, period) => ~(`plans.${plan}.${period}`)","plans":{"free":{"monthly":0,"yearly":0},"perso":{"monthly":5,"yearly":50},"pro":{"monthly":50,"yearly":500}}}}
+  </template>
+  <template id="content">
+    <h1>Pricing</h1>
+    <p data-bind="~period" data-ui="switch" class="my-5 mx-auto"></p>
+    <ul>
+      <li>monthly
+        <ul>
+          <li>label: <i class="bx bx-calendar me-2"></i>monthly</li>
+        </ul>
+      </li>
+      <li>yearly
+        <ul>
+          <li>label: yearly <i class="bx bxs-gift ms-2"></i></li>
+        </ul>
+      </li>
+    </ul>
+    <p data-kit=".cards .center"></p>
+    <ul>
+      <li>
+        <h2>free</h2>
+        <ul>
+          <li><i class="bx bx-infinite"></i> lifetime offer</li>
+        </ul>
+        <hr>
+        <ul>
+          <li>for <a class="external-link" href="https://en.wikipedia.org/wiki/Open-source_software" target="_blank">OSS</a> projects</li>
+          <li>&amp; local kits</li>
+        </ul>
+        <hr>
+        <ul>
+          <li><a data-tooltip="discord" href="javascript:void(0)" class="internal-link"><i class="bx bxl-discord"></i></a> support</li>
+          <li><button data-cb-item-0="free-yearly" data-cb-type="checkout" class="outline"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
+        </ul>
+      </li>
+      <li>
+        <h2>perso</h2>
+        <ul>
+          <li><i class="bx bx-target-lock"></i> <em>blogs, digital gardens, projects...</em></li>
+        </ul>
+        <hr>
+        <ul>
+          <li><span class="fs-5">~price("perso", ~period) + "€"</span></li>
+          <li><em><small>~period</small></em></li>
+        </ul>
+        <hr>
+        <ul>
+          <li><a data-tooltip="email" href="javascript:void(0)" class="internal-link"><i class="bx bx-mail-send"></i></a> + <a data-tooltip="discord" href="javascript:void(0)" class="internal-link"><i class="bx bxl-discord"></i></a> support</li>
+          <li><button data-cb-item-0="perso-monthly" data-cb-type="checkout" data-show="~period=='monthly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button><button data-cb-item-0="perso-yearly" data-cb-type="checkout" data-show="~period=='yearly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
+        </ul>
+      </li>
+      <li>
+        <h2>pro</h2>
+        <ul>
+          <li><i class="bx bx-target-lock"></i> <em>anything business related</em></li>
+        </ul>
+        <hr>
+        <ul>
+          <li><span class="fs-5">~price("pro", ~period) + "€"</span> </li>
+          <li><em><small>~period</small></em></li>
+        </ul>
+        <hr>
+        <ul>
+          <li><i class="bx bx-alarm"></i> priotity support</li>
+          <li><button data-cb-item-0="pro-monthly" data-cb-type="checkout" data-show="~period=='monthly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button><button data-cb-item-0="pro-yearly" data-cb-type="checkout" data-show="~period=='yearly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
+        </ul>
+      </li>
+    </ul>
+    <h2>about kits</h2>
+    <ul>
+      <li>You can activate as many kit as desired.</li>
+      <li>Each kit has a unique <code>id</code></li>
+      <li>Each kit is associated with subscription. </li>
+      <li>Kits are managed via the <a data-click="$chargebee.portal.open()" href="javascript:void(0)" class="internal-link"><i class="bx bxs-cog me-2"></i>Kit Portal</a></li>
+      <li>The only configuration is a <code>domain</code> url.</li>
+    </ul>
+    <div data-callout="tip" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg></div>
+        <div class="callout-title-inner">kit portal</div>
+      </div>
+      <div class="callout-content">
+        <ul>
+          <li>simply send the OneTimePassword received by email and you will be logged into the portal, to manage your kits and billing details.</li>
+          <li>the portal is provided by our payment provider <a class="external-link" href="https://www.chargebee.com/" target="_blank">chargebee</a>.</li>
+          <li>untill you decide to publish your kit, you can leave "localhost" as <code>domain</code> url.</li>
+        </ul>
+      </div>
+    </div>
+    <h2>invoicing</h2>
+    <p>Our payment provider <a class="external-link" href="https://www.chargebee.com/" target="_blank">chargebee</a>, is a service that simplifies subscriptions based payments, on top of a <a class="external-link" href="https://stripe.com" target="_blank">stripe</a> or Paypal account. </p>
+    <p>From the <a data-click="$chargebee.portal.open()" href="javascript:void(0)" class="internal-link"><i class="bx bxs-cog me-2"></i>Kit Portal</a> you can manage all of your subscriptions (kits) and download associated invoices.</p>
+    <p>We are a french based company, and for now, only charge in euros, vat included.</p>
+    <h2>free usage</h2>
+    <p>Kits are 100% free to use and register for:</p>
+    <ul>
+      <li>anyone publishing open source content</li>
+      <li>anyone using the kit locally on their machine. </li>
+    </ul>
+    <p>As soon as it leaves your local environnement, the kit will require a kit <code>id</code> to activate. The kid <code>id</code> has to be specified in the <code>site.id</code> config of the <code>kitrc</code>:</p>
+    <pre><code>site:
+  id: "my-kit-id"
+</code></pre>
+    <div data-callout="note" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+            <line x1="18" y1="2" x2="22" y2="6"></line>
+            <path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"></path>
+          </svg></div>
+        <div class="callout-title-inner">localhost</div>
+      </div>
+      <div class="callout-content">
+        <p>a kit can be used locally without having to be registered. use the cli <code>kit serve</code> command and to open your kit folder in the browser on localhost.</p>
+      </div>
+    </div>
+  </template>
+</body>
+
+</html>

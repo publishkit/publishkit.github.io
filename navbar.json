@@ -32,7 +32,7 @@
       "isOpen": true,
       "items": [
         [
-          "<a href=\"notes/pricing.html\" class=\"internal-link\">Pricing</a>",
+          "<a href=\"pricing.html\" class=\"internal-link\">Pricing</a>",
           "bx-dollar-circle"
         ],
         [

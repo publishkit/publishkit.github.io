@@ -27,7 +27,7 @@
     <h1>User Guide 📘</h1>
     <p>PublishKit philosophy is to be able to publish markdown content on the web, effortlessly. The kit offers a set of tools designed around powerful heuristics that offers a range between zero configuration to advanced cross content workflows.</p>
     <p>Each markdown file that PublishKit exports is processed and converted into a static html file, saved in the <code>kit</code> folder you configured.</p>
-    <p>Once a file, or a list of files from a directory/vault, are exported, you can publish/deploy the <code>kit</code> folder to any hosting provider. PublishKit as it's name implies, is a kit, and don't take part in the hosting decision.</p>
+    <p>Once a file, or files from a directory/vault, are exported, you can publish/deploy the <code>kit</code> folder to any hosting provider. PublishKit as it's name implies, is a kit, and don't take part in the hosting decision.</p>
     <p>The kit embrace the <code>static</code> experience and is meant to be deployed at the edge on CDN's. They offer ultra hight speed delievery of your content to the users, worldwide, for free. One other advantage about static apps is because all pages are delivered at nearly instant speed, they make for very consistent and pleasent browsing experiences. Which is something PublishKit is deeply focusing on. Our goal is to design first class publishing experiences for content first applications.</p>
     <h2>usage</h2>
     <ul>
@@ -40,10 +40,10 @@
     <p><em>Currently only <a href="doc/setup/obsidian.html" class="internal-link">Obsidian</a> is supported. more pkm's on the way.</em></p>
     <h2>exporting</h2>
     <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># single file</span>
-pk <span class="token builtin class-name">export</span> index.md
+kit <span class="token builtin class-name">export</span> index.md
 
 <span class="token comment"># multiple files</span>
-pk <span class="token builtin class-name">export</span> kitrc.md navbar.md blog/myarticle.md
+kit <span class="token builtin class-name">export</span> kitrc.md blog/myarticle.md
 </code></pre>
     <p>In the kit folder, the converted files, along side linked assets like images &amp; pdfs, will mirror the same folder structure as their respective source file. Exported, the file <code>blog/myarticle.md</code> in your vault folder, will be located at <code>blog/myarticle.html</code> in the kit folder.</p>
     <div data-callout="tip" class="callout">
@@ -58,7 +58,7 @@ pk <span class="token builtin class-name">export</span> kitrc.md navbar.md blog/
       </div>
     </div>
     <h2>kit preview</h2>
-    <p>Before deploying your changes to your hosting provider, you can live preview your kit application localy. Assuming you have nodejs installed on your machine, open your terminal, navigate to your kit folder and run:</p>
+    <p>Before deploying your changes to your hosting provider, you can live preview your kit application locally. Assuming you have nodejs installed on your machine, open your terminal, navigate to your kit folder and and serve the folder by running:</p>
     <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token builtin class-name">cd</span> /path/to/kit
 npx http-server
 </code></pre>
@@ -70,7 +70,7 @@ npx http-server
         <div class="callout-title-inner">CLI</div>
       </div>
       <div class="callout-content">
-        <p> <code>pk serve</code> command is a proxy to the node http-server module, but can automatically open the browser. Specify a port with <code>pk serve -p 1337</code></p>
+        <p> <code>kit serve</code> is a proxy to the node http-server module, but can automatically open the browser. To specify a port run <code>pk serve -p 1337</code></p>
       </div>
     </div>
     <h2>publishing</h2>

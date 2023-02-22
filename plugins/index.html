@@ -27,29 +27,18 @@
     <h1>Plugins</h1>
     <p>Everything on the page that is not the "actual content" is defacto rendered by a plugin.</p>
     <p>Plugins are the core design principle of PublishKit. Without any plugins, content is rendered as is, without any transformations, onto the page. But with plugins, that's where the magic begins. Plugins can do anything. From fully tweaking and theming the UI, to creating and binding ui elements, or just exposing functions for other plugins to consume. The <code>kit</code> comes equiped with some <code>core</code> plugins out of the box. Other plugins are imagined and delivered by the <code>community</code>.</p>
-    <p>Everything in the <code>kit</code> framework is a plugin. Combined, plugins can delivers powerful characteristics, like turning independant static pages into fully featured web apps.</p>
+    <p>Everything in the <code>kit</code> is a plugin. Combined, plugins can delivers powerful characteristics, like turning independant static pages into fully featured web apps.</p>
     <ul>
       <li>list of <a href="plugins/core/index.html" class="internal-link">Core Plugins</a></li>
       <li>list of <a href="plugins/community/index.html" class="internal-link">Community Plugins</a></li>
+      <li><a href="plugins/create.html" class="internal-link">Create a plugin</a></li>
     </ul>
-    <div data-callout="note" class="callout">
-      <div class="callout-title">
-        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
-            <line x1="18" y1="2" x2="22" y2="6"></line>
-            <path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"></path>
-          </svg></div>
-        <div class="callout-title-inner">Note</div>
-      </div>
-      <div class="callout-content">
-        <p>We encourage cross plugin communication, by providing elegant and higher level api's. Each plugin is exposed globaly in the page, using it's name prefixed by a <code>$</code>. Interacting with a plugin is as easy as <code>$navbar.toggle()</code> or <code>$stripe.pay()</code>.</p>
-      </div>
-    </div>
     <h2>usage</h2>
     <p>Plugins can be added and overided, taking precedence, in the frontmatter of the following files:</p>
     <ul>
-      <li>the <code>kitrc.md</code> file at the root of your vault (global config)</li>
+      <li>the <code>kitrc.md</code> - <a href="doc/services/kitrc.html" class="internal-link">$kitrc</a></li>
       <li>any <code>dirrc.md</code> file in any directory</li>
-      <li>individual content files</li>
+      <li>individual files</li>
       <li>in url - see <a href="url injection" class="internal-link">url injection</a></li>
     </ul>
     <p>To register a plugin, in the frontmatter of any of the files mentionned above, add a key value pair under the <code>plugins</code> yaml object. Use the plugin name for the key, and set a <code>true</code> value. Ex:</p>
@@ -59,9 +48,8 @@
   <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
     <p>Note that only <code>core</code> and <code>local</code> plugins can register by simply specifying a <code>true</code> value. That's because their are included in the kit (for core plugins) or auto resolve (for local plugins). </p>
-    <p>The <code>external</code> plugins have to specify their location with an url.</p>
-    <p>For <code>community</code> plugins, just prefix the plugin name with a <code>@</code> sign.</p>
-    <p>Depending on where the plugin live, you register it differently. We'll take <code>ga</code> plugin (short for google analytics) as an exemple :</p>
+    <p><code>community</code> plugins can just prefix the plugin name with a <code>@</code> sign, and <code>external</code> plugins have to specify their location with an url.</p>
+    <p>So depending on where the plugin live, you will register it differently. Exemple with the <code>ga</code> plugin:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token comment"># local</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -71,23 +59,24 @@
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token string">"https://url.com/ga.js"</span>
 </code></pre>
     <h3>local plugins</h3>
-    <p>They have to be located in the <code>plugins</code> folder, inside the <code>kit_local</code> folder at the root of your kit folder. Ex: </p>
+    <p>They have to be located in the <code>kit_local/plugins</code> folder at the root of your <code>kit</code>. Ex: </p>
     <pre class="language-text" tabindex="0"><code class="language-text">📂 kit_folder
  ┃ 
  ┣ 📂 kit_local
  ┃ ┗ 📂 plugins
- ┃   ┗ 📄 some-local-plugin.js
+ ┃   ┗ 📄 ga.js
+ ┃   ┗ 📄 my-new-plugin.js
  ┃ 
  ┣ 📄 index.html
  ┣ 📄 kitrc.json
  ┣ ...
 </code></pre>
     <h3>community plugins</h3>
-    <p>It turns out the <a href="plugins/community/ga.html" class="internal-link">ga</a> plugin is an actual community plugin, that you can use right now. I would suggest adding this particular plugin in the global configuration file <code>kitrc.md</code>, so all your app can benefit from the tracking. </p>
+    <p>It turns out the <a href="plugins/community/ga.html" class="internal-link">ga</a> plugin is an actual community plugin, that you can use right now. I would suggest adding this particular plugin in your <code>kitrc</code> config, so all your pages can benefit from the tracking. </p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token string">"@ga"</span>
 </code></pre>
-    <p>You can of course, in any page, overide the global configuration or disable the plugin like so:</p>
+    <p>You can of course, in any page, overide the <code>kitrc</code> config or disable the plugin like so:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 </code></pre>
@@ -114,6 +103,22 @@
   <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token string">"@ga|id:G-MDGQ40965Q"</span>
 </code></pre>
+    <h2>api</h2>
+    <div data-callout="note" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+            <line x1="18" y1="2" x2="22" y2="6"></line>
+            <path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Note</div>
+      </div>
+      <div class="callout-content">
+        <ul>
+          <li>Each plugin is exposed globally by it's name prefixed by a <code>$</code>. </li>
+          <li>Interacting with a plugin is as simple as <code>$navbar.toggle()</code> or <code>$stripe.pay()</code>.</li>
+        </ul>
+      </div>
+    </div>
   </template>
 </body>
 
