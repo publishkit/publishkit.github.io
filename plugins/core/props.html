@@ -21,7 +21,7 @@
 
 <body>
   <template id="frontmatter">
-    {"alias":"$props","core":true,"author":"louis","description":"Dynamic content bindings","props":{"counter":1,"tickers":["€","¥"],"total":"(price, qty, ticker='€') => (price * qty) + ticker","foo":{"bar":"baz"}}}
+    {"alias":"$props","core":true,"author":"louis","description":"Dynamic content bindings","props":{"color":"red","counter":1,"tickers":["€","¥"],"total":"(price, qty, ticker='€') => (price * qty) + ticker","foo":{"bar":"baz"}}}
   </template>
   <template id="content">
     <h1>props</h1>
@@ -31,29 +31,20 @@
     <p>You can define any properties inside the <code>props</code> object of your frontmatter :</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">props</span><span class="token punctuation">:</span>
   <span class="token key atrule">counter</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">color</span><span class="token punctuation">:</span> <span class="token string">"red"</span>
   <span class="token key atrule">tickers</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"€"</span><span class="token punctuation">,</span> <span class="token string">"¥"</span><span class="token punctuation">]</span>
   <span class="token key atrule">total</span><span class="token punctuation">:</span> <span class="token string">"(price, qty, ticker=0) =&gt; (price * qty) + ~tickers[ticker]"</span>
   <span class="token key atrule">foo</span><span class="token punctuation">:</span>
     <span class="token key atrule">bar</span><span class="token punctuation">:</span> <span class="token string">"baz"</span>
 </code></pre>
-    <p>Those props can be used and rendered anywhere in your markdown body, as single child of any element (paragraph, codeblocks, tables) by just prefixing their name with a <code>~</code>.</p>
-    <div data-callout="info" class="callout">
-      <div class="callout-title">
-        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg></div>
-        <div class="callout-title-inner">about the <code>~</code></div>
-      </div>
-      <div class="callout-content">
-        <ul>
-          <li>The <code>~</code> prefix feats perfectly in the markdown, but can also be configured. </li>
-          <li>The prefix is just syntaxic sugar and is replaced by javascript runtime associated property. <code>~foobar</code> is short syntax for <code>$props.options.foobar</code>, where the value reside.</li>
-        </ul>
-      </div>
-    </div>
-    <h2>use</h2>
+    <h2>about</h2>
+    <p>Props can:</p>
+    <ul>
+      <li>be of any types, even functions.</li>
+      <li>be rendered anywhere in your markdown body, as long as they are single child of their parent element (paragraph, codeblocks, tables).</li>
+      <li>be used as expressions in custom html attributes.</li>
+      <li>be recognized by the kit by prefixing them with a <code>~</code>.</li>
+    </ul>
     <table>
       <thead>
         <tr>
@@ -62,6 +53,10 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><span class="noprocess">~color</span></td>
+          <td><code>~color</code></td>
+        </tr>
         <tr>
           <td><span class="noprocess">~foo.bar</span></td>
           <td><code>~foo.bar</code></td>
@@ -92,8 +87,18 @@
         </tr>
       </tbody>
     </table>
+    <p>Props resolves to their litteral javascript value, so any valid javascript will work.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token operator">~</span>color<span class="token punctuation">.</span><span class="token method function property-access">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">~</span>foo<span class="token punctuation">.</span><span class="token property-access">bar</span><span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token string">"z"</span><span class="token punctuation">,</span> <span class="token string">"zzz"</span><span class="token punctuation">)</span>
+<span class="token operator">~</span>tickers<span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span><span class="token string">"€"</span><span class="token punctuation">)</span>
+<span class="token operator">~</span>tickers<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token string">"¥"</span><span class="token punctuation">)</span>
+<span class="token operator">~</span>counter <span class="token operator">*</span> <span class="token number">2</span>
+<span class="token operator">~</span>counter<span class="token operator">++</span>
+<span class="token operator">~</span><span class="token function">total</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token operator">~</span>counter<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" ttc"</span>
+</code></pre>
+    <h2>data-click</h2>
     <p>Use props inside click events:</p>
-    <pre class="language-html" tabindex="0"><code class="language-html">counter = **~counter**
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown">counter = ~counter
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~counter--<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   decrement
@@ -102,12 +107,68 @@
   increment
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-    <p>counter = <strong>~counter</strong></p><button data-click="~counter--" class="secondary outline">
+    <p>counter = <span>~counter</span></p><button data-click="~counter--" class="secondary outline">
       <i class="bx bx-minus-circle me-2"></i>decrement
     </button>
     <button data-click="~counter++" class="secondary outline">
       <i class="bx bx-plus-circle me-2"></i>increment
     </button>
+    <h2>data-ui</h2>
+    <p>You can transform lists into specific ui components, by inserting a html <code>p</code> tag before the list, and specifying a <code>data-ui</code> component.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token list punctuation">-</span> red
+<span class="token list punctuation">-</span> blue
+</code></pre>
+    <p data-ui="switch"></p>
+    <ul>
+      <li>red</li>
+      <li>blue</li>
+    </ul>
+    <h2>data-bind</h2>
+    <p>You can bind ui components to a props, so that it's stays in sync:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span> <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token list punctuation">-</span> red
+<span class="token list punctuation">-</span> blue
+</code></pre>
+    <p>current <code>color</code> value = <span>~color</span></p>
+    <p data-bind="~color" data-ui="switch"></p>
+    <ul>
+      <li>red</li>
+      <li>blue</li>
+    </ul>
+    <h2>data-show</h2>
+    <p>Display an element when a given condition is met:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color==<span class="token punctuation">'</span>red<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>red<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color==<span class="token punctuation">'</span>blue<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>blue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p>Ex: <span data-show="~color=='red'">red</span><span data-show="~color=='blue'">blue</span></p>
+    <h2>lists</h2>
+    <p>Basic list:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> monthly
+<span class="token list punctuation">-</span> yearly
+</code></pre>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"monthly"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"yearly"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre>
+    <p>Detailed list:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> monthly
+	<span class="token list punctuation">-</span> label: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bx-calendar me-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>MONTHLY
+<span class="token list punctuation">-</span> yearly
+	<span class="token list punctuation">-</span> label: YEARLY <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-gift ms-2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> 
+    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"monthly"</span><span class="token punctuation">,</span> 
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"&lt;i class='bx bx-calendar me-2'&gt;&lt;/i&gt;MONTHLY"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> 
+    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"yearly"</span><span class="token punctuation">,</span> 
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"YEARLY &lt;i class='bx bx-gift me-2'&gt;&lt;/i&gt;"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre>
   </template>
 </body>
 

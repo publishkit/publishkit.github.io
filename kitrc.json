@@ -24,10 +24,15 @@
     "social": true,
     "ga": "@ga|id:G-MWGQ40965V",
     "cards": true,
+    "codeblocks": true,
     "frontmatter": true
   },
   "props": {
     "foobar": "baz"
+  },
+  "codeblocks": {
+    "lang": true,
+    "copy": true
   },
   "theme": {
     "primary": "#6964cd",
