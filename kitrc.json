@@ -6,6 +6,7 @@
   },
   "site": {
     "id": "rec_ce2thrqg1ibmhfpnqtdg",
+    "logo": "http://publishkit.dev/attachements/logo/logo.svg",
     "name": "PublishKit",
     "description": "Markdown web apps",
     "url": "https://publishkit.dev",
@@ -41,5 +42,11 @@
   "social": {
     "github": "https://github.com/publishkit",
     "discord": "https://discord.gg/XMgVPajeT9"
+  },
+  "header": {
+    "name": false
+  },
+  "css": {
+    "logo-height": "1.6rem"
   }
 }

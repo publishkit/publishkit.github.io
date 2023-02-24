@@ -25,7 +25,7 @@
   </template>
   <template id="content">
     <h1>Pricing</h1>
-    <p data-bind="~period" data-ui="switch" class="my-5 mx-auto"></p>
+    <p class="my-5 mx-auto" data-bind="~period" data-ui="switch"></p>
     <ul>
       <li>monthly
         <ul>
@@ -38,7 +38,7 @@
         </ul>
       </li>
     </ul>
-    <p data-kit=".cards .center"></p>
+    <p class="cards center" data-ui=""></p>
     <ul>
       <li>
         <h2>free</h2>
@@ -93,7 +93,7 @@
     <ul>
       <li>You can activate as many kit as desired.</li>
       <li>Each kit has a unique <code>id</code></li>
-      <li>Each kit is associated with subscription. </li>
+      <li>Each kit is associated with a subscription. </li>
       <li>Kits are managed via the <a data-click="$chargebee.portal.open()" href="javascript:void(0)" class="internal-link"><i class="bx bxs-cog me-2"></i>Kit Portal</a></li>
       <li>The only configuration is a <code>domain</code> url.</li>
     </ul>
