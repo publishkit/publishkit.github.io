@@ -25,31 +25,31 @@
   </template>
   <template id="content">
     <h1>Plugins</h1>
-    <p>Everything on the page that is not the "actual content" is defacto rendered by a plugin.</p>
-    <p>Plugins are the core design principle of PublishKit. Without any plugins, content is rendered as is, without any transformations, onto the page. But with plugins, that's where the magic begins. Plugins can do anything. From fully tweaking and theming the UI, to creating and binding ui elements, or just exposing functions for other plugins to consume. The <code>kit</code> comes equiped with some <code>core</code> plugins out of the box. Other plugins are imagined and delivered by the <code>community</code>.</p>
-    <p>Everything in the <code>kit</code> is a plugin. Combined, plugins can delivers powerful characteristics, like turning independant static pages into fully featured web apps.</p>
+    <p>Everything on the page that is not the "actual content" is rendered by a plugin.</p>
+    <p>Plugins are the core design principle of the Kit. Without any plugins, content is rendered as is, without any transformations, onto the page. But with plugins, that's where the magic begins. Plugins can do anything. From fully tweaking and theming the UI, to creating and binding UI elements, or just exposing functions for other plugins to consume. The <code>kit</code> comes equipped with some <code>core</code> plugins out of the box. Other plugins are imagined and delivered by the <code>community</code>.</p>
+    <p>Everything in the <code>kit</code> is a plugin. Combined, plugins can deliver powerful characteristics, like turning independent static pages into fully featured web apps.</p>
     <ul>
       <li>list of <a href="plugins/core/index.html" class="internal-link">Core Plugins</a></li>
       <li>list of <a href="plugins/community/index.html" class="internal-link">Community Plugins</a></li>
       <li><a href="plugins/create.html" class="internal-link">Create a plugin</a></li>
     </ul>
     <h2>usage</h2>
-    <p>Plugins can be added and overided, taking precedence, in the frontmatter of the following files:</p>
+    <p>Plugins can be added and overrided, taking precedence, in the frontmatter of the following files:</p>
     <ul>
       <li>the <code>kitrc.md</code> - <a href="doc/services/kitrc.html" class="internal-link">$kitrc</a></li>
       <li>any <code>dirrc.md</code> file in any directory</li>
       <li>individual files</li>
       <li>in url - see <a href="url injection" class="internal-link">url injection</a></li>
     </ul>
-    <p>To register a plugin, in the frontmatter of any of the files mentionned above, add a key value pair under the <code>plugins</code> yaml object. Use the plugin name for the key, and set a <code>true</code> value. Ex:</p>
+    <p>To register a plugin, in the frontmatter of the files mentioned above, add a key value pair under the <code>plugins</code> YAML object. Use the plugin name for the key, and set a <code>true</code> value. Ex:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">navbar</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
-    <p>Note that only <code>core</code> and <code>local</code> plugins can register by simply specifying a <code>true</code> value. That's because their are included in the kit (for core plugins) or auto resolve (for local plugins). </p>
-    <p><code>community</code> plugins can just prefix the plugin name with a <code>@</code> sign, and <code>external</code> plugins have to specify their location with an url.</p>
-    <p>So depending on where the plugin live, you will register it differently. Exemple with the <code>ga</code> plugin:</p>
+    <p>Note that only <code>core</code> and <code>local</code> plugins can register by simply specifying a <code>true</code> value. That's because they are included in the kit (for core plugins) or auto resolve (for local plugins). </p>
+    <p><code>community</code> plugins can just prefix the plugin name with a <code>@</code> sign, and <code>external</code> plugins have to specify their location with a URL.</p>
+    <p>So, depending on where the plugin lives, you will register it differently. Example with the <code>ga</code> plugin:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token comment"># local</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -76,12 +76,12 @@
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token string">"@ga"</span>
 </code></pre>
-    <p>You can of course, in any page, overide the <code>kitrc</code> config or disable the plugin like so:</p>
+    <p>You can of course, in any page, override the <code>kitrc</code> config or disable the plugin like so:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 </code></pre>
     <h2>options</h2>
-    <p>Plugins can have options. For exemple the <code>ga</code> community plugin takes a google tracking <code>id</code>. At the root of the frontmatter, create a yaml object with the plugin name, and provide the option in a key value manner:</p>
+    <p>Plugins can have options. For example, the <code>ga</code> community plugin takes a Google tracking <code>id</code>. At the root of the frontmatter, create a YAML object with the plugin name, and provide the option in a key value manner:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token comment"># register plugins</span>
 <span class="token key atrule">plugins</span><span class="token punctuation">:</span>
   <span class="token key atrule">header</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -103,6 +103,26 @@
   <span class="token key atrule">darkmode</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">ga</span><span class="token punctuation">:</span> <span class="token string">"@ga|id:G-MDGQ40965Q"</span>
 </code></pre>
+    <h2>life cycle</h2>
+    <p>Plugins are orchestrated in the following way:</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">deps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">style</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> ui<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">transform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> ui<span class="token punctuation">.</span><span class="token method function property-access">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+    <p>In fact, those are the 8 lines of code that compose the <code>kit</code> main function. Plugins can implement any of the following methods of the lifecycle:</p>
+    <ul>
+      <li><code>init</code></li>
+      <li><code>deps</code></li>
+      <li><code>render</code></li>
+      <li><code>style</code></li>
+      <li><code>transform</code></li>
+      <li><code>bind</code></li>
+    </ul>
     <h2>api</h2>
     <div data-callout="note" class="callout">
       <div class="callout-title">

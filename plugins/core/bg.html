@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>bg</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="bg" />
+  <meta name="description" content="Custom backgrounds" />
+  <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta name="name" content="PublishKit" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="bg" />
+  <meta property="og:description" content="Custom backgrounds" />
+  <meta property="og:site_name" content="PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$bg","description":"Custom backgrounds"}
+  </template>
+  <template id="content">
+    <h1>bg</h1>
+    <blockquote>
+      <p>Customise the background</p>
+    </blockquote>
+    <h2>use</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">bg</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+    <h2>options</h2>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">bg</span><span class="token punctuation">:</span>
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//images.unsplash.com/photo<span class="token punctuation">-</span>1539035104074<span class="token punctuation">-</span>dee66086b5e3<span class="token punctuation">?</span>ixlib=rb<span class="token punctuation">-</span>1.2.1<span class="token important">&amp;ixid=eyJhcHBfaWQiOjI0MX0&amp;auto=format&amp;fit=crop&amp;w=2550&amp;q=80</span>
+  <span class="token key atrule">parralax</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+  </template>
+</body>
+
+</html>

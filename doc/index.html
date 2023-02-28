@@ -25,19 +25,19 @@
   </template>
   <template id="content">
     <h1>User Guide 📘</h1>
-    <p>PublishKit philosophy is to be able to publish markdown content on the web, effortlessly. The kit offers a set of tools designed around powerful heuristics that offers a range between zero configuration to advanced cross content workflows.</p>
-    <p>Each markdown file that PublishKit exports is processed and converted into a static html file, saved in the <code>kit</code> folder you configured.</p>
-    <p>Once a file, or files from a directory/vault, are exported, you can publish/deploy the <code>kit</code> folder to any hosting provider. PublishKit as it's name implies, is a kit, and don't take part in the hosting decision.</p>
-    <p>The kit embrace the <code>static</code> experience and is meant to be deployed at the edge on CDN's. They offer ultra hight speed delievery of your content to the users, worldwide, for free. One other advantage about static apps is because all pages are delivered at nearly instant speed, they make for very consistent and pleasent browsing experiences. Which is something PublishKit is deeply focusing on. Our goal is to design first class publishing experiences for content first applications.</p>
+    <p>The Kit philosophy is to be able to publish markdown content on the web, effortlessly. The kit offers a set of tools designed around powerful heuristics that offers a range between zero configuration to advanced cross content workflows.</p>
+    <p>Each markdown file that the kit exports is processed and converted into a static HTML file, saved in the <code>kit</code> folder you configured.</p>
+    <p>Once a file, or files from a directory/vault, are exported, you can publish/deploy the <code>kit</code> folder to any hosting provider. The Kit, as its name implies, is just a kit, and doesn't provide hosting.</p>
+    <p>The kit embraces the <code>static</code> experience and is meant to be deployed at the edge of CDN's. They offer ultra-high speed delivery of your content to the users, worldwide, for free. One other advantage about static apps is because all pages are delivered at nearly instant speed, they make for very consistent and pleasant browsing experiences. Which is something we are deeply focusing on. Our goal is to design first class publishing experiences for content first applications.</p>
     <h2>usage</h2>
     <ul>
       <li>via the <a href="doc/setup/cli.html" class="internal-link">CLI</a></li>
       <li>via our PKM plugin </li>
       <li>or both</li>
     </ul>
-    <p>Using the PKM plugin over the CLI has the advantage of benefiting from the PKM internal features. For exemple, <a href="doc/setup/obsidian.html" class="internal-link">Obsidian</a> users can use the wonderful <code>dataview</code> plugin to build out their content, and the queries will get published nicely.</p>
-    <p>Unlike the CLI who parse and export the markdown into html, the PKM integration bypass the markdown processing, and only processes the PKM html render, allowing PKM plugins tranformations to be publishable. Yes my friend!</p>
-    <p><em>Currently only <a href="doc/setup/obsidian.html" class="internal-link">Obsidian</a> is supported. more pkm's on the way.</em></p>
+    <p>Using the PKM plugin over the CLI has the advantage of benefiting from the PKM internal features. For example, <a href="doc/setup/obsidian.html" class="internal-link">Obsidian</a> users can use the wonderful <code>dataview</code> plugin to build out their content, and the queries will get published nicely.</p>
+    <p>Unlike the CLI who parses and exports the markdown into HTML, the PKM integration bypass the markdown processing, and only processes the PKM HTML render, allowing PKM plugins transformations to be publishable. Yes my friend!</p>
+    <p><em>Currently, only <a href="doc/setup/obsidian.html" class="internal-link">Obsidian</a> is supported. More pkm's on the way.</em></p>
     <h2>exporting</h2>
     <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># single file</span>
 kit <span class="token builtin class-name">export</span> index.md
@@ -45,7 +45,7 @@ kit <span class="token builtin class-name">export</span> index.md
 <span class="token comment"># multiple files</span>
 kit <span class="token builtin class-name">export</span> kitrc.md blog/myarticle.md
 </code></pre>
-    <p>In the kit folder, the converted files, along side linked assets like images &amp; pdfs, will mirror the same folder structure as their respective source file. Exported, the file <code>blog/myarticle.md</code> in your vault folder, will be located at <code>blog/myarticle.html</code> in the kit folder.</p>
+    <p>In the kit folder, the converted files, alongside linked assets like images &amp; PDFs, will mirror the same folder structure as their respective source file. Exported, the file <code>blog/myarticle.md</code> in your vault folder, will be located at <code>blog/myarticle.html</code> in the kit folder.</p>
     <div data-callout="tip" class="callout">
       <div class="callout-title">
         <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
@@ -58,7 +58,7 @@ kit <span class="token builtin class-name">export</span> kitrc.md blog/myarticle
       </div>
     </div>
     <h2>kit preview</h2>
-    <p>Before deploying your changes to your hosting provider, you can live preview your kit application locally. Assuming you have nodejs installed on your machine, open your terminal, navigate to your kit folder and and serve the folder by running:</p>
+    <p>Before deploying your changes to your hosting provider, you can live preview your kit application locally. Assuming you have nodejs installed on your machine, open your terminal, navigate to your kit folder and serve the folder by running:</p>
     <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token builtin class-name">cd</span> /path/to/kit
 npx http-server
 </code></pre>
@@ -67,17 +67,19 @@ npx http-server
         <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
             <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
           </svg></div>
-        <div class="callout-title-inner">CLI</div>
+        <div class="callout-title-inner">CLI command</div>
       </div>
       <div class="callout-content">
-        <p> <code>kit serve</code> is a proxy to the node http-server module, but can automatically open the browser. To specify a port run <code>pk serve -p 1337</code></p>
+        <p> You can run <code>kit serve</code>command, it's a proxy to the node http-server module, but can automatically open the browser. To specify a port run <code>pk serve -p 1337</code></p>
       </div>
     </div>
     <h2>publishing</h2>
     <p>The <code>kit</code> can be hosted anywhere.<br>
-      Preferably on ultra fast CDN's :)<br>
-      This website is hosted on github pages for intance.</p>
+      Preferably on ultra-fast CDN's :)<br>
+      This website is hosted on GitHub pages .</p>
+    <p></p>
     <div class="embed-content">
+      <div></div>
       <div>
         <h1>Setup</h1>
       </div>
@@ -101,7 +103,11 @@ npx http-server
         </div>
       </div>
     </div>
+    <div class="markdown-embed-content" style="display: none;"></div>
+    <p></p>
+    <p></p>
     <div class="embed-content">
+      <div></div>
       <div>
         <h1>Services</h1>
       </div>
@@ -140,6 +146,9 @@ npx http-server
         </div>
       </div>
     </div>
+    <div class="markdown-embed-content" style="display: none;"></div>
+    <p></p>
+    <p></p>
     <div class="embed-content">
       <div>
         <h1>Top level variables</h1>
@@ -154,6 +163,8 @@ npx http-server
         </ul>
       </div>
     </div>
+    <div class="markdown-embed-content" style="display: none;"></div>
+    <p></p>
   </template>
 </body>
 

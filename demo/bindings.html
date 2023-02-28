@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>bindings</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="bindings" />
+  <meta name="description" content="Markdown web apps" />
+  <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta name="name" content="PublishKit" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="bindings" />
+  <meta property="og:description" content="Markdown web apps" />
+  <meta property="og:site_name" content="PublishKit" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {}
+  </template>
+  <template id="content">
+    <h1>content binding</h1>
+    <h2>invoke plugins</h2>
+    <pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$navbar.toggle()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>div 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+&gt; Hero Title
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-kit</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$ui.grid<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>div 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+- one
+- two
+- three
+</code></pre>
+    <h2>div</h2>
+    <pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$navbar.toggle()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>div 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$chargebee.pay()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>div 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <div data-click="$navbar.toggle()">div 1</div>
+    <div data-click="$chargebee.pay()">div 2</div>
+  </template>
+</body>
+
+</html>
