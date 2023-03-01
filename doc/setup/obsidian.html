@@ -32,24 +32,26 @@
       <li>or install via the <a class="external-link" href="https://github.com/TfTHacker/obsidian42-brat" target="_blank">BRAT</a> plugin</li>
     </ul>
     <h2>use</h2>
-    <p>Now, whenever you want to export a file, you can either:</p>
     <ul>
       <li>click the paper-airplane icon <i class="bx bx-paper-plane"></i> in the left bar</li>
-      <li>open command palette with <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> and run <code>KIT: export file</code></li>
-      <li>or assign a shortcut to that command in the Obsidian settings</li>
+      <li>or in command palette, run <code>KIT: export file</code> or <code>KIT: export vault</code></li>
+      <li>you can assign a shortcut to any of those commands. <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>E</kbd> works pretty well for single file export.</li>
     </ul>
-    <p>You can also export all your notes at the time. </p>
-    <ul>
-      <li>open command palette with <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> and run <code>KIT: export vault</code></li>
-      <li>or assign a shortcut to that command in the Obsidian settings</li>
-    </ul>
-    <blockquote>
-      <p>![note] Vault export<br>
-        Make sure you configure the <code>include</code> &amp; <code>exclude</code> vault parameters inside the <code>kitrc</code>.</p>
-    </blockquote>
+    <div data-callout="note" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil">
+            <line x1="18" y1="2" x2="22" y2="6"></line>
+            <path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Vault export</div>
+      </div>
+      <div class="callout-content">
+        <p>Make sure you configure the <code>include</code> &amp; <code>exclude</code> vault parameters inside the <code>kitrc</code>.</p>
+      </div>
+    </div>
     <h2>configuration</h2>
     <p>When you export a note for the first time, <span class="dataview"><span>Obsidian Plugin</span></span> will ask you to specify the <code>kit</code> folder (the folder where you want your notes to be exported). You have to provide an absolute url to the folder.</p>
-    <p>It will create a <code>kitrc.md</code> at the root of your vault, containing the global configuration of your kit.</p>
+    <p>It will create a <code>kitrc.md</code> at the root of your vault, containing the global configuration of your kit. Learn about the <a href="doc/services/kitrc.html" class="internal-link">kitrc</a> file.</p>
   </template>
 </body>
 
