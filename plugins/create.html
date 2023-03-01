@@ -47,8 +47,8 @@
     <p>When a plugin is registered, it goes through the following optionnal life cycles.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">deps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">style</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">transform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -96,6 +96,39 @@
 	<span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">deps</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token string">"https://url.com/lib.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
+</code></pre>
+    <h2>style</h2>
+    <p>The <code>style</code> function is where you style your components. You can write vanilla css, or <a class="external-link" href="https://lesscss.org/" target="_blank">lesscss</a>.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">style</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  [id="toc.list"] {
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        &amp;:hover {
+          background: red;
+        }
+      }
+    }
+  }
+ 
+  @media (max-width: 576px) {
+    [id="toc.list"] {
+      display: none;
+    }
+  }
+
+  /* conditional render */
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span><span class="token punctuation">.</span><span class="token property-access">color</span> <span class="token operator">==</span> <span class="token string">"red"</span> <span class="token operator">?</span> `
+    <span class="token punctuation">[</span>id<span class="token operator">=</span><span class="token string">"toc.list"</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      ul <span class="token punctuation">{</span>
+        <span class="token literal-property property">background</span><span class="token operator">:</span> $<span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span><span class="token punctuation">.</span><span class="token property-access">color</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">}</span>
+`<span class="token punctuation">;</span>
 </code></pre>
     <h3>render</h3>
     <p>The <code>render</code> method is where you can register UI components.</p>
@@ -145,30 +178,6 @@
     <h3>addElement</h3>
     <h3>addHeaderIcon</h3>
     <h3>addModal</h3>
-    <h2>style</h2>
-    <p>The <code>style</code> function is where you style your components. You can write vanilla css, or <a class="external-link" href="https://lesscss.org/" target="_blank">lesscss</a>.</p>
-    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">style</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
-  [id="toc.list"] {
-    ul {
-      padding: 0;
-      margin: 0;
-
-      li {
-        list-style: none;
-        &amp;:hover {
-          background: red;
-        }
-      }
-    }
-  }
- 
-  @media (max-width: 576px) {
-    [id="toc.list"] {
-      display: none;
-    }
-  }
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-</code></pre>
   </template>
 </body>
 
