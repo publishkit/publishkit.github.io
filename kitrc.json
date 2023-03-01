@@ -13,7 +13,7 @@
     "keyswords": "markdown, publishing, blogging, blog, api doc"
   },
   "og": {
-    "image": "https://publishkit.dev/attachements/og-image.png"
+    "image": "https://publishkit.dev/attachements/og.png"
   },
   "plugins": {
     "theme": true,
