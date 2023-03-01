@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
   <meta name="title" content="Create a plugin" />
-  <meta name="description" content="Powers markdown into fully featured web apps." />
+  <meta name="description" content="Publish full featured web apps with markdown" />
   <meta name="image" content="https://publishkit.dev/attachements/og.png" />
   <meta name="name" content="The KIT" />
   <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
   <meta property="og:url" content="https://publishkit.dev" />
   <meta property="og:title" content="Create a plugin" />
-  <meta property="og:description" content="Powers markdown into fully featured web apps." />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
   <meta property="og:site_name" content="The KIT" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
@@ -25,12 +25,12 @@
   </template>
   <template id="content">
     <h1>Create a plugin</h1>
-    <p>Creating a plugin is very easy. In a javascript file, return a class defining your plugin.</p>
+    <p>Creating a plugin is very easy. In a javascript file, return a class defining your plugin, and set default options if the plugin has options.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">return</span> <span class="token keyword">class</span> <span class="token class-name">Plugin</span> <span class="token keyword">extends</span> <span class="token class-name">BasePlugin</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">,</span> <span class="token punctuation">{</span>
       <span class="token literal-property property">fontsize</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
-      <span class="token literal-property property">rate</span><span class="token operator">:</span> <span class="token number">35</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"purple"</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
@@ -44,7 +44,7 @@
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
     <h2>lifecycle</h2>
-    <p>When a plugin is registered, it goes through the following optionnal life cycles.</p>
+    <p>When a plugin is registered, it goes through the following optionnal life cycles, each of them giving you an opportunity to define your plugin.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">deps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">style</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

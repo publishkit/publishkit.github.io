@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
   <meta name="title" content="Obsidian Plugin" />
-  <meta name="description" content="Powers markdown into fully featured web apps." />
+  <meta name="description" content="Publish full featured web apps with markdown" />
   <meta name="image" content="https://publishkit.dev/attachements/og.png" />
   <meta name="name" content="The KIT" />
   <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
   <meta property="og:url" content="https://publishkit.dev" />
   <meta property="og:title" content="Obsidian Plugin" />
-  <meta property="og:description" content="Powers markdown into fully featured web apps." />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
   <meta property="og:site_name" content="The KIT" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
@@ -24,31 +24,32 @@
     {"title":"Obsidian Plugin","alias":"$setup.obsidian"}
   </template>
   <template id="content">
-    <h1>Obsidian setup</h1>
+    <h1>Obsidian</h1>
     <h2>install</h2>
-    <p>In Obsidian settings, go to community plugins, search &amp; install "<strong><span class="dataview"><span>Obsidian Plugin</span></span></strong>".</p>
+    <ul>
+      <li>repo url <a class="external-link" href="https://github.com/publishkit/obsidian" target="_blank">https://github.com/publishkit/obsidian</a></li>
+      <li>manually clone the repo inside your <code>.obsidian/plugins</code> folder.</li>
+      <li>or install via the <a class="external-link" href="https://github.com/TfTHacker/obsidian42-brat" target="_blank">BRAT</a> plugin</li>
+    </ul>
     <h2>use</h2>
     <p>Now, whenever you want to export a file, you can either:</p>
     <ul>
       <li>click the paper-airplane icon <i class="bx bx-paper-plane"></i> in the left bar</li>
-      <li>open command palette with <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> and run <code>PublishKit: export file</code></li>
+      <li>open command palette with <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> and run <code>KIT: export file</code></li>
       <li>or assign a shortcut to that command in the Obsidian settings</li>
     </ul>
-    <div data-callout="info" class="callout">
-      <div class="callout-title">
-        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="16" x2="12" y2="12"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg></div>
-        <div class="callout-title-inner">Info</div>
-      </div>
-      <div class="callout-content">
-        <p>Each note is exported independently. When you make a modification to a note you have to export the note again.</p>
-      </div>
-    </div>
+    <p>You can also export all your notes at the time. </p>
+    <ul>
+      <li>open command palette with <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> and run <code>KIT: export vault</code></li>
+      <li>or assign a shortcut to that command in the Obsidian settings</li>
+    </ul>
+    <blockquote>
+      <p>![note] Vault export<br>
+        Make sure you configure the <code>include</code> &amp; <code>exclude</code> vault parameters inside the <code>kitrc</code>.</p>
+    </blockquote>
     <h2>configuration</h2>
-    <p>When you export a note for the first time, <span class="dataview"><span>Obsidian Plugin</span></span> will ask you to specify the <code>kit</code> folder where you want your notes to be exported. You have to provide an absolute url to the folder.</p>
+    <p>When you export a note for the first time, <span class="dataview"><span>Obsidian Plugin</span></span> will ask you to specify the <code>kit</code> folder (the folder where you want your notes to be exported). You have to provide an absolute url to the folder.</p>
+    <p>It will create a <code>kitrc.md</code> at the root of your vault, containing the global configuration of your kit.</p>
   </template>
 </body>
 
