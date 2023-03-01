@@ -28,18 +28,14 @@
     <p>Creating a plugin is very easy. In a javascript file, return a class defining your plugin.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">return</span> <span class="token keyword">class</span> <span class="token class-name">Plugin</span> <span class="token keyword">extends</span> <span class="token class-name">BasePlugin</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	<span class="token comment">// default options</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">,</span> <span class="token punctuation">{</span>
       <span class="token literal-property property">fontsize</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
       <span class="token literal-property property">rate</span><span class="token operator">:</span> <span class="token number">35</span><span class="token punctuation">,</span>
-      <span class="token spread operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token function-variable function">render</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token comment">// register ui</span>
+    <span class="token comment">// create some ui</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
   
   <span class="token function-variable function">bind</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -48,11 +44,16 @@
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
     <h2>lifecycle</h2>
-    <p>When a plugin is registered, it goes through a simple lifecycle.</p>
-    <pre><code>init -&gt; render -&gt; bind
+    <p>When a plugin is registered, it goes through the following optionnal life cycles.</p>
+    <pre><code>await plugins.init();
+await plugins.deps();
+await plugins.render();
+await plugins.style();
+await plugins.transform();
+await plugins.bind();
 </code></pre>
     <h3>init</h3>
-    <p>Some plugins may require some initialisation before they get rendered. In that case, just provide an <code>init</code> function to your plugin class.</p>
+    <p>Some plugins may require some initialisation before they get rendered. In that case, just provide an <code>init</code> method to your plugin class.</p>
     <div data-callout="info" class="callout">
       <div class="callout-title">
         <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info">
@@ -70,26 +71,76 @@
       </div>
     </div>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
-	<span class="token comment">// do stuff</span>
+	<span class="token comment">// do stuff, load config</span>
 	<span class="token comment">// if everything ok, return true</span>
 	<span class="token comment">// else return false</span>
 	<span class="token keyword control-flow">return</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span>
 </code></pre>
+    <h3>deps</h3>
+    <p>The <code>deps</code> method let you include external dependencies, like <code>js</code> et <code>css</code> files. The method can be a flat array, or a function, if you need access to props.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token literal-property property">deps</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+	<span class="token string">"https://cdn.jsdelivr.net/lib.js"</span><span class="token punctuation">,</span>
+	<span class="token string">"https://cdn.jsdelivr.net/theme-v2.css"</span>
+<span class="token punctuation">]</span>
+
+<span class="token comment">// or dynamically</span>
+
+<span class="token function-variable function">deps</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">[</span>
+	<span class="token string">"https://url.com/lib.js"</span><span class="token punctuation">,</span>
+	<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://url.com/theme-v</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">options</span><span class="token punctuation">.</span><span class="token property-access">version</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.css</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">]</span>
+</code></pre>
+    <p>It's also possible to push a depedency inside the constructor:</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">id</span><span class="token operator">:</span> string<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">deps</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token string">"https://url.com/lib.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
     <h3>render</h3>
     <p>The <code>render</code> method is where you can register UI components.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">render</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
-	<span class="token comment">// do stuff</span>
+	<span class="token keyword">const</span> <span class="token punctuation">{</span> ui<span class="token punctuation">,</span> options <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">const</span> cta <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;i class="bx bx-dollar"&gt;&lt;/i&gt;</span><span class="token template-punctuation string">`</span></span>
+	<span class="token keyword">const</span> modal <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+	  &lt;input type="text" value="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>options<span class="token punctuation">.</span><span class="token property-access">amount</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">" /&gt;
+	  &lt;button data-click="$stripe.pay()"&gt;
+	    Pay Order
+	  &lt;/button&gt;
+	</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+	
+	ui<span class="token punctuation">.</span><span class="token method function property-access">addModal</span><span class="token punctuation">(</span><span class="token string">"my-modal"</span><span class="token punctuation">,</span> modal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	ui<span class="token punctuation">.</span><span class="token method function property-access">addElement</span><span class="token punctuation">(</span><span class="token string">"my-cta"</span><span class="token punctuation">,</span> <span class="token string">"header.right"</span><span class="token punctuation">,</span> cta<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    <h3>transform</h3>
+    <p>This is where it's appropriate to do all kind of dom manipulation. All plugins have rendered, but can still be transformed.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">transform</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> <span class="token punctuation">{</span> $dom<span class="token punctuation">,</span> $utils <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token dom variable">window</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> headings <span class="token operator">=</span> $dom<span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token method function property-access">find</span><span class="token punctuation">(</span><span class="token string">"h1, h2, h3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    headings<span class="token punctuation">.</span><span class="token method function property-access">each</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> slug <span class="token operator">=</span> $utils<span class="token punctuation">.</span><span class="token property-access">s</span><span class="token punctuation">.</span><span class="token method function property-access">slugify</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">=</span> <span class="token string">"heading-"</span> <span class="token operator">+</span> slug<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
     <h3>bind</h3>
-    <p>The <code>bind</code> method is where you bind your UI components.</p>
+    <p>The <code>bind</code> method is the last cycle, and is where you bind your UI components and make them dynamic.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">bind</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
-	<span class="token comment">// do stuff</span>
+	<span class="token keyword">const</span> <span class="token punctuation">{</span> ui <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">const</span> cta <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">"my-cta"</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> modal <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token method function property-access">get</span><span class="token punctuation">(</span><span class="token string">"my-modal"</span><span class="token punctuation">)</span>
+	
+	cta<span class="token punctuation">.</span><span class="token property-access">el</span><span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	  modal<span class="token punctuation">.</span><span class="token method function property-access">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre>
     <h2>UI</h2>
-    <p>More on <code>UI</code> later !</p>
+    <p>More on building <code>UI</code> later !</p>
     <h3>addAction</h3>
     <h3>addElement</h3>
     <h3>addHeaderIcon</h3>
@@ -97,7 +148,7 @@
     <h2>style</h2>
     <p>The <code>style</code> function is where you style your components. You can write vanilla css, or <a class="external-link" href="https://lesscss.org/" target="_blank">lesscss</a>.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token function-variable function">style</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
-  [id="right.toc.main"] {
+  [id="toc.list"] {
     ul {
       padding: 0;
       margin: 0;
@@ -112,7 +163,7 @@
   }
  
   @media (max-width: 576px) {
-    [id="right.toc.main"] {
+    [id="toc.list"] {
       display: none;
     }
   }
