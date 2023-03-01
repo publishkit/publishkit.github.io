@@ -45,12 +45,12 @@
 </code></pre>
     <h2>lifecycle</h2>
     <p>When a plugin is registered, it goes through the following optionnal life cycles.</p>
-    <pre><code>await plugins.init();
-await plugins.deps();
-await plugins.render();
-await plugins.style();
-await plugins.transform();
-await plugins.bind();
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">deps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">style</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">transform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
     <h3>init</h3>
     <p>Some plugins may require some initialisation before they get rendered. In that case, just provide an <code>init</code> method to your plugin class.</p>
@@ -111,7 +111,7 @@ await plugins.bind();
 	</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 	
 	ui<span class="token punctuation">.</span><span class="token method function property-access">addModal</span><span class="token punctuation">(</span><span class="token string">"my-modal"</span><span class="token punctuation">,</span> modal<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	ui<span class="token punctuation">.</span><span class="token method function property-access">addElement</span><span class="token punctuation">(</span><span class="token string">"my-cta"</span><span class="token punctuation">,</span> <span class="token string">"header.right"</span><span class="token punctuation">,</span> cta<span class="token punctuation">)</span>
+	ui<span class="token punctuation">.</span><span class="token method function property-access">addElement</span><span class="token punctuation">(</span><span class="token string">"my-cta"</span><span class="token punctuation">,</span> <span class="token string">"header.right"</span><span class="token punctuation">,</span> cta<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
     <h3>transform</h3>
