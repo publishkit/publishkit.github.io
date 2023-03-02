@@ -108,9 +108,9 @@
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">deps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">style</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> ui<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">transform</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">style</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> ui<span class="token punctuation">.</span><span class="token method function property-access">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword control-flow">await</span> plugins<span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
@@ -119,9 +119,10 @@
       <li><code>init</code></li>
       <li><code>deps</code></li>
       <li><code>render</code></li>
-      <li><code>style</code></li>
       <li><code>transform</code></li>
+      <li><code>style</code></li>
       <li><code>bind</code></li>
+      <li>You can find a more details about each life cycle here: <a href="plugins/create.html" class="internal-link">Create a plugin</a>.</li>
     </ul>
     <h2>api</h2>
     <div data-callout="note" class="callout">

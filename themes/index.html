@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Themes</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="Themes" />
+  <meta name="description" content="Play with themes" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="Themes" />
+  <meta property="og:description" content="Play with themes" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"title":"Themes","alias":"Themes, $themes","description":"Play with themes"}
+  </template>
+  <template id="content">
+    <h1>Themes</h1>
+    <p>UI &amp; UX is at the core of this project. You can use the default or the <a href="community.html" class="internal-link">community</a> themes, and adjust to your preferences through high level options. Ideally, <a href="themes/create.html" class="internal-link">create your own theme</a>.</p>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token comment"># @file=kitc.md</span>
+<span class="token comment"># register theme</span>
+<span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">"@default"</span>
+
+
+<span class="token comment"># custom options</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span>
+  <span class="token key atrule">highlight</span><span class="token punctuation">:</span> base16/green<span class="token punctuation">-</span>screen
+  <span class="token key atrule">primary</span><span class="token punctuation">:</span> <span class="token string">"#0f0"</span>
+  <span class="token key atrule">font</span><span class="token punctuation">:</span> monospace
+  <span class="token key atrule">headings</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">font</span><span class="token punctuation">:</span> bungee<span class="token punctuation">-</span>shade
+</code></pre>
+    <p>Tweak deeper and <a href="themes/create.html" class="internal-link">Create your theme</a></p>
+    <h2>options</h2>
+    <h3>highlight</h3>
+    <p>Highlight codeblocks with 197 languages and 248 styles from <a class="external-link" href="https://highlightjs.org/" target="_blank">highlightjs.org</a></p>
+    <ul>
+      <li><a class="internal-link" href="themes?theme=@default%7Chighlight:ascetic#heading-highlight">@default|highlight:ascetic</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Chighlight:Far#heading-highlight">@default|highlight:Far</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Chighlight:Base16%20/%20Icy%20Dark#heading-highlight">@default|highlight:Base16 / Icy Dark</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Chighlight:base16/green-screen#heading-highlight">@default|highlight:base16/green-screen</a></li>
+    </ul>
+    <p>Demo:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> hello world</span>
+
+you can write text <span class="token url">[<span class="token content">with links</span>](<span class="token url">http://example.com</span>)</span> inline or <span class="token url">[<span class="token content">link references</span>][<span class="token variable">1</span>]</span>.
+
+<span class="token list punctuation">*</span> one <span class="token italic"><span class="token punctuation">_</span><span class="token content">thing</span><span class="token punctuation">_</span></span> has <span class="token italic"><span class="token punctuation">*</span><span class="token content">em</span><span class="token punctuation">*</span></span>phasis
+<span class="token list punctuation">*</span> two <span class="token bold"><span class="token punctuation">__</span><span class="token content">things</span><span class="token punctuation">__</span></span> are <span class="token bold"><span class="token punctuation">**</span><span class="token content">bold</span><span class="token punctuation">**</span></span>
+
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> http://example.com</span>
+
+<span class="token hr punctuation">---</span>
+
+<span class="token title important">hello world
+<span class="token punctuation">===========</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>this_is</span> <span class="token attr-name">inline</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xml<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>this_is</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token blockquote punctuation">&gt;</span> markdown is so cool
+
+<span class="token code keyword">    so are code segments</span>
+
+<span class="token list punctuation">1.</span> one thing (yeah!)
+<span class="token list punctuation">2.</span> two thing <span class="token code-snippet code keyword">`i can write code`</span>, and <span class="token code-snippet code keyword">`more`</span> wipee!
+</code></pre>
+    <h3>primary</h3>
+    <p>Primary site color.</p>
+    <ul>
+      <li><a class="internal-link" href="themes?theme=@default%7Cprimary:orange#heading-primary">@default|primary:orange</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Cprimary:hex:0f0#heading-primary">@default|primary:hex:0f0</a></li>
+    </ul>
+    <h3>font</h3>
+    <p>Choose any of the 20k fonts from <a class="external-link" href="https://www.cdnfonts.com/" target="_blank">cdnfonts.com</a></p>
+    <ul>
+      <li><a class="internal-link" href="themes?theme=@default%7Cfont:Carleton#heading-font">@default|font:Carleton</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Cfont:One%20Day#heading-font">@default|font:One Day</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Cfont:Apes%20On%20Parade#heading-font">@default|font:Apes On Parade</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Cfont:KG%20Makes%20You%20Stronger#heading-font">@default|font:KG Makes You Stronger </a></li>
+    </ul>
+    <h3>headings</h3>
+    <p>By default headings inherits the <code>font</code> and <code>color</code> option. </p>
+    <ul>
+      <li><a class="internal-link" href="themes?theme=@default%7Cheadings.font:Kiti%20Cuties#heading-headings">@default|headings.font:Kiti Cuties</a></li>
+      <li><a class="internal-link" href="themes?theme=@default%7Cheadings.color:darkorange#heading-headings">@default|headings.color:darkorange</a></li>
+    </ul>
+    <h2>exemples</h2>
+    <ul>
+      <li><a class="internal-link" href="themes?theme=@matrix%7Cprimary:hex:0f0,highlight:false">@matrix</a></li>
+      <li><a class="internal-link" href="themes?theme=@matrix%7Cprimary:red,highlight:false">@matrix|primary:red</a></li>
+      <li><a class="internal-link" href="themes?theme=@matrix%7Cprimary:hex:fff,animate:false,highlight:false">@matrix|primary:hex:fff,animate:false</a></li>
+    </ul>
+  </template>
+</body>
+
+</html>

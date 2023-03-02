@@ -18,8 +18,12 @@
           "bxs-package"
         ],
         [
-          "<a href=\"theme/index.html\" class=\"internal-link\">Theme</a>",
+          "<a href=\"themes/index.html\" class=\"internal-link\">Themes</a>",
           "bx-palette"
+        ],
+        [
+          "<a href=\"community.html\" class=\"internal-link\">Community</a>",
+          "bx-group"
         ],
         [
           "<a href=\"doc/ui/elements/index.html\" class=\"internal-link\">UI</a>",

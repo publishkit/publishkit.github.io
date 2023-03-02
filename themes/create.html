@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create a theme</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="Create a theme" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="Create a theme" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"title":"Create a theme","alias":"Create a theme"}
+  </template>
+  <template id="content">
+    <h1>Create a theme</h1>
+    <p>Creating a theme is very easy. In a javascript file, return a class defining your theme, and start tweaking.</p>
+    <p>The exemple below is the actual <code>@default</code> theme of the kit. You can look at the source file <a class="external-link" href="https://github.com/publishkit/community/blob/main/themes/default.js" target="_blank">here</a>.</p>
+    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">return</span> <span class="token keyword">class</span> <span class="token class-name">Theme</span> <span class="token keyword">extends</span> <span class="token class-name">BaseTheme</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">highlight</span><span class="token operator">:</span> <span class="token string">"nord"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">font</span><span class="token operator">:</span> <span class="token string">"Marcher"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">style</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> modes <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+
+    modes<span class="token punctuation">.</span><span class="token method function property-access">css</span><span class="token punctuation">(</span><span class="token string">"all"</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      .ui-left {
+          background: var(--card-background-color);
+      }
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword control-flow">return</span> modes<span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+  </template>
+</body>
+
+</html>
