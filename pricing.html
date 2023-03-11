@@ -6,16 +6,16 @@
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
   <meta name="title" content="Pricing" />
-  <meta name="description" content="Markdown web apps" />
-  <meta name="image" content="https://publishkit.dev/attachements/og-image.png" />
-  <meta name="name" content="PublishKit" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
   <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta property="og:image" content="https://publishkit.dev/attachements/og-image.png" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
   <meta property="og:url" content="https://publishkit.dev" />
   <meta property="og:title" content="Pricing" />
-  <meta property="og:description" content="Markdown web apps" />
-  <meta property="og:site_name" content="PublishKit" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
 
@@ -24,8 +24,7 @@
     {"title":"Pricing","plugins":{"toc":false,"chargebee":"@chargebee|site:studio1337"},"props":{"period":"monthly","price":"(plan, period) => ~(`plans.${plan}.${period}`)","plans":{"free":{"monthly":0,"yearly":0},"perso":{"monthly":5,"yearly":50},"pro":{"monthly":50,"yearly":500}}}}
   </template>
   <template id="content">
-    <h1>Pricing</h1>
-    <p class="my-5 mx-auto" data-bind="~period" data-ui="switch"></p>
+    <p class="mb-5 mx-auto" data-bind="~period" data-ui="switch"></p>
     <ul>
       <li>monthly
         <ul>
@@ -53,7 +52,7 @@
         <hr>
         <ul>
           <li><a data-tooltip="discord" href="javascript:void(0)" class="internal-link"><i class="bx bxl-discord"></i></a> support</li>
-          <li><button data-cb-item-0="free-yearly" data-cb-type="checkout" class="outline"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
+          <li><button data-cb-item-0="free-yearly" data-cb-type="checkout" class="outline mt-4"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
         </ul>
       </li>
       <li>
@@ -69,7 +68,7 @@
         <hr>
         <ul>
           <li><a data-tooltip="email" href="javascript:void(0)" class="internal-link"><i class="bx bx-mail-send"></i></a> + <a data-tooltip="discord" href="javascript:void(0)" class="internal-link"><i class="bx bxl-discord"></i></a> support</li>
-          <li><button data-cb-item-0="perso-monthly" data-cb-type="checkout" data-show="~period=='monthly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button><button data-cb-item-0="perso-yearly" data-cb-type="checkout" data-show="~period=='yearly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
+          <li><button data-cb-item-0="perso-monthly" data-cb-type="checkout" data-show="~period=='monthly'" class="primary mt-4"><i class="bx bxs-plus-circle me-2"></i>add Kit</button><button data-cb-item-0="perso-yearly" data-cb-type="checkout" data-show="~period=='yearly'" class="primary mt-4"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
         </ul>
       </li>
       <li>
@@ -85,17 +84,18 @@
         <hr>
         <ul>
           <li><i class="bx bx-alarm"></i> priotity support</li>
-          <li><button data-cb-item-0="pro-monthly" data-cb-type="checkout" data-show="~period=='monthly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button><button data-cb-item-0="pro-yearly" data-cb-type="checkout" data-show="~period=='yearly'" class="primary"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
+          <li><button data-cb-item-0="pro-monthly" data-cb-type="checkout" data-show="~period=='monthly'" class="primary mt-4"><i class="bx bxs-plus-circle me-2"></i>add Kit</button><button data-cb-item-0="pro-yearly" data-cb-type="checkout" data-show="~period=='yearly'" class="primary mt-4"><i class="bx bxs-plus-circle me-2"></i>add Kit</button></li>
         </ul>
       </li>
     </ul>
+    <p style="max-width:600px;" class="m-auto" data-ui="wrap"></p>
     <h2>about kits</h2>
     <ul>
-      <li>You can activate as many kit as desired.</li>
+      <li>You can activate as many kits as desired.</li>
       <li>Each kit has a unique <code>id</code></li>
       <li>Each kit is associated with a subscription. </li>
       <li>Kits are managed via the <a data-click="$chargebee.portal.open()" href="javascript:void(0)" class="internal-link"><i class="bx bxs-cog me-2"></i>Kit Portal</a></li>
-      <li>The only configuration is a <code>domain</code> url.</li>
+      <li>The only configuration is a <code>domain</code> URL.</li>
     </ul>
     <div data-callout="tip" class="callout">
       <div class="callout-title">
@@ -113,18 +113,18 @@
       </div>
     </div>
     <h2>invoicing</h2>
-    <p>Our payment provider <a class="external-link" href="https://www.chargebee.com/" target="_blank">chargebee</a>, is a service that simplifies subscriptions based payments, on top of a <a class="external-link" href="https://stripe.com" target="_blank">stripe</a> or Paypal account. </p>
+    <p>Our payment provider, <a class="external-link" href="https://www.chargebee.com/" target="_blank">chargebee</a>, simplifies subscriptions based payments on top of a <a class="external-link" href="https://stripe.com" target="_blank">stripe</a> or PayPal account. </p>
     <p>From the <a data-click="$chargebee.portal.open()" href="javascript:void(0)" class="internal-link"><i class="bx bxs-cog me-2"></i>Kit Portal</a> you can manage all of your subscriptions (kits) and download associated invoices.</p>
-    <p>We are a french based company, and for now, only charge in euros, vat included.</p>
+    <p>We are a French based company, and for now, only charge in euros, vat included.</p>
     <h2>free usage</h2>
     <p>Kits are 100% free to use and register for:</p>
     <ul>
-      <li>anyone publishing open source content</li>
+      <li>any open source content</li>
       <li>anyone using the kit locally on their machine. </li>
     </ul>
-    <p>As soon as it leaves your local environnement, the kit will require a kit <code>id</code> to activate. The kid <code>id</code> has to be specified in the <code>site.id</code> config of the <code>kitrc</code>:</p>
-    <pre><code>site:
-  id: "my-kit-id"
+    <p>As soon as it leaves your local environment, the kit will require a kit <code>id</code> to activate. The kid id has to be specified in the <code>site.id</code> config of the <code>kitrc</code>:</p>
+    <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">site</span><span class="token punctuation">:</span>
+  <span class="token key atrule">id</span><span class="token punctuation">:</span> <span class="token string">"my-kit-id"</span>
 </code></pre>
     <div data-callout="note" class="callout">
       <div class="callout-title">
@@ -138,6 +138,7 @@
         <p>a kit can be used locally without having to be registered. use the cli <code>kit serve</code> command and to open your kit folder in the browser on localhost.</p>
       </div>
     </div>
+    <p data-ui="end"></p>
   </template>
 </body>
 
