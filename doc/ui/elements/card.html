@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>card</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="card" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="card" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$ui.card"}
+  </template>
+  <template id="content">
+    <h1>card</h1>
+    <h2>basic</h2>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+basic card
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-card=""></p>
+    <p>basic card</p>
+    <p data-end=""></p>
+    <h2>style</h2>
+    <p>You can style a card by using the <code>class</code> &amp; <code>style</code> attribute.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> 
+   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-primary text-white text-center py-4<span class="token punctuation">"</span></span>
+   <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">border</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--border-width</span><span class="token punctuation">)</span> solid <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--contrast</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+styled card
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p style="border: var(--border-width) solid var(--contrast);" class="bg-primary text-white text-center py-4" data-card=""></p>
+    <p>styled card</p>
+    <p data-end=""></p>
+    <h2>section</h2>
+    <p>Cards can be wrapped into <a href="doc/ui/elements/section.html" class="internal-link">sections</a>:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>diagonal primary-bg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+card inside a section
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p class="diagonal primary-bg" data-section=""></p>
+    <p class="text-center" data-card=""></p>
+    <p>card inside a section</p>
+    <p data-end=""></p>
+    <p data-end=""></p>
+    <h2>multi</h2>
+    <p>Multi cards can be rendered from a simple markdown list.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-auto<span class="token punctuation">"</span></span> 
+   <span class="token attr-name">data-item-class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-primary text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+-
+  <span class="token list punctuation">-</span> Batman
+  <span class="token list punctuation">-</span> xx
+-
+  <span class="token list punctuation">-</span> Superman
+  <span class="token list punctuation">-</span> xxx
+-
+  <span class="token list punctuation">-</span> Codeman
+  <span class="token list punctuation">-</span> xxx
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-item-class="bg-primary text-white" class="grid-auto" data-card=""></p>
+    <ul>
+      <li>
+        <ul>
+          <li>Batman</li>
+          <li>xx</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>Superman</li>
+          <li>xxx</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>Codeman</li>
+          <li>xxx</li>
+        </ul>
+      </li>
+    </ul>
+    <p data-end=""></p>
+    <p><span><img src="attachements/superman.png"></span></p>
+    <p><span><img src="attachements/batman.png"></span></p>
+    <p><span><img src="attachements/spiderman.png"></span></p>
+  </template>
+</body>
+
+</html>

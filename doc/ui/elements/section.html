@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>section</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="section" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="section" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$ui.section"}
+  </template>
+  <template id="content">
+    <h1>section</h1>
+    <p>When using a fluid layout, you can wrap any markdown into a section:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>section<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary-bg text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> Basic section</span>
+
+Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p class="primary-bg text-white mb-4" data-ui="section"></p>
+    <h1 class="noprocess">Basic section</h1>
+    <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p data-ui="end"></p>
+    <h2>background</h2>
+    <p>You can use the following classes:</p>
+    <ul>
+      <li><code>primary-bg</code></li>
+      <li><code>secondary-bg</code></li>
+      <li><code>gradient-bg</code></li>
+    </ul>
+    <p>You can also specify the background color in the <code>data-bg</code> prop:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>section<span class="token punctuation">"</span></span> <span class="token attr-name">data-bg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+red section
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p class="text-white" data-bg="red" data-ui="section"></p>
+    <p>red section</p>
+    <p data-ui="end"></p>
+    <h2>diagonal</h2>
+    <p class="diagonal v1 primary-bg text-white my-4" data-ui="section"></p>
+    <p>class="diagonal v1 primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <p class="diagonal v2 primary-bg text-white my-4" data-ui="section"></p>
+    <p>class="diagonal v2 primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <h2>angle</h2>
+    <p class="angle primary-bg text-white" data-bg="" data-ui="section"></p>
+    <p>class="angle v1 primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <p class="angle v2 primary-bg text-white" data-bg="" data-ui="section"></p>
+    <p>class="angle v2 primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <p class="angle v3 primary-bg text-white" data-bg="" data-ui="section"></p>
+    <p>class="angle v3 primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <p class="angle v4 primary-bg text-white" data-bg="" data-ui="section"></p>
+    <p>class="angle v4 primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <h2>waves</h2>
+    <p class="waves primary-bg text-white" data-ui="section"></p>
+    <p>class="waves primary-bg text-white"</p>
+    <p data-ui="end"></p>
+    <h2>spikes</h2>
+    <p class="spikes primary-bg text-white" data-ui="section"></p>
+    <p>class="spikes primary-bg text-white"</p>
+    <p data-ui="end"></p>
+  </template>
+</body>
+
+</html>
