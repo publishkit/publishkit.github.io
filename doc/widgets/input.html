@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>input</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="input" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="input" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$widget.input","props":{"name":"Bruce Wayne"}}
+  </template>
+  <template id="content">
+    <h1>input</h1>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`name`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token strike"><span class="token punctuation">~</span><span class="token content">name&lt;/span&gt;
+&lt;input type="text" data-bind="</span><span class="token punctuation">~</span></span>name" /&gt;
+</code></pre>
+    <p data-preview=""></p>
+    <p><code>name</code> = <span>~name</span></p><input data-bind="~name" type="text">
+    <p data-end=""></p>
+    <div data-callout="tip" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Debounce</div>
+      </div>
+      <div class="callout-content">
+        <p> You can debounce by passing a a delay in the <code>data-debounce="700"</code> attribute.</p>
+      </div>
+    </div>
+  </template>
+</body>
+
+</html>

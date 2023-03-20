@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <title>pdf</title>
+  <title>Publish on Gitlab</title>
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
-  <meta name="title" content="pdf" />
+  <meta name="title" content="Publish on Gitlab" />
   <meta name="description" content="Publish full featured web apps with markdown" />
   <meta name="image" content="https://publishkit.dev/attachements/og.png" />
   <meta name="name" content="The KIT" />
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
   <meta property="og:url" content="https://publishkit.dev" />
-  <meta property="og:title" content="pdf" />
+  <meta property="og:title" content="Publish on Gitlab" />
   <meta property="og:description" content="Publish full featured web apps with markdown" />
   <meta property="og:site_name" content="The KIT" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
@@ -21,12 +21,20 @@
 
 <body>
   <template id="frontmatter">
-    {"alias":"$ui.pdf"}
+    {"title":"Publish on Gitlab","alias":"$setup.github"}
   </template>
   <template id="content">
-    <h1>pdf</h1>
-    <p><span class="pdf"><iframe src="attachements/showcase-pdf.pdf" frameborder="no"></iframe></span></p>
-    <p>checkout the <a href="doc/plugins/core/pdf.html" class="internal-link">$pdf</a> plugin!</p>
+    <h1>Publish on Gitlab</h1>
+    <p>Gitlab Pages is a free CDN hosting provider. </p>
+    <h2>how to</h2>
+    <ul>
+      <li>Make your <code>vault</code> a git folder, and commit to one of your repo.</li>
+      <li>name the repo <code>reponame.gitlab.io</code></li>
+      <li>activate the "Pages" service in the repo settings.</li>
+      <li>browse your kit at <code>https://username.gitlab.io</code></li>
+    </ul>
+    <h2>custom domain</h2>
+    <p>Check <a class="external-link" href="https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/" target="_blank">add a custom domain</a>.</p>
   </template>
 </body>
 

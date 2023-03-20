@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <title>Community Themes</title>
+  <title>Publish on Github</title>
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
-  <meta name="title" content="Community Themes" />
+  <meta name="title" content="Publish on Github" />
   <meta name="description" content="Publish full featured web apps with markdown" />
   <meta name="image" content="https://publishkit.dev/attachements/og.png" />
   <meta name="name" content="The KIT" />
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
   <meta property="og:url" content="https://publishkit.dev" />
-  <meta property="og:title" content="Community Themes" />
+  <meta property="og:title" content="Publish on Github" />
   <meta property="og:description" content="Publish full featured web apps with markdown" />
   <meta property="og:site_name" content="The KIT" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
@@ -21,27 +21,20 @@
 
 <body>
   <template id="frontmatter">
-    {"title":"Community Themes","alias":"Community Themes"}
+    {"title":"Publish on Github","alias":"$setup.github"}
   </template>
   <template id="content">
-    <h1>Themes</h1>
-    <div class="block-language-dataview node-insert-event">
-      <table class="dataview">
-        <thead class="table-view-thead">
-          <tr class="table-view-tr-header">
-            <th class="table-view-th"><span>theme</span><span class="dataview small-text">2</span></th>
-          </tr>
-        </thead>
-        <tbody class="table-view-tbody">
-          <tr>
-            <td><span><a href="themes/community/default.html" class="internal-link">default</a></span></td>
-          </tr>
-          <tr>
-            <td><span><a href="themes/community/matrix.html" class="internal-link">matrix</a></span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <h1>Publish on Github</h1>
+    <p>Github Pages is a free CDN hosting provider. </p>
+    <h2>how to</h2>
+    <ul>
+      <li>Make your <code>vault</code> a git folder, and commit to one of your repo.</li>
+      <li>name the repo <code>reponame.github.io</code></li>
+      <li>activate the "Pages" service in the repo settings.</li>
+      <li>browse your kit at <code>https://username.github.io</code></li>
+    </ul>
+    <h2>custom domain</h2>
+    <p>Check <a class="external-link" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank">add a custom domain</a>.</p>
   </template>
 </body>
 

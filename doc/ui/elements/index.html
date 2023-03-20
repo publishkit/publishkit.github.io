@@ -24,8 +24,6 @@
     {"title":"UI showcase","alias":"$ui.showcase"}
   </template>
   <template id="content">
-    <h1>UI showcase</h1>
-    <p>This page showcases the UI components.</p>
     <p></p>
     <div class="embed-content">
       <div></div>
@@ -218,7 +216,7 @@
         <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token string">"bar,baz"</span><span class="token punctuation">.</span><span class="token method function property-access">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 </code></pre>
       </div>
-      <p>You can theme codeblocks with <a href="doc/services/theme#highlight" class="internal-link">$theme.highlight</a></p>
+      <p>You can theme codeblocks with <a href="doc/themes/index#heading-highlight" class="internal-link">$theme.highlight</a> prop, and you can add extra features with the <a href="doc/plugins/core/codeblocks.html" class="internal-link">codeblocks</a> plugin.</p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
@@ -236,6 +234,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>bx bxs-plane bx-lg<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
       </div>
+      <p data-preview=""></p>
       <div></div>
       <div>
         <div class="d-flex align-items-center">
@@ -245,6 +244,7 @@
           <i class="bx bxs-plane bx-lg"></i>
         </div>
       </div>
+      <p data-end=""></p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
@@ -254,7 +254,16 @@
       <div>
         <h1>image</h1>
       </div>
+      <div>
+        <pre class="language-markdown" tabindex="0"><code class="language-markdown">![[showcase-image.jpg||300]]
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>80<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attachements/showcase-image.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+      </div>
+      <p data-preview=""></p>
       <p><span width="300"><img width="300" src="attachements/showcase-image.jpg"></span></p>
+      <div><img src="attachements/showcase-image.jpg" width="80"></div>
+      <p data-end=""></p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
@@ -388,7 +397,7 @@
           </article>
         </dialog>
       </div>
-      <p>checkout the <a href="plugins/core/modal.html" class="internal-link">$modal</a> plugin!</p>
+      <p>checkout the <a href="doc/plugins/core/modal.html" class="internal-link">$modal</a> plugin!</p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
@@ -467,135 +476,14 @@
         <h1>pdf</h1>
       </div>
       <p><span class="pdf"><iframe src="attachements/showcase-pdf.pdf" frameborder="no"></iframe></span></p>
-      <p>checkout the <a href="plugins/core/pdf.html" class="internal-link">$pdf</a> plugin!</p>
+      <p>checkout the <a href="doc/plugins/core/pdf.html" class="internal-link">$pdf</a> plugin!</p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
     <p></p>
-    <div class="embed-content">
-      <div></div>
-      <div>
-        <h1>latex</h1>
-      </div>
-      <div>
-        <div class="math math-block"><mjx-container class="MathJax" jax="CHTML" display="true" style="position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>y</mi>
-                <mo>=</mo>
-                <mfrac>
-                  <mn>1</mn>
-                  <mi>x</mi>
-                </mfrac>
-              </math></mjx-assistive-mml></mjx-container></div>
-      </div>
-    </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
     <p></p>
-    <div class="embed-content">
-      <div></div>
-      <div>
-        <h1>color</h1>
-      </div>
-      <div>
-        <h2>backgrounds</h2>
-      </div>
-      <div>
-        <div class="p-1 px-2 mb-1 bg-primary">.bg-primary</div>
-        <div class="p-1 px-2 mb-1 bg-secondary">.bg-secondary</div>
-        <div class="p-1 px-2 mb-1 bg-success">.bg-success</div>
-        <div class="p-1 px-2 mb-1 bg-danger">.bg-danger</div>
-        <div class="p-1 px-2 mb-1 bg-warning">.bg-warning</div>
-        <div class="p-1 px-2 mb-1 bg-info">.bg-info</div>
-        <div class="p-1 px-2 mb-1 bg-white">.bg-white</div>
-        <div class="p-1 px-2 mb-1 bg-black">.bg-black</div>
-      </div>
-      <p></p>
-    </div>
-    <div class="markdown-embed-content" style="display: none;"></div>
-    <p></p>
-    <p></p>
-    <div class="embed-content">
-      <div></div>
-      <div>
-        <h1>section</h1>
-      </div>
-      <p>When using a fluid layout, you can wrap any markdown into a section:</p>
-      <div>
-        <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>section<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary-bg text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token title important"><span class="token punctuation">#</span> Basic section</span>
-
-Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-      </div>
-      <p class="primary-bg text-white mb-4" data-ui="section"></p>
-      <div>
-        <h1 class="noprocess">Basic section</h1>
-      </div>
-      <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <p data-ui="end"></p>
-      <div>
-        <h2>background</h2>
-      </div>
-      <p>You can use the following classes:</p>
-      <div>
-        <ul>
-          <li><code>primary-bg</code></li>
-          <li><code>secondary-bg</code></li>
-          <li><code>gradient-bg</code></li>
-        </ul>
-      </div>
-      <p>You can also specify the background color in the <code>data-bg</code> prop:</p>
-      <div>
-        <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>section<span class="token punctuation">"</span></span> <span class="token attr-name">data-bg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-
-red section
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>end<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-      </div>
-      <p class="text-white" data-bg="red" data-ui="section"></p>
-      <p>red section</p>
-      <p data-ui="end"></p>
-      <div>
-        <h2>diagonal</h2>
-      </div>
-      <p class="diagonal v1 primary-bg text-white my-4" data-ui="section"></p>
-      <p>class="diagonal v1 primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <p class="diagonal v2 primary-bg text-white my-4" data-ui="section"></p>
-      <p>class="diagonal v2 primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <div>
-        <h2>angle</h2>
-      </div>
-      <p class="angle primary-bg text-white" data-bg="" data-ui="section"></p>
-      <p>class="angle v1 primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <p class="angle v2 primary-bg text-white" data-bg="" data-ui="section"></p>
-      <p>class="angle v2 primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <p class="angle v3 primary-bg text-white" data-bg="" data-ui="section"></p>
-      <p>class="angle v3 primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <p class="angle v4 primary-bg text-white" data-bg="" data-ui="section"></p>
-      <p>class="angle v4 primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <div>
-        <h2>waves</h2>
-      </div>
-      <p class="waves primary-bg text-white" data-ui="section"></p>
-      <p>class="waves primary-bg text-white"</p>
-      <p data-ui="end"></p>
-      <div>
-        <h2>spikes</h2>
-      </div>
-      <p class="spikes primary-bg text-white" data-ui="section"></p>
-      <p>class="spikes primary-bg text-white"</p>
-      <p data-ui="end"></p>
-    </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
   </template>

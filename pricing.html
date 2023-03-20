@@ -24,7 +24,7 @@
     {"title":"Pricing","plugins":{"toc":false,"chargebee":"@chargebee|site:studio1337"},"props":{"period":"monthly","price":"(plan, period) => ~(`plans.${plan}.${period}`)","plans":{"free":{"monthly":0,"yearly":0},"perso":{"monthly":5,"yearly":50},"pro":{"monthly":50,"yearly":500}}}}
   </template>
   <template id="content">
-    <p class="mb-5 mx-auto" data-bind="~period" data-ui="switch"></p>
+    <p class="mb-5 mx-auto" data-bind="~period" data-switch=""></p>
     <ul>
       <li>monthly
         <ul>
@@ -37,7 +37,8 @@
         </ul>
       </li>
     </ul>
-    <p class="cards center" data-ui=""></p>
+    <p data-end=""></p>
+    <p data-item-class="text-center" class="grid-auto" data-card=""></p>
     <ul>
       <li>
         <h2>free</h2>
@@ -88,7 +89,8 @@
         </ul>
       </li>
     </ul>
-    <p style="max-width:600px;" class="m-auto" data-ui="wrap"></p>
+    <p data-end=""></p>
+    <p style="max-width:600px;" class="m-auto" data-div=""></p>
     <h2>about kits</h2>
     <ul>
       <li>You can activate as many kits as desired.</li>
@@ -122,7 +124,7 @@
       <li>any open source content</li>
       <li>anyone using the kit locally on their machine. </li>
     </ul>
-    <p>As soon as it leaves your local environment, the kit will require a kit <code>id</code> to activate. The kid id has to be specified in the <code>site.id</code> config of the <code>kitrc</code>:</p>
+    <p>As soon as it leaves your local environment, the kit will require a kit <code>id</code> to activate. The kit id has to be specified in the <code>site.id</code> config of the <a href="doc/services/kitrc.html" class="internal-link">kitrc</a>:</p>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">site</span><span class="token punctuation">:</span>
   <span class="token key atrule">id</span><span class="token punctuation">:</span> <span class="token string">"my-kit-id"</span>
 </code></pre>
@@ -138,7 +140,7 @@
         <p>a kit can be used locally without having to be registered. use the cli <code>kit serve</code> command and to open your kit folder in the browser on localhost.</p>
       </div>
     </div>
-    <p data-ui="end"></p>
+    <p data-end=""></p>
   </template>
 </body>
 

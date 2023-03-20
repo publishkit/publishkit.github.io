@@ -25,7 +25,7 @@
   </template>
   <template id="content">
     <h1>Create a plugin</h1>
-    <p>Creating a plugin is very easy. In a javascript file, return a class defining your plugin, and set default options if the plugin has options.</p>
+    <p>Creating a plugin is very easy. In a javascript file, return a class defining your plugin, and set some default options if needed.</p>
     <pre class="language-js" tabindex="0"><code class="language-js"><span class="token keyword control-flow">return</span> <span class="token keyword">class</span> <span class="token class-name">Plugin</span> <span class="token keyword">extends</span> <span class="token class-name">BasePlugin</span> <span class="token punctuation">{</span>
   <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">super</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> options<span class="token punctuation">,</span> <span class="token punctuation">{</span>

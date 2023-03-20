@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>card</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="card" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="card" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$widget.card"}
+  </template>
+  <template id="content">
+    <h1>card</h1>
+    <h2>basic</h2>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> my title</span>
+I'm <span class="token bold"><span class="token punctuation">**</span><span class="token content">bold text</span><span class="token punctuation">**</span></span> inside a <span class="token code-snippet code keyword">`card`</span> widget.
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-preview=""></p>
+    <h1 class="noprocess">my title</h1>
+    <p>I'm <strong>bold text</strong> inside a <code>card</code> widget.</p>
+    <p data-end=""></p>
+    <h2>style</h2>
+    <p>You can style a card by using the <code>class</code> &amp; <code>style</code> attribute.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> 
+   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-primary text-white text-center py-4<span class="token punctuation">"</span></span>
+   <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">px</span> solid <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--contrast</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+styled card
+
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p style="border: 10px solid var(--contrast);" class="bg-primary text-white text-center py-4" data-card=""></p>
+    <p>styled card</p>
+    <p data-end=""></p>
+    <h2>multi</h2>
+    <p>Multi cards can be rendered from a simple markdown list.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-auto<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+-
+  <span class="token list punctuation">-</span> ![[superman.png]]
+  <span class="token list punctuation">-</span> ## Superman
+-
+  <span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>attachements/batman.png<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token list punctuation">-</span> ## Batman
+-
+  <span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://publishkit.dev/attachements/spiderman.png<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token list punctuation">-</span> ## Spiderman
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p class="grid-auto" data-card=""></p>
+    <ul>
+      <li>
+        <ul>
+          <li><span><img src="attachements/superman.png"></span></li>
+          <li>
+            <h2 class="noprocess">Superman</h2>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li><span><img src="attachements/batman.png"></span></li>
+          <li>
+            <h2 class="noprocess">Batman</h2>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li><span><img src="attachements/spiderman.png"></span></li>
+          <li>
+            <h2 class="noprocess">Spiderman</h2>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p data-end=""></p>
+    <p>You can style each item with:</p>
+    <ul>
+      <li>data-item-class</li>
+      <li>data-item-style</li>
+    </ul>
+    <h2>data-item-click</h2>
+    <p>Add a click listener to each item list element. You have access to the current item, the index, and the items array.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">data-item-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$app.goto(item.href)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">-</span> Themes
+	<span class="token list punctuation">-</span> href: [[doc/themes]]
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bx-palette<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token list punctuation">-</span> Plugins
+	<span class="token list punctuation">-</span> href: doc/plugins
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-package<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token list punctuation">-</span> Widgets
+	<span class="token list punctuation">-</span> href: doc/widgets
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-widget<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-item-click="$app.goto(item.href)" data-item-class="cursor" class="grid-2 fixed center" data-card=""></p>
+    <ul>
+      <li>Themes
+        <ul>
+          <li>href: <a href="doc/themes" class="internal-link">doc/themes</a></li>
+          <li><i class="bx bx-palette"></i></li>
+        </ul>
+      </li>
+      <li>Plugins
+        <ul>
+          <li>href: doc/plugins</li>
+          <li><i class="bx bxs-package"></i></li>
+        </ul>
+      </li>
+      <li>Widgets
+        <ul>
+          <li>href: doc/widgets</li>
+          <li><i class="bx bxs-widget"></i></li>
+        </ul>
+      </li>
+    </ul>
+    <p data-end=""></p>
+    <h2>data-href</h2>
+    <p>Each card item content gets wrappred inside a link tag.</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">data-item-href</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">-</span> Themes
+	<span class="token list punctuation">-</span> href: [[doc/themes]]
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bx-palette<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token list punctuation">-</span> Plugins
+	<span class="token list punctuation">-</span> href: doc/plugins
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-package<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+<span class="token list punctuation">-</span> Widgets
+	<span class="token list punctuation">-</span> href: doc/widgets
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-widget<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-item-href="" class="grid-2 fixed center" data-card=""></p>
+    <ul>
+      <li>Themes
+        <ul>
+          <li>href: <a href="doc/themes" class="internal-link">doc/themes</a></li>
+          <li><i class="bx bx-palette"></i></li>
+        </ul>
+      </li>
+      <li>Plugins
+        <ul>
+          <li>href: doc/plugins</li>
+          <li><i class="bx bxs-package"></i></li>
+        </ul>
+      </li>
+      <li>Widgets
+        <ul>
+          <li>href: doc/widgets</li>
+          <li><i class="bx bxs-widget"></i></li>
+        </ul>
+      </li>
+    </ul>
+    <p data-end=""></p>
+  </template>
+</body>
+
+</html>

@@ -21,7 +21,7 @@
 
 <body>
   <template id="frontmatter">
-    {"alias":"$props","core":true,"author":"louis","description":"Dynamic content bindings","props":{"color":"red","counter":1,"tickers":["€","¥"],"total":"(price, qty, ticker='€') => (price * qty) + ticker","foo":{"bar":"baz"}}}
+    {"alias":"$props","core":true,"author":"louis","description":"Dynamic content bindings","props":{"color":"red","counter":1,"tickers":["€","¥"],"total":"(price, qty, ticker='€') => (price * qty) + ticker","toggleColor":"() => { ~color = ~color == 'red' ? 'blue' : 'red' }","foo":{"bar":"baz"}}}
   </template>
   <template id="content">
     <h1>props</h1>
@@ -34,6 +34,7 @@
   <span class="token key atrule">color</span><span class="token punctuation">:</span> <span class="token string">"red"</span>
   <span class="token key atrule">tickers</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"€"</span><span class="token punctuation">,</span> <span class="token string">"¥"</span><span class="token punctuation">]</span>
   <span class="token key atrule">total</span><span class="token punctuation">:</span> <span class="token string">"(price, qty, ticker=0) =&gt; (price * qty) + ~tickers[ticker]"</span>
+  <span class="token key atrule">toggleColor</span><span class="token punctuation">:</span> <span class="token string">"() =&gt; { ~color = ~color == 'red' ? 'blue' : 'red' }"</span>
   <span class="token key atrule">foo</span><span class="token punctuation">:</span>
     <span class="token key atrule">bar</span><span class="token punctuation">:</span> <span class="token string">"baz"</span>
 </code></pre>
@@ -98,7 +99,7 @@
 </code></pre>
     <h2>data-click</h2>
     <p>Use props inside click events:</p>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown">counter = ~counter
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`counter`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>~counter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~counter--<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   decrement
@@ -107,68 +108,55 @@
   increment
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-    <p>counter = <span>~counter</span></p><button data-click="~counter--" class="secondary outline">
+    <p data-preview=""></p>
+    <p><code>counter</code> = <span>~counter</span></p><button data-click="~counter--" class="secondary outline me-2">
       <i class="bx bx-minus-circle me-2"></i>decrement
     </button>
     <button data-click="~counter++" class="secondary outline">
       <i class="bx bx-plus-circle me-2"></i>increment
     </button>
-    <h2>data-ui</h2>
-    <p>You can transform lists into specific ui components, by inserting a html <code>p</code> tag before the list, and specifying a <code>data-ui</code> component.</p>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-<span class="token list punctuation">-</span> red
-<span class="token list punctuation">-</span> blue
-</code></pre>
-    <p data-ui="switch"></p>
-    <ul>
-      <li>red</li>
-      <li>blue</li>
-    </ul>
+    <p data-end=""></p>
     <h2>data-bind</h2>
-    <p>You can bind ui components to a props, so that it's stays in sync:</p>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-ui</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span> <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <p>You can bind props to native html inputs and kit <a href="doc/widgets/index.html" class="internal-link">widgets</a>. </p>
+    <ul>
+      <li>on an input:</li>
+    </ul>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`foo.bar`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span><span class="token strike"><span class="token punctuation">~</span><span class="token content">foo.bar&lt;/span&gt;
+&lt;input type="text" data-bind="</span><span class="token punctuation">~</span></span>foo.bar" /&gt;
+</code></pre>
+    <p data-preview=""></p>
+    <p><code>foo.bar</code> = <span>~foo.bar</span></p><input data-bind="~foo.bar" type="text">
+    <p data-end=""></p>
+    <ul>
+      <li>on a kit widget</li>
+    </ul>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`color`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>~color<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-switch</span> <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
 <span class="token list punctuation">-</span> red
 <span class="token list punctuation">-</span> blue
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-    <p>current <code>color</code> value = <span>~color</span></p>
-    <p data-bind="~color" data-ui="switch"></p>
+    <p data-preview=""></p>
+    <p><code>color</code> = <span>~color</span></p>
+    <p data-bind="~color" data-switch=""></p>
     <ul>
       <li>red</li>
       <li>blue</li>
     </ul>
+    <p data-end=""></p>
+    <p data-end=""></p>
     <h2>data-show</h2>
     <p>Display an element when a given condition is met:</p>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color==<span class="token punctuation">'</span>red<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>red<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~toggleColor()<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Toggle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color==<span class="token punctuation">'</span>red<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>red<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-show</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color==<span class="token punctuation">'</span>blue<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>blue<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-    <p>Ex: <span data-show="~color=='red'">red</span><span data-show="~color=='blue'">blue</span></p>
-    <h2>lists</h2>
-    <p>Basic list:</p>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> monthly
-<span class="token list punctuation">-</span> yearly
-</code></pre>
-    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token punctuation">[</span>
-  <span class="token punctuation">{</span> <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"monthly"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span> <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"yearly"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span>
-</code></pre>
-    <p>Detailed list:</p>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token list punctuation">-</span> monthly
-  <span class="token list punctuation">-</span> label: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bx-calendar me-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>MONTHLY
-<span class="token list punctuation">-</span> yearly
-  <span class="token list punctuation">-</span> label: YEARLY <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-gift ms-2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-    <pre class="language-js" tabindex="0"><code class="language-js"><span class="token punctuation">[</span>
-  <span class="token punctuation">{</span> 
-    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"monthly"</span><span class="token punctuation">,</span> 
-    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"&lt;i class='bx bx-calendar me-2'&gt;&lt;/i&gt;MONTHLY"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span> 
-    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"yearly"</span><span class="token punctuation">,</span> 
-    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"YEARLY &lt;i class='bx bx-gift me-2'&gt;&lt;/i&gt;"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span>
-</code></pre>
+    <p data-preview=""></p>
+    <p><button class="d-inline m-0 me-4" role="button" data-click="~toggleColor()">Toggle</button><span data-show="~color=='red'">red</span><span data-show="~color=='blue'">blue</span></p>
+    <p data-end=""></p>
   </template>
 </body>
 

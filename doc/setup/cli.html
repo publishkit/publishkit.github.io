@@ -25,6 +25,38 @@
   </template>
   <template id="content">
     <h1>Cli setup</h1>
+    <p>The Cli</p>
+    <h2>install</h2>
+    <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">npm</span> -g <span class="token function">install</span> @publishkit/cli
+// or
+<span class="token function">yarn</span> -g <span class="token function">add</span> @publishkit/cli
+</code></pre>
+    <h2>export</h2>
+    <pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># single file</span>
+kit <span class="token builtin class-name">export</span> index.md
+
+<span class="token comment"># multiple files</span>
+kit <span class="token builtin class-name">export</span> kitrc.md blog/myarticle.md
+</code></pre>
+    <h2>serve</h2>
+    <p>Serve your kit folder locally in the browser. In your kit folder run:</p>
+    <pre class="language-bash" tabindex="0"><code class="language-bash">kit serve -p <span class="token number">1337</span>
+</code></pre>
+    <div data-callout="tip" class="callout">
+      <div class="callout-title">
+        <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg></div>
+        <div class="callout-title-inner">Tip</div>
+      </div>
+      <div class="callout-content">
+        <p> The serve command is an alias of the node <a class="external-link" href="https://github.com/http-party/http-server" target="_blank">http-server</a> module, but can automatically open up the browser. To specify a port run <code>pk serve -p 1337</code></p>
+      </div>
+    </div>
+    <h2>ls</h2>
+    <p>The <code>ls</code> command is pretty handy and let you list all the files that match the <code>include</code> &amp; <code>exclude</code> settings in your <a href="kitrc.html" class="internal-link">kitrc</a>. Make sure you are in your <code>vault</code> folder (the folder containing your markdown files) and run:</p>
+    <pre class="language-bash" tabindex="0"><code class="language-bash">kit <span class="token function">ls</span>
+</code></pre>
   </template>
 </body>
 
