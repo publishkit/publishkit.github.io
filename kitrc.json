@@ -44,7 +44,14 @@
     "discord": "https://discord.gg/XMgVPajeT9"
   },
   "header": {
-    "name": false
+    "name": false,
+    "class": "shadow"
+  },
+  "cards": {
+    "class": "shadow",
+    "item": {
+      "class": "shadow"
+    }
   },
   "css": {
     "logo-height": "1.6rem",
