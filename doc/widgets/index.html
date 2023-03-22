@@ -129,9 +129,11 @@ padded <span class="token italic"><span class="token punctuation">*</span><span 
       <div><input data-bind="~name" type="text"></div>
       <p data-end=""></p>
       <div>
-        <div data-callout="tip" class="callout node-insert-event">
+        <div data-callout="tip" class="callout">
           <div class="callout-title">
-            <div class="callout-icon"><svg width="16" height="16"></svg></div>
+            <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+              </svg></div>
             <div class="callout-title-inner">Debounce</div>
           </div>
           <div class="callout-content">
@@ -179,9 +181,9 @@ padded <span class="token italic"><span class="token punctuation">*</span><span 
       <div>
         <h1>section</h1>
       </div>
-      <p>Sections are meant to be used with <code>layout.fluid</code>, and take 100% of the width wiewport. You can wrap any markdown into a section:</p>
+      <p>Sections are meant to be used with <code>layout.fluid</code>, and takes 100% of the width wiewport. You can wrap any markdown into a section:</p>
       <div>
-        <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>primary-bg text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+        <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gradient-bg text-white<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token title important"><span class="token punctuation">#</span> Basic section</span>
 
@@ -190,7 +192,7 @@ Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
       </div>
-      <p class="primary-bg text-white mb-4" data-section=""></p>
+      <p class="gradient-bg text-white mb-4" data-section=""></p>
       <div>
         <h1 class="noprocess">Basic section</h1>
       </div>
@@ -225,7 +227,36 @@ red section
       <p class="diagonal v1 primary-bg text-white my-4" data-section=""></p>
       <p>class="diagonal v1 primary-bg text-white"</p>
       <p data-end=""></p>
-      <div></div>
+      <p class="diagonal v2 primary-bg text-white my-4" data-section=""></p>
+      <p>class="diagonal v2 primary-bg text-white"</p>
+      <p data-end=""></p>
+      <div>
+        <h2>angle</h2>
+      </div>
+      <p class="angle primary-bg text-white" data-bg="" data-section=""></p>
+      <p>class="angle v1 primary-bg text-white"</p>
+      <p data-end=""></p>
+      <p class="angle v2 primary-bg text-white" data-bg="" data-section=""></p>
+      <p>class="angle v2 primary-bg text-white"</p>
+      <p data-end=""></p>
+      <p class="angle v3 primary-bg text-white" data-bg="" data-section=""></p>
+      <p>class="angle v3 primary-bg text-white"</p>
+      <p data-end=""></p>
+      <p class="angle v4 primary-bg text-white" data-bg="" data-section=""></p>
+      <p>class="angle v4 primary-bg text-white"</p>
+      <p data-end=""></p>
+      <div>
+        <h2>waves</h2>
+      </div>
+      <p class="waves primary-bg text-white" data-section=""></p>
+      <p>class="waves primary-bg text-white"</p>
+      <p data-end=""></p>
+      <div>
+        <h2>spikes</h2>
+      </div>
+      <p class="spikes primary-bg text-white" data-section=""></p>
+      <p>class="spikes primary-bg text-white"</p>
+      <p data-end=""></p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
@@ -263,6 +294,8 @@ I'm <span class="token bold"><span class="token punctuation">**</span><span clas
    <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">px</span> solid <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--contrast</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
 styled card
+
+
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
@@ -330,14 +363,15 @@ styled card
       <div>
         <h2>data-item-click</h2>
       </div>
+      <p>Add a click listener to each item list element. You have access to the current item, the index, and the items array.</p>
       <div>
         <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">data-item-click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$app.goto(item.href)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token list punctuation">-</span> Themes
-	<span class="token list punctuation">-</span> href: themes
+	<span class="token list punctuation">-</span> href: [[doc/themes]]
 	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bx-palette<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 <span class="token list punctuation">-</span> Plugins
-	<span class="token list punctuation">-</span> href: plugins
+	<span class="token list punctuation">-</span> href: doc/plugins
 	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-package<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 <span class="token list punctuation">-</span> Widgets
 	<span class="token list punctuation">-</span> href: doc/widgets
@@ -346,18 +380,18 @@ styled card
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
       </div>
-      <p data-item-href="item.href + 'foo'" data-item-click_disable="$app.goto(item.href)" data-item-class="cursor" class="grid-2 fixed center" data-card=""></p>
+      <p data-item-click="$app.goto(item.href)" data-item-class="cursor" class="grid-2 fixed center" data-card=""></p>
       <div>
         <ul>
           <li>Themes
             <ul>
-              <li>href: themes</li>
+              <li>href: <a href="doc/themes" class="internal-link">doc/themes</a></li>
               <li><i class="bx bx-palette"></i></li>
             </ul>
           </li>
           <li>Plugins
             <ul>
-              <li>href: plugins</li>
+              <li>href: doc/plugins</li>
               <li><i class="bx bxs-package"></i></li>
             </ul>
           </li>
@@ -373,19 +407,47 @@ styled card
       <div>
         <h2>data-href</h2>
       </div>
+      <p>Each card item content gets wrappred inside a link tag, pulling the value from the <code>href</code> props passed to each item of the list.</p>
       <div>
         <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">data-item-href</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token list punctuation">-</span> Themes
 	<span class="token list punctuation">-</span> href: [[doc/themes]]
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bx-palette<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 <span class="token list punctuation">-</span> Plugins
-	<span class="token list punctuation">-</span> href: [[doc/plugins]]
+	<span class="token list punctuation">-</span> href: doc/plugins
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-package<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 <span class="token list punctuation">-</span> Widgets
-	<span class="token list punctuation">-</span> href: [[doc/widgets]]
+	<span class="token list punctuation">-</span> href: doc/widgets
+	<span class="token list punctuation">-</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bx bxs-widget<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
       </div>
+      <p data-item-href="" class="grid-2 fixed center" data-card=""></p>
+      <div>
+        <ul>
+          <li>Themes
+            <ul>
+              <li>href: <a href="doc/themes" class="internal-link">doc/themes</a></li>
+              <li><i class="bx bx-palette"></i></li>
+            </ul>
+          </li>
+          <li>Plugins
+            <ul>
+              <li>href: doc/plugins</li>
+              <li><i class="bx bxs-package"></i></li>
+            </ul>
+          </li>
+          <li>Widgets
+            <ul>
+              <li>href: doc/widgets</li>
+              <li><i class="bx bxs-widget"></i></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <p data-end=""></p>
     </div>
     <div class="markdown-embed-content" style="display: none;"></div>
     <p></p>
