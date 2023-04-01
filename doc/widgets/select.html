@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>select</title>
+  <meta charset="utf-8" />
+  <meta name="url" content="https://publishkit.dev" />
+  <meta name="title" content="select" />
+  <meta name="description" content="Publish full featured web apps with markdown" />
+  <meta name="image" content="https://publishkit.dev/attachements/og.png" />
+  <meta name="name" content="The KIT" />
+  <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
+  <meta property="og:url" content="https://publishkit.dev" />
+  <meta property="og:title" content="select" />
+  <meta property="og:description" content="Publish full featured web apps with markdown" />
+  <meta property="og:site_name" content="The KIT" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
+</head>
+
+<body>
+  <template id="frontmatter">
+    {"alias":"$widget.select","props":{"color":"red","colors":[]}}
+  </template>
+  <template id="content">
+    <h1>select</h1>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`color`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>~color<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-select</span> <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">-</span> red
+<span class="token list punctuation">-</span> blue
+<span class="token list punctuation">-</span> purple
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-preview=""></p>
+    <p><code>color</code> = <span>~color</span></p>
+    <p placeholder="Pick color" data-bind="~color" data-select=""></p>
+    <ul>
+      <li>red</li>
+      <li>blue</li>
+      <li>purple</li>
+    </ul>
+    <p data-end=""></p>
+    <p data-end=""></p>
+    <p>Multi select by adding <code>multiple</code> prop to the widget:</p>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`colors`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>~colors<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-select</span>
+   <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~colors<span class="token punctuation">"</span></span>
+   <span class="token attr-name">multiple</span>
+   <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Pick color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">-</span> red
+<span class="token list punctuation">-</span> blue
+<span class="token list punctuation">-</span> purple
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+    <p data-preview=""></p>
+    <p><code>colors</code> = <span>~colors</span></p>
+    <p placeholder="Pick color" data-bind="~colors" multiple="" data-select=""></p>
+    <ul>
+      <li>red</li>
+      <li>blue</li>
+      <li>purple</li>
+    </ul>
+    <p data-end=""></p>
+    <p data-end=""></p>
+  </template>
+</body>
+
+</html>

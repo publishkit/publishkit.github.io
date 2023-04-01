@@ -26,16 +26,37 @@
   <template id="content">
     <h1>form</h1>
     <div>
-      <input value="foobar" type="text">
-      <input type="date">
-      <input type="time">
-      <input type="color">
-      <input value="foobar" type="search">
-      <select>
-        <option selected="" value="">Select a fruit…</option>
-        <option>…</option>
-        <option>…</option>
+      <fieldset>
+        <input value="" type="text">
+      </fieldset>
+      <fieldset>
+        <input type="date">
+      </fieldset>
+      <fieldset>
+        <input type="time">
+      </fieldset>
+      <fieldset>
+        <input type="color">
+      </fieldset>
+      <fieldset>
+        <input placeholder="search" type="search">
+      </fieldset>
+    </div>
+    <fieldset>
+      <select placeholder="Select" data-select="">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
       </select>
+    </fieldset>
+    <fieldset>
+      <select placeholder="Multi Select" multiple="" data-select="">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </fieldset>
+    <fieldset>
       <details role="list">
         <summary aria-haspopup="listbox">Dropdown</summary>
         <ul role="listbox">
@@ -44,22 +65,21 @@
           <li><a data-click="return false" href="#" class="internal-link">Something else here</a></li>
         </ul>
       </details>
-
-      <fieldset>
-        <label for="small">
-          <input checked="" value="small" name="size" id="small" type="radio">
-          radio
-        </label>
-        <label for="medium">
-          <input value="medium" name="size" id="medium" type="radio">
-          radio
-        </label>
-        <label for="extralarge">
-          <input disabled="" value="extralarge" name="size" id="extralarge" type="radio">
-          disabled
-        </label>
-      </fieldset>
-    </div>
+    </fieldset>
+    <fieldset>
+      <label for="small">
+        <input checked="" value="small" name="size" id="small" type="radio">
+        radio
+      </label>
+      <label for="medium">
+        <input value="medium" name="size" id="medium" type="radio">
+        radio
+      </label>
+      <label for="extralarge">
+        <input disabled="" value="extralarge" name="size" id="extralarge" type="radio">
+        disabled
+      </label>
+    </fieldset>
     <fieldset>
       <label for="terms">
         <input name="terms" id="terms" type="checkbox">
@@ -76,7 +96,6 @@
         switch
       </label>
     </fieldset>
-
   </template>
 </body>
 

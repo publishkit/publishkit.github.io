@@ -5,6 +5,6 @@
   "author": "louis",
   "license": "MIT",
   "scripts": {
-    "dev": "npx serve -l 3010"
+    "dev": "npx serve -l 1400"
   }
 }

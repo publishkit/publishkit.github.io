@@ -21,11 +21,11 @@
 
 <body>
   <template id="frontmatter">
-    {"title":"Widgets","alias":"$widgets","props":{"name":"Bruce Wayne","color":"red"}}
+    {"title":"Widgets","alias":"$widgets","props":{"name":"Bruce Wayne","color":"red","colors":[]}}
   </template>
   <template id="content">
     <h1>Widgets</h1>
-    <p>The kit provides customisable widgets to enhance your content. Just include the widget in your markdown, and give it some options.</p>
+    <p>The kit provides customisable widgets to enhance your content. Just include the widget in your markdown and give it some options.</p>
     <h2>use</h2>
     <p>Wrap any markdown content around 2 <code>p</code> html tags. The opening tag defines the widget, as a <code>data-attribute</code>, and the closing tag use the <code>data-end</code> attribute.</p>
     <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
@@ -36,7 +36,7 @@ And some <span class="token bold"><span class="token punctuation">**</span><span
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-    <p data-preview=""></p>
+    <p data-card=""></p>
     <h1 class="noprocess">Some title</h1>
     <p>And some <strong>bold</strong> text inside a <code>card</code> widget !</p>
     <p data-end=""></p>
@@ -66,7 +66,7 @@ padded <span class="token italic"><span class="token punctuation">*</span><span 
     <ul>
       <li>a markdown list inside the wrapped widget tags:</li>
     </ul>
-    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-auto text-center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-card</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid-auto fixed text-center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token list punctuation">-</span> foo
 <span class="token list punctuation">-</span> bar
@@ -74,7 +74,7 @@ padded <span class="token italic"><span class="token punctuation">*</span><span 
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-    <p class="grid-auto text-center" data-card=""></p>
+    <p class="grid-auto fixed text-center" data-card=""></p>
     <ul>
       <li>foo</li>
       <li>bar</li>
@@ -113,6 +113,13 @@ padded <span class="token italic"><span class="token punctuation">*</span><span 
 <span class="token punctuation">]</span>
 </code></pre>
     <h1>Widget</h1>
+    <ul>
+      <li><a class="internal-link" href="doc/widgets#heading-input">input</a></li>
+      <li><a class="internal-link" href="doc/widgets#heading-select">select</a></li>
+      <li><a class="internal-link" href="doc/widgets#heading-switch">switch</a></li>
+      <li><a class="internal-link" href="doc/widgets#heading-section">section</a></li>
+      <li><a class="internal-link" href="doc/widgets#heading-card">card</a></li>
+    </ul>
     <p></p>
     <div class="embed-content">
       <div></div>
@@ -179,6 +186,67 @@ padded <span class="token italic"><span class="token punctuation">*</span><span 
     <div class="embed-content">
       <div></div>
       <div>
+        <h1>select</h1>
+      </div>
+      <div>
+        <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`color`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>~color<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-select</span> <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">-</span> red
+<span class="token list punctuation">-</span> blue
+<span class="token list punctuation">-</span> purple
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+      </div>
+      <p data-preview=""></p>
+      <p><code>color</code> = <span>~color</span></p>
+      <p placeholder="Pick color" data-bind="~color" data-select=""></p>
+      <div>
+        <ul>
+          <li>red</li>
+          <li>blue</li>
+          <li>purple</li>
+        </ul>
+      </div>
+      <p data-end=""></p>
+      <p data-end=""></p>
+      <p>Multi select by adding <code>multiple</code> prop to the widget:</p>
+      <div>
+        <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token code-snippet code keyword">`colors`</span> = <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>~colors<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-select</span>
+   <span class="token attr-name">data-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>~colors<span class="token punctuation">"</span></span>
+   <span class="token attr-name">multiple</span>
+   <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Pick color<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">-</span> red
+<span class="token list punctuation">-</span> blue
+<span class="token list punctuation">-</span> purple
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+      </div>
+      <p data-preview=""></p>
+      <p><code>colors</code> = <span>~colors</span></p>
+      <p placeholder="Pick color" data-bind="~colors" multiple="" data-select=""></p>
+      <div>
+        <ul>
+          <li>red</li>
+          <li>blue</li>
+          <li>purple</li>
+        </ul>
+      </div>
+      <p data-end=""></p>
+      <p data-end=""></p>
+    </div>
+    <div class="markdown-embed-content" style="display: none;"></div>
+    <p></p>
+    <p></p>
+    <div class="embed-content">
+      <div></div>
+      <div>
         <h1>section</h1>
       </div>
       <p>Sections are meant to be used with <code>layout.fluid</code>, and takes 100% of the width wiewport. You can wrap any markdown into a section:</p>
@@ -204,9 +272,9 @@ Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
       <p>You can use the following classes:</p>
       <div>
         <ul>
-          <li><code>primary-bg</code></li>
-          <li><code>secondary-bg</code></li>
-          <li><code>gradient-bg</code></li>
+          <li>primary-bg</li>
+          <li>secondary-bg</li>
+          <li>gradient-bg</li>
         </ul>
       </div>
       <p>You can also specify the background color in the <code>data-bg</code> prop:</p>
@@ -294,8 +362,6 @@ I'm <span class="token bold"><span class="token punctuation">**</span><span clas
    <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">px</span> solid <span class="token function">var</span><span class="token punctuation">(</span><span class="token variable">--contrast</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 
 styled card
-
-
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-end</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
