@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="url" content="https://publishkit.dev" />
   <meta name="title" content="tags" />
-  <meta name="description" content="Tags search" />
+  <meta name="description" content="Enable tags search" />
   <meta name="image" content="https://publishkit.dev/attachements/og.png" />
   <meta name="name" content="The KIT" />
   <meta name="keyswords" content="markdown, publishing, blogging, blog, api doc" />
@@ -14,19 +14,19 @@
   <meta property="og:image" content="https://publishkit.dev/attachements/og.png" />
   <meta property="og:url" content="https://publishkit.dev" />
   <meta property="og:title" content="tags" />
-  <meta property="og:description" content="Tags search" />
+  <meta property="og:description" content="Enable tags search" />
   <meta property="og:site_name" content="The KIT" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/publishkit/kit@latest/init.js"></script>
 </head>
 
 <body>
   <template id="frontmatter">
-    {"alias":"$tags","description":"Tags search"}
+    {"alias":"$tags","description":"Enable tags search","tags":["plugin","core","tags"]}
   </template>
   <template id="content">
     <h1>tags</h1>
     <blockquote>
-      <p>Tag search</p>
+      <p>Enable tags search</p>
     </blockquote>
     <h2>use</h2>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
@@ -34,8 +34,15 @@
 </code></pre>
     <h2>options</h2>
     <pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token key atrule">placeholder</span><span class="token punctuation">:</span> <span class="token string">"Search Tags..."</span>
+  <span class="token key atrule">shortcut</span><span class="token punctuation">:</span> <span class="token string">"control+k"</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">header_icon</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 </code></pre>
-    <p><a href="#Solutions" class="tag internal-link">#Solutions</a> <a href="#Farming" class="tag internal-link">#Farming</a> <a href="#RegenerativeAgriculture" class="tag internal-link">#RegenerativeAgriculture</a> <a href="#WaterUse" class="tag internal-link">#WaterUse</a> <a href="#Soil" class="tag internal-link">#Soil</a> <a href="#Food" class="tag internal-link">#Food</a> <a href="#LandUse" class="tag internal-link">#LandUse</a> <a href="#FoodSecurity" class="tag internal-link">#FoodSecurity</a> <a href="#JustTransition" class="tag internal-link">#JustTransition</a> <a href="#IndigenousRights" class="tag internal-link">#IndigenousRights</a> <a href="#Cows" class="tag internal-link">#Cows</a> <a href="#Concrete" class="tag internal-link">#Concrete</a> <a href="#Combustion" class="tag internal-link">#Combustion</a> <a href="#rocknroll" class="tag internal-link">#rocknroll</a></p>
+    <h2>demo</h2><button data-click="$modal.open('tags.modal')" class="secondary outline me-2">
+      <i class="bx bx-hash me-2"></i>Search Tags
+    </button>
+    <p><a href="#ui" class="tag internal-link">#ui</a> <a href="#widget" class="tag internal-link">#widget</a> <a href="#theme" class="tag internal-link">#theme</a> <a href="#plugin" class="tag internal-link">#plugin</a></p>
   </template>
 </body>
 
