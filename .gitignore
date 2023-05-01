@@ -1,3 +1,4 @@
 .DS_Store
 kit_local
 test/
+*_test.md
