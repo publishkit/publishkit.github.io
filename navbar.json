@@ -6,20 +6,16 @@
       "isOpen": true,
       "items": [
         [
-          "<a href=\"index.html\" class=\"internal-link\">Home</a>",
+          "<a data-tooltip-position=\"top\" href=\"index.html\" class=\"internal-link\">Home</a>",
           "bx-paper-plane"
         ],
         [
-          "<a href=\"doc/index.html\" class=\"internal-link\">Documentation</a>",
+          "<a data-tooltip-position=\"top\" href=\"doc/index.html\" class=\"internal-link\">Documentation</a>",
           "bx-book-open"
         ],
         [
-          "<a href=\"community.html\" class=\"internal-link\">Community</a>",
+          "<a data-tooltip-position=\"top\" href=\"community.html\" class=\"internal-link\">Community</a>",
           "bx-group"
-        ],
-        [
-          "<a href=\"pricing.html\" class=\"internal-link\">Pricing</a>",
-          "bx-dollar-circle"
         ]
       ]
     },
@@ -28,11 +24,11 @@
       "isOpen": true,
       "items": [
         [
-          "<a href=\"blog/index.html\" class=\"internal-link\">Blog</a>",
+          "<a data-tooltip-position=\"top\" href=\"blog/index.html\" class=\"internal-link\">Blog</a>",
           "bx-notepad"
         ],
         [
-          "<a href=\"contact.html\" class=\"internal-link\">Contact</a>",
+          "<a data-tooltip-position=\"top\" href=\"contact.html\" class=\"internal-link\">Contact</a>",
           "bx-envelope"
         ]
       ]
